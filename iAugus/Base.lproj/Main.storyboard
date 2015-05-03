@@ -93,7 +93,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Timeline" id="sOP-jt-DTZ"/>
+                    <navigationItem key="navigationItem" title="Timeline" id="sOP-jt-DTZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="W8r-Am-Vay">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6OJ-OW-9J2">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="fiH-MO-D7X" eventType="touchUpInside" id="tjT-8n-OhY"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5k-q9-wDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,7 +259,7 @@
         <!--Slide Panel View Controller-->
         <scene sceneID="9ha-dd-P5K">
             <objects>
-                <viewController storyboardIdentifier="LeftViewController" id="t8S-nX-2TZ" customClass="SlidePanelViewController" customModule="SlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftViewController" id="t8S-nX-2TZ" customClass="SlidePanelViewController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k9g-qY-IxG"/>
                         <viewControllerLayoutGuide type="bottom" id="oRa-3o-H2b"/>

@@ -15,6 +15,8 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         initViewController()
         
+        // set defalut viewController of TabBarViewController
+        self.selectedIndex = 2
     }
     
     

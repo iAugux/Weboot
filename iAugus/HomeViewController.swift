@@ -10,10 +10,24 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBAction func login(sender: AnyObject) {
+        callWeibo()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    
+    func callWeibo() {
+        println("weibo pressed")
+        var request: WBAuthorizeRequest! = WBAuthorizeRequest.request() as! WBAuthorizeRequest
+        request.redirectURI = "https://api.weibo.com/oauth2/default.html"
+        request.scope = "all"
+        WeiboSDK.sendRequest(request)
     }
 
     override func didReceiveMemoryWarning() {

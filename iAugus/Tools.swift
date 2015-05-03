@@ -13,3 +13,6 @@ let ScreenHeight = UIScreen.mainScreen().bounds.height
 
 // get the width of Screen
 let ScreenWidth = UIScreen.mainScreen().bounds.width
+
+// set Weibo Appkey
+let weiboAppKey:String = "244849822"
