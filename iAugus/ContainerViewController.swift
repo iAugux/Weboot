@@ -32,6 +32,7 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate{
         
         mainTabBarViewController = UIStoryboard.mainTabBarController()
         centerNavigationController = UINavigationController(rootViewController: mainTabBarViewController)
+        centerNavigationController.setNavigationBarHidden(true , animated: false)
         view.addSubview(centerNavigationController.view)
         addChildViewController(centerNavigationController)
         centerNavigationController.didMoveToParentViewController(self)

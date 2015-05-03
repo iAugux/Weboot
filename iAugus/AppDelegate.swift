@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  SlideMenu
+//  iAugus
 //
 //  Created by Augus on 4/27/15.
 //  Copyright (c) 2015 Augus. All rights reserved.
@@ -19,11 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         application.statusBarStyle = .LightContent
-        
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        UINavigationBar.appearance().titleTextAttributes = titleDict as [NSObject : AnyObject]
-        
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
         let containerViewController = ContainerViewController()
         var homeNav = storyboard.instantiateViewControllerWithIdentifier("homeNav") as! UINavigationController
