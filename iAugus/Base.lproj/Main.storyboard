@@ -91,22 +91,30 @@
                     <view key="view" contentMode="scaleToFill" id="YvI-LN-PQz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V6w-vJ-ZIu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EHK-Yx-70s">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" tableViewCell="EHK-Yx-70s" id="q6U-u7-m1K">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V6w-vJ-ZIu" firstAttribute="leading" secondItem="YvI-LN-PQz" secondAttribute="leading" id="3qG-9X-I4D"/>
+                            <constraint firstAttribute="trailing" secondItem="V6w-vJ-ZIu" secondAttribute="trailing" id="CdY-6h-NC3"/>
+                            <constraint firstAttribute="bottom" secondItem="V6w-vJ-ZIu" secondAttribute="bottom" id="SL6-ZI-fAf"/>
+                            <constraint firstItem="V6w-vJ-ZIu" firstAttribute="top" secondItem="YvI-LN-PQz" secondAttribute="top" id="Yc0-97-UIa"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Timeline" id="sOP-jt-DTZ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="W8r-Am-Vay">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6OJ-OW-9J2">
-                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="login:" destination="fiH-MO-D7X" eventType="touchUpInside" id="tjT-8n-OhY"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Timeline" id="sOP-jt-DTZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5k-q9-wDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

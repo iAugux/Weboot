@@ -16,3 +16,9 @@ let ScreenWidth = UIScreen.mainScreen().bounds.width
 
 // set Weibo Appkey
 let weiboAppKey:String = "244849822"
+
+// set weibo AppSecret
+let weiboAppSecret:String = "c489a36fc2ba7aa130114cfa680df1a8"
+
+// set authorizeURL
+let authorizeURL = "https://api.weibo.com/oauth2/authorize"
