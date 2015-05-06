@@ -16,6 +16,9 @@ enum SlideOutState {
 
 class ContainerViewController: UIViewController, UIGestureRecognizerDelegate{
     
+    // 0 ~ 320
+    let centerPanelExpandedOffset: CGFloat = 200
+
     var centerNavigationController: UINavigationController!
     var mainTabBarViewController: MainTabBarController!
     var leftViewController: SlidePanelViewController?
@@ -25,7 +28,6 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate{
             showShadowForCenterViewController(shouldShowShadow)
         }
     }
-    let centerPanelExpandedOffset: CGFloat = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
