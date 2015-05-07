@@ -9,16 +9,18 @@
 import UIKit
 
 
-class HomeViewController: BaseViewController {
+
+class HomeViewController: UITableViewController {
     // MARK: - Property
-    var statuses:NSMutableArray?
+    var statuses:NSMutableArray? = NSMutableArray()
     var query:WeiboRequestOperation? = WeiboRequestOperation()
-    var tableView:UITableView?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("accessToke: \(WeiboAuthentication().accessToken)")
+        if Weibo.getWeibo().isAuthenticated(){
+            self.loadstatuses()
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,74 +28,74 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        var loginAndLogoutButton = UIBarButtonItem()
-        self.navigationItem.rightBarButtonItem?.title = ""
-        
-        
+        var loginOrLogoutButton = UIBarButtonItem()
         
         if !(Weibo.getWeibo().isAuthenticated()){
-            println("not been authenticated")
-            loginAndLogoutButton = UIBarButtonItem(title: "Login", style: UIBarButtonItemStyle.Plain, target: self, action: "loginWeibo")
-            self.navigationItem.rightBarButtonItem = loginAndLogoutButton
-            println("authenticating...")
+            showLoginButton()
         }
-        if Weibo.getWeibo().isAuthenticated(){
-            println("has been authenticated")
-            self.navigationItem.rightBarButtonItem?.title = ""
-            loginAndLogoutButton = UIBarButtonItem(title: "Logout", style: .Plain, target: self , action: "logoutWeibo")
-            self.navigationItem.rightBarButtonItem = loginAndLogoutButton
-
+        else {
+            showLogoutButton()
         }
-       
-    }
-   
-    func callWeibo() {
-        println("weibo pressed")
-        var request: WBAuthorizeRequest! = WBAuthorizeRequest.request() as! WBAuthorizeRequest
-        request.redirectURI = "https://api.weibo.com/oauth2/default.html"
-        request.scope = "all"
-        WeiboSDK.sendRequest(request)
-        println("accessToke: \(WeiboAuthentication().accessToken)")
-        
-        if Weibo.getWeibo().isAuthenticated(){
-            self.loadstatuses()
-        }
-        
+        self.loadstatuses()
     }
     
+    // MARK: - login or logout
+    
+    func showLoginButton(){
+        let loginButton = UIBarButtonItem(title: "Login", style: UIBarButtonItemStyle.Plain, target: self, action: "loginWeibo")
+        self.navigationItem.rightBarButtonItem = loginButton
+    }
+    func showLogoutButton(){
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: "logoutWeibo")
+        self.navigationItem.rightBarButtonItem = logoutButton
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     func loginWeibo(){
         
         if !(Weibo.getWeibo().isAuthenticated()){
-            println("not authenticated")
+            println("not authenticated! and authenticating...")
             Weibo.getWeibo().authorizeWithCompleted({ account, error in
                 if error == nil{
                     NSLog("sign in successful \(account.user.screenName)")
                     println("sign in successful")
-
+                    
                 }
                 else{
                     NSLog("failed to sign in \(error)")
                     println("failed to sign in ")
                 }
             })
-            
-        }else{
-            println("has been authenticated")
             self.loadstatuses()
         }
-        
+        else{
+            println("has already been authenticated!")
+            self.loadstatuses()
+        }
     }
-   
- 
     
+    func logoutWeibo(){
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure to logout", preferredStyle: UIAlertControllerStyle.Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
+        let confirmAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {
+            action in
+            Weibo.getWeibo().signOut()
+        })
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        self.tableView.reloadData()
+    }
+    
+    
+    // MARK: - load data of weibo timeline
     func loadstatuses(){
         self.statuses = nil
-        if let query = query{
-            query.cancel()
+        if query != nil {
+            query!.cancel()
         }
-        self.tableView?.reloadData()
-        query = Weibo.getWeibo().queryTimeline(StatusTimelineFriends, count: 50 , completed: ({ statuses, error in
-            if error == nil{
+        self.tableView.reloadData()
+        query = Weibo.getWeibo().queryTimeline(StatusTimelineFriends, count: numberOfTimelineRow , completed: ({ statuses, error in
+            if error != nil{
                 self.statuses = nil
                 NSLog("error: \(error)")
                 
@@ -105,18 +107,17 @@ class HomeViewController: BaseViewController {
             self.query = nil
             self.tableView?.reloadData()
         }))
-
+        
     }
     
     
-    
-    // MARK: - tableView
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    // MARK: - table view data source
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        if let query = query{
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        if query != nil {
             return 1
         }
         if self.statuses == nil{
@@ -125,13 +126,9 @@ class HomeViewController: BaseViewController {
         return statuses!.count
     }
     
-   
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cellIdentifier = "Cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! UITableViewCell
-        cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
-        
-        if let query = query{
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = UITableViewCell(style: .Default, reuseIdentifier: "TimelineCell")
+        if query != nil {
             cell.textLabel?.text = "Loading..."
             
         }
@@ -142,21 +139,9 @@ class HomeViewController: BaseViewController {
             let status:Status = statuses?.objectAtIndex(indexPath.row) as! Status
             cell.textLabel?.text = status.text
         }
+        
         return cell
     }
     
-    
-
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

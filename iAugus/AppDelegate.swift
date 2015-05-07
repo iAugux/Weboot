@@ -29,23 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         homeNav.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = homeNav
         
-        
-//        // Link with Weibo SDK
-//        WeiboSDK.enableDebugMode(true)
-//        println("start redisterApp")
-//        WeiboSDK.registerApp(weiboAppKey)
-//        println("registerApp end")
-//        
-        
-        
+   
     
         let weibo:Weibo = Weibo(appKey: weiboAppKey, withAppSecret: weiboAppSecret)
         Weibo.setWeibo(weibo)
         if weibo.isAuthenticated(){
             NSLog("current user: \(weibo.currentAccount().user.name)")
         }
-//        WeiboAuthentication(authorizeURL: authorizeURL, accessTokenURL: nil, appKey: weiboAppKey, appSecret: weiboAppSecret)
-        
       
         
         return true
