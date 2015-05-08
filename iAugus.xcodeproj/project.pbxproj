@@ -22,7 +22,6 @@
 		B14A4B691AEBD9B200498F9C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B681AEBD9B200498F9C /* BaseViewController.swift */; };
 		B14A4B6B1AEBD9EA00498F9C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B6A1AEBD9EA00498F9C /* BaseNavigationController.swift */; };
 		B14A4B701AEBDAB100498F9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B6E1AEBDAB100498F9C /* HomeViewController.swift */; };
-		B14A4B711AEBDAB100498F9C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14A4B6F1AEBDAB100498F9C /* HomeViewController.xib */; };
 		B14A4B741AEBDAEB00498F9C /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B721AEBDAEB00498F9C /* CommentViewController.swift */; };
 		B14A4B751AEBDAEB00498F9C /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14A4B731AEBDAEB00498F9C /* CommentViewController.xib */; };
 		B14A4B7C1AEBDBA000498F9C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B7A1AEBDBA000498F9C /* ProfileViewController.swift */; };
@@ -39,6 +38,8 @@
 		B14A4B981AECB61100498F9C /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */; };
 		B15D00F31AF9D8DA00F0C92F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */; };
 		B15D00F51AF9D8E600F0C92F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */; };
+		B17486C61AFCE0DE0050D942 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17486C41AFCE0DE0050D942 /* TimelineCell.swift */; };
+		B17486C71AFCE0DE0050D942 /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17486C51AFCE0DE0050D942 /* TimelineCell.xib */; };
 		B1D80AE21AF9F84500A533DB /* WeiboAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80AB21AF9F84500A533DB /* WeiboAccounts.m */; };
 		B1D80AE31AF9F84500A533DB /* WeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80AB41AF9F84500A533DB /* WeiboRequest.m */; };
 		B1D80AE41AF9F84500A533DB /* WeiboRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80AB61AF9F84500A533DB /* WeiboRequestOperation.m */; };
@@ -96,7 +97,6 @@
 		B14A4B681AEBD9B200498F9C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B14A4B6A1AEBD9EA00498F9C /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B6E1AEBDAB100498F9C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B14A4B6F1AEBDAB100498F9C /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B14A4B721AEBDAEB00498F9C /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		B14A4B731AEBDAEB00498F9C /* CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		B14A4B7A1AEBDBA000498F9C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +113,8 @@
 		B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 		B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B17486C41AFCE0DE0050D942 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		B17486C51AFCE0DE0050D942 /* TimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
 		B1D80AB11AF9F84500A533DB /* WeiboAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboAccounts.h; sourceTree = "<group>"; };
 		B1D80AB21AF9F84500A533DB /* WeiboAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboAccounts.m; sourceTree = "<group>"; };
 		B1D80AB31AF9F84500A533DB /* WeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboRequest.h; sourceTree = "<group>"; };
@@ -289,7 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				B14A4B6E1AEBDAB100498F9C /* HomeViewController.swift */,
-				B14A4B6F1AEBDAB100498F9C /* HomeViewController.xib */,
+				B17486C41AFCE0DE0050D942 /* TimelineCell.swift */,
+				B17486C51AFCE0DE0050D942 /* TimelineCell.xib */,
 				B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */,
 			);
 			name = Home;
@@ -521,6 +524,7 @@
 			files = (
 				B1D80AEE1AF9F84500A533DB /* WeiboDialogClose.png in Resources */,
 				B14A4B7D1AEBDBA000498F9C /* ProfileViewController.xib in Resources */,
+				B17486C71AFCE0DE0050D942 /* TimelineCell.xib in Resources */,
 				B1D80AEF1AF9F84500A533DB /* WeiboDialogClose@2x.png in Resources */,
 				B14A4B871AEBEEAA00498F9C /* AtViewController.xib in Resources */,
 				B14A4B451AEBBA8E00498F9C /* Main.storyboard in Resources */,
@@ -528,7 +532,6 @@
 				B14A4B831AEBEE9600498F9C /* FavoriteViewController.xib in Resources */,
 				B14A4B751AEBDAEB00498F9C /* CommentViewController.xib in Resources */,
 				B14A4B471AEBBA8E00498F9C /* Images.xcassets in Resources */,
-				B14A4B711AEBDAB100498F9C /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +627,7 @@
 				B1D80AF11AF9F84500A533DB /* NSDictionary+Json.m in Sources */,
 				B13930321AEE306900D682BD /* ContainerViewController.swift in Sources */,
 				B14A4B941AECB5EC00498F9C /* FavoriteNavigationController.swift in Sources */,
+				B17486C61AFCE0DE0050D942 /* TimelineCell.swift in Sources */,
 				B14A4B691AEBD9B200498F9C /* BaseViewController.swift in Sources */,
 				B14A4B821AEBEE9600498F9C /* FavoriteViewController.swift in Sources */,
 				B14A4B7C1AEBDBA000498F9C /* ProfileViewController.swift in Sources */,
