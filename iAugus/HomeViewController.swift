@@ -19,7 +19,7 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("")
+        println("hello")
         // part of GearRefreshController
         gearRefreshControl = GearRefreshControl(frame: self.view.bounds)
         gearRefreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
