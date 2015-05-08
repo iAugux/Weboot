@@ -1,0 +1,10 @@
+PODS:
+  - GearRefreshControl (0.1)
+
+DEPENDENCIES:
+  - GearRefreshControl
+
+SPEC CHECKSUMS:
+  GearRefreshControl: c9c3531449560152f2834579fb059615db24a77f
+
+COCOAPODS: 0.36.4

@@ -7,20 +7,24 @@
 //
 
 import UIKit
-
+import GearRefreshControl
 
 
 class HomeViewController: UITableViewController {
-    // MARK: - Property
+    var gearRefreshControl: GearRefreshControl!
+    
     var statuses:NSMutableArray? = NSMutableArray()
     var query:WeiboRequestOperation? = WeiboRequestOperation()
     let refreshController = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Weibo.getWeibo().isAuthenticated(){
-            self.loadstatuses()
-        }
+
+        // part of GearRefreshController
+        gearRefreshControl = GearRefreshControl(frame: self.view.bounds)
+        gearRefreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = gearRefreshControl
+        self.refreshControl?.beginRefreshing()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -131,20 +135,25 @@ class HomeViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = UITableViewCell(style: .Default, reuseIdentifier: "TimelineCell")
-        if query != nil {
-            cell.textLabel?.text = "Loading..."
-            
-        }
-        else if (self.statuses == nil){
-            cell.textLabel?.text = "Failed to load, please login..."
-        }
-        else{
+
+        if statuses != nil{
             let status:Status = statuses?.objectAtIndex(indexPath.row) as! Status
             cell.textLabel?.text = status.text
         }
-        
         return cell
     }
     
+    // MARK: - part of GearRefreshControl
+    func refresh(){
+        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC)));
+        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+            self.loadstatuses()
+            self.gearRefreshControl.endRefreshing()
+        }
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        gearRefreshControl.scrollViewDidScroll(scrollView)
+    }
     
 }

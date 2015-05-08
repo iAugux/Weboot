@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1889C7D24263509383A51304 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F46F94BB2F14981B976D1396 /* Pods-dummy.m */; };
+		7D2DBF71431EE0EFFDFA591B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6903406ACB23C8E0432AD2C0 /* Foundation.framework */; };
+		A3D5BE081755A5CAF457ED34 /* GearRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7709A9B12451B8CB738DB2 /* GearRefreshControl.swift */; };
+		B76D8DDF37D95857A707DB2E /* Pods-GearRefreshControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E27CF5CC48E1A81D4622FB52 /* Pods-GearRefreshControl-dummy.m */; };
+		C420AE6474162C1E11A37AC9 /* Pods-GearRefreshControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B485C50F7ADD5F2552E10F94 /* Pods-GearRefreshControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAAF6A8761C5595E92FDB84D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6903406ACB23C8E0432AD2C0 /* Foundation.framework */; };
+		F8A48A8D878853B9E780B7EA /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9D6D1263FC95AE5A5C969EA /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63E8FDBAC8A1D38F07A2004E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1EE07BD84718D6524C772BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E244B961C4800C42CE6B5686;
+			remoteInfo = "Pods-GearRefreshControl";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AFD7B3C8317A0191A16B5AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E02BDA42B00D1A999409617 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		42B8CEF5E7A7F731A627658A /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4F6A272C00BE38679C9610C1 /* Pods-GearRefreshControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GearRefreshControl.xcconfig"; sourceTree = "<group>"; };
+		57E76EFFCDCD79F996E2D7AF /* GearRefreshControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GearRefreshControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E5E74153810E32DE5FB2BEF /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		65025D34629AD48D4DEB260D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6903406ACB23C8E0432AD2C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		75C3923DA63D264D92F18816 /* Pods-GearRefreshControl-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GearRefreshControl-Private.xcconfig"; sourceTree = "<group>"; };
+		7F69B0BE88CD63EB0F14547C /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		7FC5B03AB2D4835B6ACF6C73 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		91BE06DDCB46A218DC2B5690 /* Pods-GearRefreshControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GearRefreshControl-prefix.pch"; sourceTree = "<group>"; };
+		A195EA11108F839E04CF1E34 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		A4A2B5F61D5A2D943438224C /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		A9D6D1263FC95AE5A5C969EA /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		AE7A16962D6E99D34F2791F3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B485C50F7ADD5F2552E10F94 /* Pods-GearRefreshControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GearRefreshControl-umbrella.h"; sourceTree = "<group>"; };
+		BD4677B9E0549AD62F38C9D2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		E27CF5CC48E1A81D4622FB52 /* Pods-GearRefreshControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GearRefreshControl-dummy.m"; sourceTree = "<group>"; };
+		E527770005DFBADCCEE45050 /* Pods-GearRefreshControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GearRefreshControl.modulemap"; sourceTree = "<group>"; };
+		E848F6724408A21346232E67 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		EF7709A9B12451B8CB738DB2 /* GearRefreshControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GearRefreshControl.swift; path = Source/GearRefreshControl.swift; sourceTree = "<group>"; };
+		F46F94BB2F14981B976D1396 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3A5891B4F656CA13F07395B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D2DBF71431EE0EFFDFA591B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F27D5BE78CE92F986A4006A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAAF6A8761C5595E92FDB84D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1408B5BCCA637B88589A6E50 = {
+			isa = PBXGroup;
+			children = (
+				42B8CEF5E7A7F731A627658A /* Podfile */,
+				754EB56785444A9A0E221F59 /* Frameworks */,
+				3738804F779EA7C8019341A6 /* Pods */,
+				58DEA3B689941F6505F1FA72 /* Products */,
+				1C0D562F6E8D3EA46F1CC008 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		1C0D562F6E8D3EA46F1CC008 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				203A37AA1CC869F7EF93BABF /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		203A37AA1CC869F7EF93BABF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1AFD7B3C8317A0191A16B5AE /* Info.plist */,
+				7F69B0BE88CD63EB0F14547C /* Pods.modulemap */,
+				2E02BDA42B00D1A999409617 /* Pods-acknowledgements.markdown */,
+				5E5E74153810E32DE5FB2BEF /* Pods-acknowledgements.plist */,
+				F46F94BB2F14981B976D1396 /* Pods-dummy.m */,
+				E848F6724408A21346232E67 /* Pods-environment.h */,
+				7FC5B03AB2D4835B6ACF6C73 /* Pods-frameworks.sh */,
+				A4A2B5F61D5A2D943438224C /* Pods-resources.sh */,
+				A9D6D1263FC95AE5A5C969EA /* Pods-umbrella.h */,
+				BD4677B9E0549AD62F38C9D2 /* Pods.debug.xcconfig */,
+				A195EA11108F839E04CF1E34 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		2113813640A24B35FD9D1F8B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6903406ACB23C8E0432AD2C0 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		3738804F779EA7C8019341A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FB182C015AFA5BBF9F5E61E /* GearRefreshControl */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		402552DF730E5057770C6140 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				65025D34629AD48D4DEB260D /* Info.plist */,
+				E527770005DFBADCCEE45050 /* Pods-GearRefreshControl.modulemap */,
+				4F6A272C00BE38679C9610C1 /* Pods-GearRefreshControl.xcconfig */,
+				75C3923DA63D264D92F18816 /* Pods-GearRefreshControl-Private.xcconfig */,
+				E27CF5CC48E1A81D4622FB52 /* Pods-GearRefreshControl-dummy.m */,
+				91BE06DDCB46A218DC2B5690 /* Pods-GearRefreshControl-prefix.pch */,
+				B485C50F7ADD5F2552E10F94 /* Pods-GearRefreshControl-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-GearRefreshControl";
+			sourceTree = "<group>";
+		};
+		58DEA3B689941F6505F1FA72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57E76EFFCDCD79F996E2D7AF /* GearRefreshControl.framework */,
+				AE7A16962D6E99D34F2791F3 /* Pods.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		754EB56785444A9A0E221F59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2113813640A24B35FD9D1F8B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FB182C015AFA5BBF9F5E61E /* GearRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				EF7709A9B12451B8CB738DB2 /* GearRefreshControl.swift */,
+				402552DF730E5057770C6140 /* Support Files */,
+			);
+			path = GearRefreshControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1216B2ED87536A8DE61F5A87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A48A8D878853B9E780B7EA /* Pods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5E44464814896BA66B120A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C420AE6474162C1E11A37AC9 /* Pods-GearRefreshControl-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0E15FF9DDB0BADEEE8632DAF /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73A2C6B6099F2A8BAFB56625 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				11D6CFC4DBC4BCBF95834244 /* Sources */,
+				F27D5BE78CE92F986A4006A8 /* Frameworks */,
+				1216B2ED87536A8DE61F5A87 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAB27369A56482B923CEFC7C /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = AE7A16962D6E99D34F2791F3 /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E244B961C4800C42CE6B5686 /* Pods-GearRefreshControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A2E19BBB95318B0D037249 /* Build configuration list for PBXNativeTarget "Pods-GearRefreshControl" */;
+			buildPhases = (
+				EAD569E4207FD4887113FD6E /* Sources */,
+				B3A5891B4F656CA13F07395B /* Frameworks */,
+				CB5E44464814896BA66B120A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GearRefreshControl";
+			productName = "Pods-GearRefreshControl";
+			productReference = 57E76EFFCDCD79F996E2D7AF /* GearRefreshControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B1EE07BD84718D6524C772BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 26F4FCB32AA9D4AD39365BBD /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1408B5BCCA637B88589A6E50;
+			productRefGroup = 58DEA3B689941F6505F1FA72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E15FF9DDB0BADEEE8632DAF /* Pods */,
+				E244B961C4800C42CE6B5686 /* Pods-GearRefreshControl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11D6CFC4DBC4BCBF95834244 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1889C7D24263509383A51304 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD569E4207FD4887113FD6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D5BE081755A5CAF457ED34 /* GearRefreshControl.swift in Sources */,
+				B76D8DDF37D95857A707DB2E /* Pods-GearRefreshControl-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAB27369A56482B923CEFC7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GearRefreshControl";
+			target = E244B961C4800C42CE6B5686 /* Pods-GearRefreshControl */;
+			targetProxy = 63E8FDBAC8A1D38F07A2004E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		421154A71A89B2F50EEFDC34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A953FD18470F538C70A07E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C3923DA63D264D92F18816 /* Pods-GearRefreshControl-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GearRefreshControl/Pods-GearRefreshControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GearRefreshControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-GearRefreshControl/Pods-GearRefreshControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = GearRefreshControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C0A601E1A8E5365A24B1EF7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A195EA11108F839E04CF1E34 /* Pods.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C46E6CA0A23B4469A2775E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD4677B9E0549AD62F38C9D2 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C4C4D6FAEBFED26301C560CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C3923DA63D264D92F18816 /* Pods-GearRefreshControl-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GearRefreshControl/Pods-GearRefreshControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-GearRefreshControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-GearRefreshControl/Pods-GearRefreshControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GearRefreshControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F2F3454B0CA9C2B26EBB056E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26F4FCB32AA9D4AD39365BBD /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				421154A71A89B2F50EEFDC34 /* Debug */,
+				F2F3454B0CA9C2B26EBB056E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70A2E19BBB95318B0D037249 /* Build configuration list for PBXNativeTarget "Pods-GearRefreshControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A953FD18470F538C70A07E34 /* Debug */,
+				C4C4D6FAEBFED26301C560CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73A2C6B6099F2A8BAFB56625 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C46E6CA0A23B4469A2775E55 /* Debug */,
+				C0A601E1A8E5365A24B1EF7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B1EE07BD84718D6524C772BA /* Project object */;
+}
