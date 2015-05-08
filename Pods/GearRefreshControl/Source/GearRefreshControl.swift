@@ -39,7 +39,7 @@ public class GearRefreshControl: UIRefreshControl {
         
         refreshContainerView = UIView(frame: self.bounds)
 //        refreshContainerView.backgroundColor = UIColor(red:0.13, green:0.29, blue:0.55, alpha:1)
-        refreshContainerView.backgroundColor = UIColor.blueColor()
+        refreshContainerView.backgroundColor = UIColor.grayColor()
         overlayView = UIView(frame: self.bounds)
         overlayView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.3)
         
