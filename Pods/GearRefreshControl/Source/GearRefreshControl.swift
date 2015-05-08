@@ -11,7 +11,6 @@ import UIKit
 public class GearRefreshControl: UIRefreshControl {
     
     var isRefreshControlAnimating = false
-
     private var refreshContainerView: UIView!
     private var overlayView: UIView!
     private var shadowView: ShadowView!
@@ -39,36 +38,41 @@ public class GearRefreshControl: UIRefreshControl {
         
         refreshContainerView = UIView(frame: self.bounds)
 //        refreshContainerView.backgroundColor = UIColor(red:0.13, green:0.29, blue:0.55, alpha:1)
-        refreshContainerView.backgroundColor = UIColor.grayColor()
+        refreshContainerView.backgroundColor = UIColor.clearColor()
         overlayView = UIView(frame: self.bounds)
-        overlayView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.3)
+//        overlayView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.3)
         
         shadowView = ShadowView(frame: self.bounds)
         shadowView.shadowPercentage = 0.2
         
         centerGear = MainGear(frame: CGRectMake(0, 0, 48, 48))
         centerGear.backgroundColor = UIColor.clearColor()
-        centerGear.tintColor = UIColor(red:0.36, green:0.52, blue:0.92, alpha:1)
+//        centerGear.tintColor = UIColor(red:0.36, green:0.52, blue:0.92, alpha:1)
+        centerGear.tintColor = UIColor(red: 0.231, green: 1.000, blue: 0.927, alpha: 0.790)
         centerGear.center = CGPoint(x: CGRectGetMidX(self.refreshContainerView.frame), y: CGRectGetMidY(self.refreshContainerView.frame))
         
         topGear = BigGear(frame: CGRectMake(0, 0, 92, 92))
         topGear.backgroundColor = UIColor.clearColor()
-        topGear.tintColor = UIColor(red:0.31, green:0.47, blue:0.84, alpha:1)
+//        topGear.tintColor = UIColor(red: 0.310, green: 0.470, blue: 0.840, alpha: 0.880)
+        topGear.tintColor = UIColor(red: 0.923, green: 1.000, blue: 0.487, alpha: 1.000)
         topGear.center = CGPoint(x: CGRectGetMidX(self.refreshContainerView.frame) + 48, y: CGRectGetMidY(self.refreshContainerView.frame) - 49)
         
         rightGear = BigGear(frame: CGRectMake(0, 0, 92, 92))
         rightGear.backgroundColor = UIColor.clearColor()
-        rightGear.tintColor = UIColor(red:0.23, green:0.41, blue:0.76, alpha:1)
+//        rightGear.tintColor = UIColor(red:0.23, green:0.41, blue:0.76, alpha:1)
+        rightGear.tintColor = UIColor(red: 1.000, green: 0.663, blue: 0.897, alpha: 0.270)
         rightGear.center = CGPoint(x: CGRectGetMidX(self.refreshContainerView.frame) + 120, y: CGRectGetMidY(self.refreshContainerView.frame))
         
         bottomGear = BigGear(frame: CGRectMake(0, 0, 88, 88))
         bottomGear.backgroundColor = UIColor.clearColor()
-        bottomGear.tintColor = UIColor(red:0.31, green:0.47, blue:0.84, alpha:1)
+//        bottomGear.tintColor = UIColor(red:0.31, green:0.47, blue:0.84, alpha:1)
+        bottomGear.tintColor = UIColor(red: 0.400, green: 0.800, blue: 1.000, alpha: 0.500)
         bottomGear.center = CGPoint(x: CGRectGetMidX(self.refreshContainerView.frame) - 48, y: CGRectGetMidY(self.refreshContainerView.frame) + 42)
         
         leftGear = BigGear(frame: CGRectMake(0, 0, 92, 92))
         leftGear.backgroundColor = UIColor.clearColor()
-        leftGear.tintColor = UIColor(red:0.23, green:0.41, blue:0.76, alpha:1)
+//        leftGear.tintColor = UIColor(red:0.23, green:0.41, blue:0.76, alpha:1)
+        leftGear.tintColor = UIColor(red: 0.359, green: 1.000, blue: 0.193, alpha: 0.360)
         leftGear.center = CGPoint(x: CGRectGetMidX(self.refreshContainerView.frame) - 110, y: CGRectGetMidY(self.refreshContainerView.frame) - 18)
         
         refreshContainerView.addSubview(self.topGear)

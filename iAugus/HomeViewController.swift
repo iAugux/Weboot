@@ -12,27 +12,24 @@ import GearRefreshControl
 
 class HomeViewController: UITableViewController {
     var gearRefreshControl: GearRefreshControl!
-    
     var statuses:NSMutableArray? = NSMutableArray()
     var query:WeiboRequestOperation? = WeiboRequestOperation()
-    let refreshController = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("hello")
         // part of GearRefreshController
         gearRefreshControl = GearRefreshControl(frame: self.view.bounds)
         gearRefreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = gearRefreshControl
-        self.refreshControl?.beginRefreshing()
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        var loginOrLogoutButton = UIBarButtonItem()
         
         if !(Weibo.getWeibo().isAuthenticated()){
             showLoginButton()
@@ -41,6 +38,7 @@ class HomeViewController: UITableViewController {
             showLogoutButton()
         }
         self.loadstatuses()
+        
     }
     
     // MARK: - login or logout
@@ -93,7 +91,7 @@ class HomeViewController: UITableViewController {
         
     }
     
-    
+   
     // MARK: - load data of weibo timeline
     func loadstatuses(){
         self.statuses = nil
