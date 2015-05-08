@@ -24,4 +24,4 @@ let weiboAppSecret:String = "c489a36fc2ba7aa130114cfa680df1a8"
 let authorizeURL = "https://api.weibo.com/oauth2/authorize"
 
 // set row number of Timeline
-let numberOfTimelineRow: Int32 = 100
+let numberOfTimelineRow: Int32 = 50 

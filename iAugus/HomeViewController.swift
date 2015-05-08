@@ -14,7 +14,7 @@ class HomeViewController: UITableViewController {
     // MARK: - Property
     var statuses:NSMutableArray? = NSMutableArray()
     var query:WeiboRequestOperation? = WeiboRequestOperation()
-    
+    let refreshController = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,7 @@ class HomeViewController: UITableViewController {
             println("has already been authenticated!")
             self.loadstatuses()
         }
+        self.loadstatuses()
     }
     
     func logoutWeibo(){
@@ -79,11 +80,13 @@ class HomeViewController: UITableViewController {
         let confirmAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {
             action in
             Weibo.getWeibo().signOut()
+            self.tableView.dataSource = nil
+            self.tableView.reloadData()
         })
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         self.presentViewController(alertController, animated: true, completion: nil)
-        self.tableView.reloadData()
+        
     }
     
     
@@ -97,15 +100,15 @@ class HomeViewController: UITableViewController {
         query = Weibo.getWeibo().queryTimeline(StatusTimelineFriends, count: numberOfTimelineRow , completed: ({ statuses, error in
             if error != nil{
                 self.statuses = nil
-                NSLog("error: \(error)")
+                NSLog("error: \(error) , please login...")
                 
             }
             else{
                 self.statuses = statuses
-                
             }
             self.query = nil
-            self.tableView?.reloadData()
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }))
         
     }
@@ -133,7 +136,7 @@ class HomeViewController: UITableViewController {
             
         }
         else if (self.statuses == nil){
-            cell.textLabel?.text = "Failed to load..."
+            cell.textLabel?.text = "Failed to load, please login..."
         }
         else{
             let status:Status = statuses?.objectAtIndex(indexPath.row) as! Status
