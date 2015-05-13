@@ -12,15 +12,21 @@ import GearRefreshControl
 
 class HomeViewController: UITableViewController {
     var gearRefreshControl: GearRefreshControl!
-    var statuses:NSMutableArray? = NSMutableArray()
+    var statuses: NSMutableArray?
+    var users: NSMutableArray?
     var query:WeiboRequestOperation? = WeiboRequestOperation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // part of GearRefreshController
         gearRefreshControl = GearRefreshControl(frame: self.view.bounds)
         gearRefreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = gearRefreshControl
+        
+        // register weibo cell
+        tableView.rowHeight = 250.0
+        tableView.registerNib(UINib(nibName: "OriginalWeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "OriginalWeiboTableViewCell")
         
     }
     
@@ -37,7 +43,7 @@ class HomeViewController: UITableViewController {
         else {
             showLogoutButton()
         }
-        self.loadstatuses()
+        self.loadStatuses()
         
     }
     
@@ -67,13 +73,13 @@ class HomeViewController: UITableViewController {
                     println("failed to sign in ")
                 }
             })
-            self.loadstatuses()
+            self.loadStatuses()
         }
         else{
             println("has already been authenticated!")
-            self.loadstatuses()
+            self.loadStatuses()
         }
-        self.loadstatuses()
+        self.loadStatuses()
     }
     
     func logoutWeibo(){
@@ -92,8 +98,8 @@ class HomeViewController: UITableViewController {
     }
     
    
-    // MARK: - load data of weibo timeline
-    func loadstatuses(){
+    // MARK: - load data
+    func loadStatuses(){
         self.statuses = nil
         if query != nil {
             query!.cancel()
@@ -114,13 +120,12 @@ class HomeViewController: UITableViewController {
         }))
         
     }
-    
-    
-    // MARK: - table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
+
+    // MARK: - TableViewDataSource
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        return 0
+//    }
+//    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if query != nil {
             return 1
@@ -130,14 +135,51 @@ class HomeViewController: UITableViewController {
         }
         return statuses!.count
     }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: "TimelineCell")
 
+    /**
+    @property (nonatomic, copy) NSString *statusIdString; //字符串型的微博ID
+    @property (nonatomic, assign) time_t createdAt;  //创建时间
+    @property (nonatomic, assign) long long statusId; //微博ID
+    @property (nonatomic, copy) NSString *text; //微博信息内容
+    @property (nonatomic, copy) NSString *source; //微博来源
+    @property (nonatomic, copy) NSString *sourceUrl; //微博来源Url
+    @property (nonatomic, assign) BOOL favorited; //是否已收藏
+    @property (nonatomic, assign) BOOL truncated; //是否被截断
+    @property (nonatomic, assign) long long inReplyToStatusId; //回复ID
+    @property (nonatomic, assign) long long inReplyToUserId; //回复人UID
+    @property (nonatomic, copy) NSString *inReplyToScreenName; //回复人昵称
+    @property (nonatomic, assign) long long mid; //微博MID
+    @property (nonatomic, strong) NSArray *images; //图片集合
+    @property (nonatomic, assign) int repostsCount; //转发数
+    @property (nonatomic, assign) int commentsCount; //评论数
+    @property (nonatomic, assign) int attitudesCount; //赞
+    @property (nonatomic, retain) GeoInfo *geo; //地理信息字段
+    @property (nonatomic, strong) User *user; //微博作者的用户信息字段
+    @property (nonatomic, strong) Status *retweetedStatus; // 转发微博
+    @property (nonatomic, readonly) NSNumber *statusKey;
+
+    */
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        let identifier: String = "OriginalWeiboTableViewCell"
+//        let cell = UITableViewCell(style: .Default, reuseIdentifier: "TimelineCell")
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! OriginalWeiboTableViewCell
         if statuses != nil{
-            let status:Status = statuses?.objectAtIndex(indexPath.row) as! Status
-            cell.textLabel?.text = status.text
+            let status: Status = statuses?.objectAtIndex(indexPath.row) as! Status
+            // set weibo text
+            cell.originalWeiboText.text = status.text
+            // set created time
+            cell.createdDate.text = status.statusTimeString()
+            //set weibo source
+            cell.weiboSource.text = status.source
+            // set ScreenName
+            cell.screenName.text = status.user.screenName
+            // set user image
+            if let userImageUrl = status.user.profileImageUrl{
+                
+            }
         }
+
         return cell
     }
     
@@ -145,7 +187,7 @@ class HomeViewController: UITableViewController {
     func refresh(){
         var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC)));
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-            self.loadstatuses()
+            self.loadStatuses()
             self.gearRefreshControl.endRefreshing()
         }
     }

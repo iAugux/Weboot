@@ -199,7 +199,7 @@ static Weibo *g_weibo = nil;
 }
 
 - (WeiboRequestOperation *)queryPublicTimelineWithCount:(int)count
-                                              completed:(WeiboTimelineQueryCompletedBlock)completedBlock {
+                                completed:(WeiboTimelineQueryCompletedBlock)completedBlock {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    self.appKey, @"source",
                                    [NSString stringWithFormat:@"%d", count], @"count"

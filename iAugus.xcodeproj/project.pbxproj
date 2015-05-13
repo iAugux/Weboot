@@ -160,8 +160,8 @@
 		B1D80ADB1AF9F84500A533DB /* WeiboDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboDialog.m; sourceTree = "<group>"; };
 		B1D80ADC1AF9F84500A533DB /* WeiboLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboLoginDialog.h; sourceTree = "<group>"; };
 		B1D80ADD1AF9F84500A533DB /* WeiboLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboLoginDialog.m; sourceTree = "<group>"; };
-		B1D80ADE1AF9F84500A533DB /* Weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weibo.h; sourceTree = "<group>"; };
-		B1D80ADF1AF9F84500A533DB /* Weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weibo.m; sourceTree = "<group>"; };
+		B1D80ADE1AF9F84500A533DB /* Weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Weibo.h; path = ../Weibo.h; sourceTree = "<group>"; };
+		B1D80ADF1AF9F84500A533DB /* Weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Weibo.m; path = ../Weibo.m; sourceTree = "<group>"; };
 		B1D80AE01AF9F84500A533DB /* WeiboConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboConfig.h; sourceTree = "<group>"; };
 		B1D80AE11AF9F84500A533DB /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
 		CE48B4F81EDF1545559EF6D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -250,6 +250,7 @@
 				B14A4B631AEBD71700498F9C /* At */,
 				B14A4B621AEBD6F100498F9C /* Profile */,
 				B14A4B671AEBD98500498F9C /* BaseView */,
+				B1D80AAF1AF9F84500A533DB /* WeiboSDK */,
 				B14A4B3F1AEBBA8E00498F9C /* AppDelegate.swift */,
 				B13930311AEE306900D682BD /* ContainerViewController.swift */,
 				B13930331AEE30B700D682BD /* SidePaneViewController.swift */,
@@ -259,7 +260,6 @@
 				B14A4B481AEBBA8E00498F9C /* LaunchScreen.xib */,
 				B1374BBC1AF65D0D00C454B7 /* iAugus-Bridging-Header.h */,
 				B1374BC01AF65E0900C454B7 /* Frameworks */,
-				B1D80AAF1AF9F84500A533DB /* WeiboSDK */,
 				B14A4B3D1AEBBA8E00498F9C /* Supporting Files */,
 			);
 			path = iAugus;
@@ -362,8 +362,6 @@
 				B1D80AC91AF9F84500A533DB /* Resources */,
 				B1D80ACC1AF9F84500A533DB /* Utilities */,
 				B1D80AD91AF9F84500A533DB /* Views */,
-				B1D80ADE1AF9F84500A533DB /* Weibo.h */,
-				B1D80ADF1AF9F84500A533DB /* Weibo.m */,
 				B1D80AE01AF9F84500A533DB /* WeiboConfig.h */,
 				B1D80AE11AF9F84500A533DB /* WeiboSDK.h */,
 			);
@@ -392,6 +390,8 @@
 				B1D80ABC1AF9F84500A533DB /* GeoInfo.m */,
 				B1D80ABD1AF9F84500A533DB /* Status.h */,
 				B1D80ABE1AF9F84500A533DB /* Status.m */,
+				B1D80ADE1AF9F84500A533DB /* Weibo.h */,
+				B1D80ADF1AF9F84500A533DB /* Weibo.m */,
 				B1D80ABF1AF9F84500A533DB /* StatusImage.h */,
 				B1D80AC01AF9F84500A533DB /* StatusImage.m */,
 				B1D80AC11AF9F84500A533DB /* StatusVisible.h */,

@@ -27,14 +27,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="createdDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCn-dJ-KCc">
-                        <rect key="frame" x="82" y="37" width="79" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="82" y="37" width="63" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weiboSource" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6B-dC-hpk">
-                        <rect key="frame" x="169" y="37" width="85" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="157" y="37" width="68" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -147,7 +147,7 @@
                     <constraint firstItem="jeb-Kz-2WE" firstAttribute="top" secondItem="CLW-GF-gbi" secondAttribute="bottom" constant="8" id="Xs4-EO-uSG"/>
                     <constraint firstItem="CLW-GF-gbi" firstAttribute="leading" secondItem="qEJ-6u-jjl" secondAttribute="leadingMargin" constant="-8" id="ayG-hg-IJ8"/>
                     <constraint firstItem="CLW-GF-gbi" firstAttribute="top" secondItem="Uws-y1-G59" secondAttribute="bottom" constant="8" id="cT9-Xv-7St"/>
-                    <constraint firstItem="Q6B-dC-hpk" firstAttribute="leading" secondItem="HCn-dJ-KCc" secondAttribute="trailing" constant="8" id="ejT-hS-Htt"/>
+                    <constraint firstItem="Q6B-dC-hpk" firstAttribute="leading" secondItem="HCn-dJ-KCc" secondAttribute="trailing" constant="12" id="ejT-hS-Htt"/>
                     <constraint firstItem="uyf-hJ-K8p" firstAttribute="top" secondItem="qEJ-6u-jjl" secondAttribute="topMargin" constant="4" id="fZ6-rm-ep2"/>
                     <constraint firstItem="o7K-fF-McS" firstAttribute="leading" secondItem="qEJ-6u-jjl" secondAttribute="leadingMargin" constant="4" id="hGI-cC-9E2"/>
                     <constraint firstItem="hxt-Ng-mBw" firstAttribute="top" secondItem="uyf-hJ-K8p" secondAttribute="bottom" constant="8" id="kcv-Fd-wUd"/>

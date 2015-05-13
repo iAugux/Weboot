@@ -9,7 +9,13 @@
 import UIKit
 
 class OriginalWeiboTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var screenName: UILabel!
+//    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var originalWeiboText: UILabel!
+    @IBOutlet weak var createdDate: UILabel!
+    @IBOutlet weak var weiboSource: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
