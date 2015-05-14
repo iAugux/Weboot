@@ -13,7 +13,7 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initViewController()
+//        initViewController()
         
         // set defalut viewController of TabBarViewController
         self.selectedIndex = 2
@@ -29,6 +29,7 @@ class MainTabBarController: UITabBarController {
         
     }
  
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -94,6 +94,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Timeline" id="GRN-vx-1Db"/>
+                    <connections>
+                        <outlet property="tableView" destination="Kt5-cb-feK" id="vXc-1z-gNB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZc-mO-qsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

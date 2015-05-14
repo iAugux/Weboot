@@ -18,7 +18,18 @@ class OriginalWeiboTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code  
+        userImage.layer.cornerRadius = 20.0
+        userImage.clipsToBounds = true
+        initControllers()
+    }
+    
+    func initControllers(){
+        screenName.text = nil
+        originalWeiboText.text = nil
+        createdDate.text = nil
+        weiboSource.text = nil
+   
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

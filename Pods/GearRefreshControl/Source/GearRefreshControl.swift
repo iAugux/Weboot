@@ -34,6 +34,7 @@ public class GearRefreshControl: UIRefreshControl {
         setupRefreshControl()
     }
     
+    
     public func setupRefreshControl() {
         
         refreshContainerView = UIView(frame: self.bounds)
@@ -91,7 +92,7 @@ public class GearRefreshControl: UIRefreshControl {
     
     public func scrollViewDidScroll(scrollView: UIScrollView) {
         var refreshBounds = self.bounds;
-        
+    
         // Distance the table has been pulled
         var pullDistance = max(0.0, -self.frame.origin.y);
         var pullRatio = min(max(pullDistance, 0.0), 140.0) / 140.0;
@@ -121,8 +122,10 @@ public class GearRefreshControl: UIRefreshControl {
         if (refreshing && !isRefreshControlAnimating) {
             animateRefreshView()
         }
+        
     }
     
+       
     private func animateRefreshView() {
         isRefreshControlAnimating = true
         
