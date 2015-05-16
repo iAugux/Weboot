@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -78,7 +78,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="OriginalWeiboText" destination="XJ3-e2-dCp" id="YVs-q5-Cx1"/>
                 <outlet property="createdDate" destination="IyH-ho-lNI" id="cC8-S6-Ahr"/>
                 <outlet property="originalWeiboText" destination="XJ3-e2-dCp" id="XMK-ky-UFb"/>
                 <outlet property="screenName" destination="gsG-1w-hbp" id="xwT-1O-y1D"/>
@@ -88,4 +87,9 @@
             <point key="canvasLocation" x="352" y="106"/>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

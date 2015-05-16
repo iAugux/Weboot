@@ -90,6 +90,7 @@ public class GearRefreshControl: UIRefreshControl {
         addSubview(self.refreshContainerView)
     }
     
+    
     public func scrollViewDidScroll(scrollView: UIScrollView) {
         var refreshBounds = self.bounds;
     
@@ -125,7 +126,7 @@ public class GearRefreshControl: UIRefreshControl {
         
     }
     
-       
+    
     private func animateRefreshView() {
         isRefreshControlAnimating = true
         

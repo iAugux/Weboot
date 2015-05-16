@@ -17,6 +17,8 @@ class MainTabBarController: UITabBarController {
         
         // set defalut viewController of TabBarViewController
         self.selectedIndex = 2
+        
+        doubleClickTarBarToRefresh()
     }
     
     
@@ -29,7 +31,19 @@ class MainTabBarController: UITabBarController {
         
     }
  
+    func doubleClickTarBarToRefresh(){
+        if tabBarItem == self.selectedIndex {
+            
+
+        }
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "beginToRefresh")
+        tapGesture.numberOfTapsRequired = 2
+        
+    }
     
+    func beginToRefresh(){
+        println("double Clicked")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

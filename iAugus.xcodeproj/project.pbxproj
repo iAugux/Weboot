@@ -42,6 +42,8 @@
 		B16CE53B1B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16CE5371B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib */; };
 		B16CE53C1B01134000D8AAB0 /* RetweetedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */; };
 		B16CE53D1B01134000D8AAB0 /* RetweetedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */; };
+		B1C213C91B063A7A00BDB8E6 /* DetailTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */; };
+		B1C213CB1B0642F700BDB8E6 /* NewWeiboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */; };
 		B1D80AE21AF9F84500A533DB /* WeiboAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80AB21AF9F84500A533DB /* WeiboAccounts.m */; };
 		B1D80AE31AF9F84500A533DB /* WeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80AB41AF9F84500A533DB /* WeiboRequest.m */; };
 		B1D80AE41AF9F84500A533DB /* WeiboRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80AB61AF9F84500A533DB /* WeiboRequestOperation.m */; };
@@ -119,6 +121,8 @@
 		B16CE5371B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OriginalWeiboTableViewCell.xib; sourceTree = "<group>"; };
 		B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetedTableViewCell.swift; sourceTree = "<group>"; };
 		B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetweetedTableViewCell.xib; sourceTree = "<group>"; };
+		B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTimelineViewController.swift; sourceTree = "<group>"; };
+		B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWeiboViewController.swift; sourceTree = "<group>"; };
 		B1D80AB11AF9F84500A533DB /* WeiboAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboAccounts.h; sourceTree = "<group>"; };
 		B1D80AB21AF9F84500A533DB /* WeiboAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboAccounts.m; sourceTree = "<group>"; };
 		B1D80AB31AF9F84500A533DB /* WeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboRequest.h; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 				B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */,
 				B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */,
 				B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */,
+				B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */,
+				B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -618,11 +624,13 @@
 				B1D80AF41AF9F84500A533DB /* URLRequestHelper.m in Sources */,
 				B1D80AE91AF9F84500A533DB /* StatusImage.m in Sources */,
 				B1D80AE81AF9F84500A533DB /* Status.m in Sources */,
+				B1C213C91B063A7A00BDB8E6 /* DetailTimelineViewController.swift in Sources */,
 				B1D80AED1AF9F84500A533DB /* WeiboAuthentication.m in Sources */,
 				B1D80AF81AF9F84500A533DB /* Weibo.m in Sources */,
 				B1D80AE51AF9F84500A533DB /* WeiboSignIn.m in Sources */,
 				B14A4B741AEBDAEB00498F9C /* CommentViewController.swift in Sources */,
 				B14A4B401AEBBA8E00498F9C /* AppDelegate.swift in Sources */,
+				B1C213CB1B0642F700BDB8E6 /* NewWeiboViewController.swift in Sources */,
 				B16CE53C1B01134000D8AAB0 /* RetweetedTableViewCell.swift in Sources */,
 				B1D80AEC1AF9F84500A533DB /* WeiboAccount.m in Sources */,
 				B14A4B961AECB60200498F9C /* AtNavigationController.swift in Sources */,

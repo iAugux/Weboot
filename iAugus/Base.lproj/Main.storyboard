@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="onb-pg-Hkz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Comment-->
@@ -80,6 +81,68 @@
             </objects>
             <point key="canvasLocation" x="915" y="2111"/>
         </scene>
+        <!--New Weibo View Controller-->
+        <scene sceneID="Diz-gx-eaD">
+            <objects>
+                <viewController id="mlq-mQ-9P7" customClass="NewWeiboViewController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FlB-we-8ni"/>
+                        <viewControllerLayoutGuide type="bottom" id="XCH-yj-raN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SpH-YO-8AZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqf-yL-vPR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="AL1-P0-YBe"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="1mh-oJ-hac">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u4Q-T1-Rn8">
+                                            <connections>
+                                                <action selector="newWeiboCanceled:" destination="mlq-mQ-9P7" id="6N4-vX-SQD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="send" id="IwF-18-Q1v">
+                                            <connections>
+                                                <action selector="postNewWeiboButton:" destination="mlq-mQ-9P7" id="B2C-9g-pj6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvg-aR-yaS">
+                                <rect key="frame" x="16" y="82" width="288" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="275" id="pyA-3F-2go"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nqf-yL-vPR" firstAttribute="leading" secondItem="SpH-YO-8AZ" secondAttribute="leadingMargin" constant="-16" id="4H5-KA-Ikd"/>
+                            <constraint firstItem="Vvg-aR-yaS" firstAttribute="top" secondItem="Nqf-yL-vPR" secondAttribute="bottom" constant="18" id="A0S-jC-NWX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nqf-yL-vPR" secondAttribute="trailing" constant="-16" id="HTP-My-ij6"/>
+                            <constraint firstItem="Vvg-aR-yaS" firstAttribute="trailing" secondItem="SpH-YO-8AZ" secondAttribute="trailingMargin" id="Lun-23-X6Q"/>
+                            <constraint firstItem="Vvg-aR-yaS" firstAttribute="leading" secondItem="SpH-YO-8AZ" secondAttribute="leadingMargin" id="MM8-Yw-9CH"/>
+                            <constraint firstItem="Nqf-yL-vPR" firstAttribute="top" secondItem="SpH-YO-8AZ" secondAttribute="topMargin" id="pVe-G7-6ze"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2ud-00-5vh"/>
+                    <connections>
+                        <outlet property="newWeiboCanceled" destination="Vvg-aR-yaS" id="5qk-pE-D1N"/>
+                        <outlet property="newWeiboTextField" destination="Vvg-aR-yaS" id="KkV-k8-lMH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6u-BX-a93" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="-1079"/>
+        </scene>
         <!--Timeline-->
         <scene sceneID="Z0z-J4-Yze">
             <objects>
@@ -93,14 +156,35 @@
                             <outlet property="delegate" destination="vIe-Fm-pUq" id="gBN-vm-QvT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Timeline" id="GRN-vx-1Db"/>
-                    <connections>
-                        <outlet property="tableView" destination="Kt5-cb-feK" id="vXc-1z-gNB"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Timeline" id="GRN-vx-1Db">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="BEd-ys-kcw">
+                            <connections>
+                                <segue destination="X1q-ML-4wo" kind="modal" identifier="newWeiboSegue" id="JZH-Nh-3Ae"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZc-mO-qsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="915" y="-443"/>
+        </scene>
+        <!--Detail Timeline View Controller-->
+        <scene sceneID="F7H-6k-Rbl">
+            <objects>
+                <viewController id="6yk-Y0-WrY" customClass="DetailTimelineViewController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rZv-hG-rhx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hfd-dq-Ho2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zRT-5j-B52">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMh-CB-sje" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="-443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a8X-DM-jNk">
@@ -276,8 +360,28 @@
             </objects>
             <point key="canvasLocation" x="-282" y="2564"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iX3-EL-Ky1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="X1q-ML-4wo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lXF-XC-dh0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mlq-mQ-9P7" kind="relationship" relationship="rootViewController" id="Ple-Zb-TcJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="519-2i-dhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915" y="-1079"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="send" width="25" height="25"/>
         <image name="tab_favlist_selected" width="30" height="30"/>
         <image name="tab_user_at_selected" width="30" height="30"/>
         <image name="tab_user_comments_selected" width="30" height="30"/>

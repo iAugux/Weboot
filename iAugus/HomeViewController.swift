@@ -10,20 +10,21 @@ import UIKit
 import GearRefreshControl
 import Alamofire
 
+let newWeiboSegue = "newWeiboSegue"
 
-class HomeViewController: UITableViewController {
+class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate {
     var gearRefreshControl: GearRefreshControl!
     var statuses: NSMutableArray?
     var users: NSMutableArray?
     var query:WeiboRequestOperation? = WeiboRequestOperation()
+//    var storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshTableView()
+
         self.loadStatuses()
-        // set navigationItem' title to name of currentAccount
-        let nameOfCurrentAccount = Weibo.getWeibo().currentAccount().user.name
-        self.navigationItem.title = nameOfCurrentAccount
-        
+        showCurrentAccountNameOnTimeline()
         // part of GearRefreshController
         gearRefreshControl = GearRefreshControl(frame: self.view.bounds)
         gearRefreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
@@ -51,15 +52,47 @@ class HomeViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    // set navigationItem' title to name of currentAccount
+    func showCurrentAccountNameOnTimeline(){
+        if Weibo.getWeibo().isAuthenticated(){
+            let nameOfCurrentAccount = Weibo.getWeibo().currentAccount().user.name
+            self.navigationItem.title = nameOfCurrentAccount
+        }
+    }
+    
+    // MARK: - Navigation
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let vc: UIViewController = storyboard?.instantiateInitialViewController() as! UIViewController
+//        self.navigationController?.pushViewController(vc, animated: true)
+//        let indexPath = tableView.indexPathForSelectedRow()
+////        let item = statuses[indexPath.row]
+//        let detailViewController = segue.destinationViewController as! DetailTimelineViewController
+//        
+//        
+//    }
+    
+    
+    // MARK: - Post new weibo
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == newWeiboSegue{
+            let detailVC = segue.destinationViewController as! UINavigationController
+            var newWeiboVC = detailVC.viewControllers[0] as! NewWeiboViewController
+            newWeiboVC.delegate = self
+        }
+    }
+    
+    func postNewWeibo(controller: NewWeiboViewController) {
+        loadStatuses()
+    }
     // MARK: - login or logout
     
     func showLoginButton(){
         let loginButton = UIBarButtonItem(title: "Login", style: UIBarButtonItemStyle.Plain, target: self, action: "loginWeibo")
-        self.navigationItem.rightBarButtonItem = loginButton
+        self.navigationItem.leftBarButtonItem = loginButton
     }
     func showLogoutButton(){
         let logoutButton = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: "logoutWeibo")
-        self.navigationItem.rightBarButtonItem = logoutButton
+        self.navigationItem.leftBarButtonItem = logoutButton
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     func loginWeibo(){
@@ -125,6 +158,9 @@ class HomeViewController: UITableViewController {
         }))
         
     }
+   
+
+    
 
     // MARK: - TableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -138,6 +174,7 @@ class HomeViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+
         let identifier: String = "OriginalWeiboTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! OriginalWeiboTableViewCell
         if statuses != nil{
@@ -194,4 +231,20 @@ class HomeViewController: UITableViewController {
         gearRefreshControl.scrollViewDidScroll(scrollView)
     }
     
+    
+    // fake to start refresh
+    func refreshTableView(){
+        
+        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "fakeStartRefresh", userInfo: nil, repeats: false)
+        //        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "endRefresh", userInfo: nil, repeats: false)
+        //        NSTimer.performSelector("endRefresh", withObject: nil, afterDelay: 0.1)
+    }
+    
+    func fakeStartRefresh(){
+        self.gearRefreshControl.beginRefreshing()
+        self.tableView.setContentOffset(CGPointMake(0, -125), animated: true)
+        
+    }
+    
+
 }
