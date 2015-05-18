@@ -16,13 +16,14 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     var gearRefreshControl: GearRefreshControl!
     var statuses: NSMutableArray?
     var users: NSMutableArray?
+    
     var query:WeiboRequestOperation? = WeiboRequestOperation()
-//    var storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //    var storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshTableView()
-
+        
         self.loadStatuses()
         showCurrentAccountNameOnTimeline()
         // part of GearRefreshController
@@ -31,11 +32,11 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         self.refreshControl = gearRefreshControl
         
         // register weibo cell
-        tableView.rowHeight = 250.0
+        tableView.rowHeight = 400.0
         tableView.registerNib(UINib(nibName: "OriginalWeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "OriginalWeiboTableViewCell")
         
     }
- 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -59,17 +60,6 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             self.navigationItem.title = nameOfCurrentAccount
         }
     }
-    
-    // MARK: - Navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let vc: UIViewController = storyboard?.instantiateInitialViewController() as! UIViewController
-//        self.navigationController?.pushViewController(vc, animated: true)
-//        let indexPath = tableView.indexPathForSelectedRow()
-////        let item = statuses[indexPath.row]
-//        let detailViewController = segue.destinationViewController as! DetailTimelineViewController
-//        
-//        
-//    }
     
     
     // MARK: - Post new weibo
@@ -111,13 +101,15 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                 }
             })
             self.loadStatuses()
+            tableView.reloadData()
         }
         else{
             println("has already been authenticated!")
             self.loadStatuses()
+            tableView.reloadData()
         }
         self.loadStatuses()
-        
+        tableView.reloadData()
     }
     
     func logoutWeibo(){
@@ -135,7 +127,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         
     }
     
-   
+    
     // MARK: - load data
     func loadStatuses(){
         self.statuses = nil
@@ -158,10 +150,10 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         }))
         
     }
-   
-
     
-
+    
+    
+    
     // MARK: - TableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if query != nil {
@@ -172,9 +164,9 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         }
         return statuses!.count
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-
+        
         let identifier: String = "OriginalWeiboTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! OriginalWeiboTableViewCell
         if statuses != nil{
@@ -202,19 +194,21 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             }
             
             // set original weibo images
-//            if let arrayImageUrl: NSArray = status.images{
-//                Alamofire.request(.GET, arrayImageUrl).response(){
-//                    (_, _, [data], _) in
-//                    
-//                }
-//            }
-//            let originalImageUrl = status.images
-//            println("\(originalImageUrl)")
-//            cell.imageView?.image =
-            
+            var statusImage: StatusImage! = status.images.first as? StatusImage
+            if statusImage == nil {
+                cell.originalWeiboImages.image = nil
+            }
+            else{
+                let statusImageUrl = statusImage.thumbnailImageUrl
+                println("\(statusImageUrl)")
+                Alamofire.request(.GET, statusImageUrl).response(){
+                    (_, _, data, _) in
+                    let image = UIImage(data: data! as! NSData)
+                    cell.originalWeiboImages?.image = image
+                }
+            }
         }
-//        self.tableView.setContentOffset(CGPointMake(0, -10.0), animated: true)
-
+        
         return cell
     }
     
@@ -246,5 +240,5 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         
     }
     
-
+    
 }

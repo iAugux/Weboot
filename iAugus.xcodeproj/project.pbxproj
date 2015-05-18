@@ -121,6 +121,7 @@
 		B16CE5371B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OriginalWeiboTableViewCell.xib; sourceTree = "<group>"; };
 		B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetedTableViewCell.swift; sourceTree = "<group>"; };
 		B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetweetedTableViewCell.xib; sourceTree = "<group>"; };
+		B1819A4F1B079F2E00E66D0D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTimelineViewController.swift; sourceTree = "<group>"; };
 		B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWeiboViewController.swift; sourceTree = "<group>"; };
 		B1D80AB11AF9F84500A533DB /* WeiboAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboAccounts.h; sourceTree = "<group>"; };
@@ -299,13 +300,14 @@
 			isa = PBXGroup;
 			children = (
 				B14A4B6E1AEBDAB100498F9C /* HomeViewController.swift */,
+				B1819A4F1B079F2E00E66D0D /* MyPlayground.playground */,
+				B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */,
 				B16CE5361B01134000D8AAB0 /* OriginalWeiboTableViewCell.swift */,
 				B16CE5371B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib */,
+				B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */,
 				B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */,
 				B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */,
-				B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */,
 				B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */,
-				B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";

@@ -10,10 +10,10 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OriginalWeiboTableViewCell" rowHeight="224" id="hwD-ON-dtx" customClass="OriginalWeiboTableViewCell" customModule="iAugus" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hwD-ON-dtx" id="rri-BP-UX2">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="hwD-ON-dtx" id="rri-BP-UX2">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-FH-Psx" userLabel="userImage">
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-FH-Psx" userLabel="userImage">
                         <rect key="frame" x="12" y="12" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="1ad-bP-ycA"/>
@@ -38,7 +38,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-An-jh3">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-An-jh3">
                         <rect key="frame" x="12" y="89" width="125" height="125"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="125" id="H7x-6g-lYU"/>
@@ -79,6 +79,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="createdDate" destination="IyH-ho-lNI" id="cC8-S6-Ahr"/>
+                <outlet property="originalWeiboImages" destination="6sA-An-jh3" id="VfA-uq-fC6"/>
                 <outlet property="originalWeiboText" destination="XJ3-e2-dCp" id="XMK-ky-UFb"/>
                 <outlet property="screenName" destination="gsG-1w-hbp" id="xwT-1O-y1D"/>
                 <outlet property="userImage" destination="ZnO-FH-Psx" id="6cd-m7-I53"/>

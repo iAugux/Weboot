@@ -15,6 +15,7 @@ class OriginalWeiboTableViewCell: UITableViewCell {
     @IBOutlet weak var originalWeiboText: UILabel!
     @IBOutlet weak var createdDate: UILabel!
     @IBOutlet weak var weiboSource: UILabel!
+    @IBOutlet weak var originalWeiboImages: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,11 +26,12 @@ class OriginalWeiboTableViewCell: UITableViewCell {
     }
     
     func initControllers(){
+        userImage.image = nil
         screenName.text = nil
         originalWeiboText.text = nil
         createdDate.text = nil
         weiboSource.text = nil
-   
+//        originalWeiboImages.image = nil
     }
    
     override func setSelected(selected: Bool, animated: Bool) {
