@@ -22,6 +22,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         refreshTableView()
         
         self.loadStatuses()
@@ -150,9 +151,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         }))
         
     }
-    
-    
-    
+   
     
     // MARK: - TableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -185,30 +184,45 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             cell.screenName.text = status.user.screenName
             
             // set user image
-            if let userImageUrl = status.user.profileImageUrl{
-                Alamofire.request(.GET, userImageUrl).response(){
-                    (_, _, data, _) in
-                    let image = UIImage(data: data! as! NSData)
-                    cell.userImage.image = image
-                }
+            if let userImageUrl: NSURL = NSURL(string: status.user.profileImageUrl){
+                //                Alamofire.request(.GET, userImageUrl).response(){
+                //                    (_, _, data, _) in
+                //                    let image = UIImage(data: data! as! NSData)
+                //                    cell.userImage.image = image
+                //                }
+                cell.userImage.sd_setImageWithURL(userImageUrl, placeholderImage: UIImage(named: "profile_image_placeholder"))
             }
             
             // set original weibo images
-            var statusImage: StatusImage! = status.images.first as? StatusImage
-            if statusImage == nil {
-                cell.originalWeiboImages.image = nil
+            var numberOfImages = status.images.count
+            for i in 0..<9 {
+                var images = [cell.image1, cell.image2, cell.image3, cell.image4, cell.image5, cell.image6, cell.image7, cell.image8, cell.image9]
+                images[i].hidden = true
+            }
+            println("numberOfImages = \(numberOfImages)")
+            if numberOfImages == 0 {
+                cell.imageViewContainer.hidden = true
             }
             else{
-                let statusImageUrl = statusImage.thumbnailImageUrl
-                println("\(statusImageUrl)")
-                Alamofire.request(.GET, statusImageUrl).response(){
-                    (_, _, data, _) in
-                    let image = UIImage(data: data! as! NSData)
-                    cell.originalWeiboImages?.image = image
+                cell.imageViewContainer.hidden = false
+                // back to default position
+                cell.imageViewContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+
+                for var i = 0 ; i < numberOfImages ; i++ {
+                    var images = [cell.image1, cell.image2, cell.image3, cell.image4, cell.image5, cell.image6, cell.image7, cell.image8, cell.image9]
+                    images[i].hidden = false
+                    var widthOfImageContainer: CGFloat = 25.0 + (originalWeiboImageWidth + 8) * CGFloat(numberOfImages)
+                    cell.imageViewContainer.contentSize = CGSize(width: widthOfImageContainer, height: 125.0)
+
+                    var statusImage: StatusImage! = status.images[numberOfImages - i - 1] as? StatusImage
+                    let statusImageUrl: NSURL = NSURL(string: statusImage.middleImageUrl)!
+                    println("\(statusImageUrl)")
+                    images[i].sd_setImageWithURL(statusImageUrl, placeholderImage: UIImage(named: "image_holder"))
+                    
                 }
             }
+            
         }
-        
         return cell
     }
     
@@ -219,6 +233,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             self.loadStatuses()
             self.gearRefreshControl.endRefreshing()
         }
+    
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {

@@ -41,43 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
-    
-//    func application(application: UIApplication, openURL url:NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-//        
-//        return WeiboSDK.handleOpenURL(url , delegate: self)
-//    }
-//    
-//    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-//        return WeiboSDK.handleOpenURL(url , delegate: self)
-//    }
-//    
-//    func didReceiveWeiboRequest(request: WBBaseRequest!) {
-//        if (request.isKindOfClass(WBProvideMessageForWeiboRequest)) {
-//            //TODO: sth
-//        }
-//    }
-//    func didReceiveWeiboResponse(response: WBBaseResponse!) {
-//        if (response.isKindOfClass(WBSendMessageToWeiboResponse)) {
-//            var message = "响应状态:\(response.statusCode.rawValue)\n响应UserInfo数据:\(response.userInfo)\n原请求UserInfo数据:\(response.requestUserInfo)"
-//            var alert = UIAlertView(title: "发送结果", message: message, delegate: nil, cancelButtonTitle: "确定")
-//            let wbAuthorize :WBAuthorizeResponse = response as! WBAuthorizeResponse
-//            var accessToken = wbAuthorize.accessToken
-//            if let token = accessToken {
-//                self.wbToken = accessToken
-//            }
-//            var userID = wbAuthorize.userID
-//            if let id = userID{
-//                self.wbCurrentUserID = userID
-//            }
-//            
-//            alert.show()
-//        } else if (response.isKindOfClass(WBAuthorizeResponse)) {
-//            var message = "响应状态: \(response.statusCode.rawValue)\nresponse.userId: \((response as! WBAuthorizeResponse).userID)\nresponse.accessToken: \((response as! WBAuthorizeResponse).accessToken)\n响应UserInfo数据: \(response.userInfo)\n原请求UserInfo数据: \(response.requestUserInfo)"
-//            var alert = UIAlertView(title: "认证结果", message: message, delegate: nil, cancelButtonTitle: "确定")
-//            alert.show()
-//        }
-//    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

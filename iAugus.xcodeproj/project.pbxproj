@@ -797,7 +797,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iAugus/WeiboSDK",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iAugus/iAugus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -821,7 +824,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iAugus/WeiboSDK",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iAugus/iAugus-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
