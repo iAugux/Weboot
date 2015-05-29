@@ -10,10 +10,14 @@ import UIKit
 import GearRefreshControl
 import Alamofire
 
-let newWeiboSegue = "newWeiboSegue"
+let kNewWeiboSegue = "newWeiboSegue"
+let kOriginalWeiboTableViewCell: String = "OriginalWeiboTableViewCell"
+var publicStatusImageUrl: NSURL?
 
 class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate {
+    let mainTabBarController = MainTabBarController()
     var gearRefreshControl: GearRefreshControl!
+
     var statuses: NSMutableArray?
     var users: NSMutableArray?
     
@@ -36,6 +40,8 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         tableView.rowHeight = 400.0
         tableView.registerNib(UINib(nibName: "OriginalWeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "OriginalWeiboTableViewCell")
         
+        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,8 +49,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        
+        super.viewWillAppear(animated)
         if !(Weibo.getWeibo().isAuthenticated()){
             showLoginButton()
         }
@@ -65,7 +70,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     
     // MARK: - Post new weibo
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == newWeiboSegue{
+        if segue.identifier == kNewWeiboSegue{
             let detailVC = segue.destinationViewController as! UINavigationController
             var newWeiboVC = detailVC.viewControllers[0] as! NewWeiboViewController
             newWeiboVC.delegate = self
@@ -151,7 +156,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         }))
         
     }
-   
+    
     
     // MARK: - TableViewDataSource
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -166,10 +171,9 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let identifier: String = "OriginalWeiboTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! OriginalWeiboTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kOriginalWeiboTableViewCell) as! OriginalWeiboTableViewCell
         if statuses != nil{
-            let status: Status = statuses?.objectAtIndex(indexPath.row) as! Status
+            var status = statuses?.objectAtIndex(indexPath.row) as! Status
             
             // set weibo text
             cell.originalWeiboText.text = status.text
@@ -185,11 +189,6 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             
             // set user image
             if let userImageUrl: NSURL = NSURL(string: status.user.profileImageUrl){
-                //                Alamofire.request(.GET, userImageUrl).response(){
-                //                    (_, _, data, _) in
-                //                    let image = UIImage(data: data! as! NSData)
-                //                    cell.userImage.image = image
-                //                }
                 cell.userImage.sd_setImageWithURL(userImageUrl, placeholderImage: UIImage(named: "profile_image_placeholder"))
             }
             
@@ -205,26 +204,45 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             }
             else{
                 cell.imageViewContainer.hidden = false
-                // back to default position
+                // back to default position when imageViewContainer appears again
                 cell.imageViewContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-
+                
                 for var i = 0 ; i < numberOfImages ; i++ {
                     var images = [cell.image1, cell.image2, cell.image3, cell.image4, cell.image5, cell.image6, cell.image7, cell.image8, cell.image9]
                     images[i].hidden = false
                     var widthOfImageContainer: CGFloat = 25.0 + (originalWeiboImageWidth + 8) * CGFloat(numberOfImages)
                     cell.imageViewContainer.contentSize = CGSize(width: widthOfImageContainer, height: 125.0)
-
+                    
                     var statusImage: StatusImage! = status.images[numberOfImages - i - 1] as? StatusImage
                     let statusImageUrl: NSURL = NSURL(string: statusImage.middleImageUrl)!
+                    publicStatusImageUrl = NSURL(string: statusImage.originalImageUrl)
                     println("\(statusImageUrl)")
                     images[i].sd_setImageWithURL(statusImageUrl, placeholderImage: UIImage(named: "image_holder"))
+//                    images[i].contentMode = UIViewContentMode.ScaleToFill
+                    
+                    let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTapDidTap")
+                    singleTap.numberOfTapsRequired = 1
+                    images[i].userInteractionEnabled = true
+                    images[i].addGestureRecognizer(singleTap)
+                    
                     
                 }
             }
             
         }
+        
+        
         return cell
     }
+    func singleTapDidTap(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: DetailImageViewController = storyboard.instantiateViewControllerWithIdentifier("detailImageViewController") as! DetailImageViewController
+        vc.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        println("thumbnail image tapped")
+    }
+    
     
     // MARK: - part of GearRefreshControl
     func refresh(){
@@ -233,7 +251,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             self.loadStatuses()
             self.gearRefreshControl.endRefreshing()
         }
-    
+        
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {

@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class OriginalWeiboTableViewCell: UITableViewCell {
+class OriginalWeiboTableViewCell: UITableViewCell, ASMediasFocusDelegate {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var screenName: UILabel!
 //    @IBOutlet weak var name: UILabel!
@@ -19,6 +19,8 @@ class OriginalWeiboTableViewCell: UITableViewCell {
     @IBOutlet weak var weiboSource: UILabel!
     @IBOutlet var imageViewContainer: UIScrollView!
 
+    let mediaFocusManager = ASMediaFocusManager()
+    let homeViewController = HomeViewController()
     
     var image1: UIImageView = UIImageView()
     var image2: UIImageView = UIImageView()
@@ -48,14 +50,19 @@ class OriginalWeiboTableViewCell: UITableViewCell {
         var images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
         for var index = 0; index < 9; index++ {
             var image_x: CGFloat = 20.0 + (originalWeiboImageWidth + 8) * CGFloat(index)
-            images[index].contentMode = UIViewContentMode.ScaleToFill
             images[index].frame = CGRectMake(image_x, 0, originalWeiboImageWidth, originalWeiboImageWidth)
+            images[index].contentMode = UIViewContentMode.ScaleAspectFill
+            images[index].clipsToBounds = true
             var imageArray: NSMutableArray?
             imageArray?.addObject(images[index])
 
             imageViewContainer.addSubview(images[index])
 
         }
+        
+        
+        self.mediaFocusManager.delegate = self
+        self.mediaFocusManager.installOnView(imageView)
         
     }
     
@@ -75,4 +82,17 @@ class OriginalWeiboTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - ASMediaFocusManagerDelegate
+    func parentViewControllerForMediaFocusManager(mediaFocusManager: ASMediaFocusManager!) -> UIViewController! {
+        return homeViewController
+    }
+    func mediaFocusManager(mediaFocusManager: ASMediaFocusManager!, mediaURLForView view: UIView!) -> NSURL! {
+        let url = NSURL(string: "")
+        return url
+    }
+    func mediaFocusManager(mediaFocusManager: ASMediaFocusManager!, titleForView view: UIView!) -> String! {
+        let st = ""
+        return st
+    }
+
 }

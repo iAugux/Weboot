@@ -30,7 +30,7 @@
 		B14A4B831AEBEE9600498F9C /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14A4B811AEBEE9600498F9C /* FavoriteViewController.xib */; };
 		B14A4B861AEBEEAA00498F9C /* AtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B841AEBEEAA00498F9C /* AtViewController.swift */; };
 		B14A4B871AEBEEAA00498F9C /* AtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14A4B851AEBEEAA00498F9C /* AtViewController.xib */; };
-		B14A4B8E1AEC7AE900498F9C /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B8D1AEC7AE900498F9C /* Tools.swift */; };
+		B14A4B8E1AEC7AE900498F9C /* DefaultConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B8D1AEC7AE900498F9C /* DefaultConstants.swift */; };
 		B14A4B901AEC7F2600498F9C /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */; };
 		B14A4B921AECB59300498F9C /* CommentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B911AECB59300498F9C /* CommentNavigationController.swift */; };
 		B14A4B941AECB5EC00498F9C /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B931AECB5EC00498F9C /* FavoriteNavigationController.swift */; };
@@ -38,10 +38,25 @@
 		B14A4B981AECB61100498F9C /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */; };
 		B15D00F31AF9D8DA00F0C92F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */; };
 		B15D00F51AF9D8E600F0C92F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */; };
+		B16953981B0F1AEF00E81A2D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */; };
 		B16CE53A1B01134000D8AAB0 /* OriginalWeiboTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16CE5361B01134000D8AAB0 /* OriginalWeiboTableViewCell.swift */; };
 		B16CE53B1B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16CE5371B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib */; };
 		B16CE53C1B01134000D8AAB0 /* RetweetedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */; };
 		B16CE53D1B01134000D8AAB0 /* RetweetedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */; };
+		B19375611B176F6F0027A7DF /* ASImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B193754D1B176F6F0027A7DF /* ASImageScrollView.m */; };
+		B19375621B176F6F0027A7DF /* ASMediaFocusController.m in Sources */ = {isa = PBXBuildFile; fileRef = B193754F1B176F6F0027A7DF /* ASMediaFocusController.m */; };
+		B19375631B176F6F0027A7DF /* ASMediaFocusController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B19375501B176F6F0027A7DF /* ASMediaFocusController.xib */; };
+		B19375641B176F6F0027A7DF /* ASMediaFocusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B19375521B176F6F0027A7DF /* ASMediaFocusManager.m */; };
+		B19375651B176F6F0027A7DF /* ASTransparentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19375541B176F6F0027A7DF /* ASTransparentView.m */; };
+		B19375661B176F6F0027A7DF /* ASVideoBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = B19375561B176F6F0027A7DF /* ASVideoBehavior.m */; };
+		B19375671B176F6F0027A7DF /* ASVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19375581B176F6F0027A7DF /* ASVideoControlView.m */; };
+		B19375681B176F6F0027A7DF /* ASVideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B19375591B176F6F0027A7DF /* ASVideoControlView.xib */; };
+		B19375691B176F6F0027A7DF /* asmedia_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = B193755B1B176F6F0027A7DF /* asmedia_pause.png */; };
+		B193756A1B176F6F0027A7DF /* asmedia_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B193755C1B176F6F0027A7DF /* asmedia_pause@2x.png */; };
+		B193756B1B176F6F0027A7DF /* asmedia_play.png in Resources */ = {isa = PBXBuildFile; fileRef = B193755D1B176F6F0027A7DF /* asmedia_play.png */; };
+		B193756C1B176F6F0027A7DF /* asmedia_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B193755E1B176F6F0027A7DF /* asmedia_play@2x.png */; };
+		B193756D1B176F6F0027A7DF /* asmedia_playbig.png in Resources */ = {isa = PBXBuildFile; fileRef = B193755F1B176F6F0027A7DF /* asmedia_playbig.png */; };
+		B193756E1B176F6F0027A7DF /* asmedia_playbig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B19375601B176F6F0027A7DF /* asmedia_playbig@2x.png */; };
 		B1C213C91B063A7A00BDB8E6 /* DetailTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */; };
 		B1C213CB1B0642F700BDB8E6 /* NewWeiboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */; };
 		B1D80AE21AF9F84500A533DB /* WeiboAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80AB21AF9F84500A533DB /* WeiboAccounts.m */; };
@@ -109,7 +124,7 @@
 		B14A4B811AEBEE9600498F9C /* FavoriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		B14A4B841AEBEEAA00498F9C /* AtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtViewController.swift; sourceTree = "<group>"; };
 		B14A4B851AEBEEAA00498F9C /* AtViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AtViewController.xib; sourceTree = "<group>"; };
-		B14A4B8D1AEC7AE900498F9C /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		B14A4B8D1AEC7AE900498F9C /* DefaultConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultConstants.swift; sourceTree = "<group>"; };
 		B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B911AECB59300498F9C /* CommentNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B931AECB5EC00498F9C /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
@@ -117,11 +132,32 @@
 		B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 		B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
 		B16CE5361B01134000D8AAB0 /* OriginalWeiboTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalWeiboTableViewCell.swift; sourceTree = "<group>"; };
 		B16CE5371B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OriginalWeiboTableViewCell.xib; sourceTree = "<group>"; };
 		B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetedTableViewCell.swift; sourceTree = "<group>"; };
 		B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetweetedTableViewCell.xib; sourceTree = "<group>"; };
 		B1819A4F1B079F2E00E66D0D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		B193754C1B176F6F0027A7DF /* ASImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASImageScrollView.h; sourceTree = "<group>"; };
+		B193754D1B176F6F0027A7DF /* ASImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASImageScrollView.m; sourceTree = "<group>"; };
+		B193754E1B176F6F0027A7DF /* ASMediaFocusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASMediaFocusController.h; sourceTree = "<group>"; };
+		B193754F1B176F6F0027A7DF /* ASMediaFocusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASMediaFocusController.m; sourceTree = "<group>"; };
+		B19375501B176F6F0027A7DF /* ASMediaFocusController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASMediaFocusController.xib; sourceTree = "<group>"; };
+		B19375511B176F6F0027A7DF /* ASMediaFocusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASMediaFocusManager.h; sourceTree = "<group>"; };
+		B19375521B176F6F0027A7DF /* ASMediaFocusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASMediaFocusManager.m; sourceTree = "<group>"; };
+		B19375531B176F6F0027A7DF /* ASTransparentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTransparentView.h; sourceTree = "<group>"; };
+		B19375541B176F6F0027A7DF /* ASTransparentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTransparentView.m; sourceTree = "<group>"; };
+		B19375551B176F6F0027A7DF /* ASVideoBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASVideoBehavior.h; sourceTree = "<group>"; };
+		B19375561B176F6F0027A7DF /* ASVideoBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASVideoBehavior.m; sourceTree = "<group>"; };
+		B19375571B176F6F0027A7DF /* ASVideoControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASVideoControlView.h; sourceTree = "<group>"; };
+		B19375581B176F6F0027A7DF /* ASVideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASVideoControlView.m; sourceTree = "<group>"; };
+		B19375591B176F6F0027A7DF /* ASVideoControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASVideoControlView.xib; sourceTree = "<group>"; };
+		B193755B1B176F6F0027A7DF /* asmedia_pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asmedia_pause.png; sourceTree = "<group>"; };
+		B193755C1B176F6F0027A7DF /* asmedia_pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asmedia_pause@2x.png"; sourceTree = "<group>"; };
+		B193755D1B176F6F0027A7DF /* asmedia_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asmedia_play.png; sourceTree = "<group>"; };
+		B193755E1B176F6F0027A7DF /* asmedia_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asmedia_play@2x.png"; sourceTree = "<group>"; };
+		B193755F1B176F6F0027A7DF /* asmedia_playbig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asmedia_playbig.png; sourceTree = "<group>"; };
+		B19375601B176F6F0027A7DF /* asmedia_playbig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asmedia_playbig@2x.png"; sourceTree = "<group>"; };
 		B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTimelineViewController.swift; sourceTree = "<group>"; };
 		B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWeiboViewController.swift; sourceTree = "<group>"; };
 		B1D80AB11AF9F84500A533DB /* WeiboAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboAccounts.h; sourceTree = "<group>"; };
@@ -200,6 +236,11 @@
 		8C91D068BF51825768DEBA0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */,
+				B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */,
+				B1374BD31AF65ED000C454B7 /* CoreGraphics.framework */,
+				B1374BC71AF65E7D00C454B7 /* UIKit.framework */,
+				B1374BC51AF65E7000C454B7 /* Foundation.framework */,
 				4C49906CFCFCC02648970BE5 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -212,18 +253,6 @@
 				6052A341134E97ACEDB5DD2F /* Pods.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		B1374BC01AF65E0900C454B7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */,
-				B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */,
-				B1374BD31AF65ED000C454B7 /* CoreGraphics.framework */,
-				B1374BC71AF65E7D00C454B7 /* UIKit.framework */,
-				B1374BC51AF65E7000C454B7 /* Foundation.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B14A4B311AEBBA8E00498F9C = {
@@ -264,7 +293,6 @@
 				B14A4B461AEBBA8E00498F9C /* Images.xcassets */,
 				B14A4B481AEBBA8E00498F9C /* LaunchScreen.xib */,
 				B1374BBC1AF65D0D00C454B7 /* iAugus-Bridging-Header.h */,
-				B1374BC01AF65E0900C454B7 /* Frameworks */,
 				B14A4B3D1AEBBA8E00498F9C /* Supporting Files */,
 			);
 			path = iAugus;
@@ -273,8 +301,9 @@
 		B14A4B3D1AEBBA8E00498F9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B193754B1B176F6F0027A7DF /* ASMediaFocusManager */,
 				B14A4B3E1AEBBA8E00498F9C /* Info.plist */,
-				B14A4B8D1AEC7AE900498F9C /* Tools.swift */,
+				B14A4B8D1AEC7AE900498F9C /* DefaultConstants.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -308,6 +337,7 @@
 				B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */,
 				B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */,
 				B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */,
+				B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -359,6 +389,41 @@
 				B14A4B6A1AEBD9EA00498F9C /* BaseNavigationController.swift */,
 			);
 			name = BaseView;
+			sourceTree = "<group>";
+		};
+		B193754B1B176F6F0027A7DF /* ASMediaFocusManager */ = {
+			isa = PBXGroup;
+			children = (
+				B193754C1B176F6F0027A7DF /* ASImageScrollView.h */,
+				B193754D1B176F6F0027A7DF /* ASImageScrollView.m */,
+				B193754E1B176F6F0027A7DF /* ASMediaFocusController.h */,
+				B193754F1B176F6F0027A7DF /* ASMediaFocusController.m */,
+				B19375501B176F6F0027A7DF /* ASMediaFocusController.xib */,
+				B19375511B176F6F0027A7DF /* ASMediaFocusManager.h */,
+				B19375521B176F6F0027A7DF /* ASMediaFocusManager.m */,
+				B19375531B176F6F0027A7DF /* ASTransparentView.h */,
+				B19375541B176F6F0027A7DF /* ASTransparentView.m */,
+				B19375551B176F6F0027A7DF /* ASVideoBehavior.h */,
+				B19375561B176F6F0027A7DF /* ASVideoBehavior.m */,
+				B19375571B176F6F0027A7DF /* ASVideoControlView.h */,
+				B19375581B176F6F0027A7DF /* ASVideoControlView.m */,
+				B19375591B176F6F0027A7DF /* ASVideoControlView.xib */,
+				B193755A1B176F6F0027A7DF /* Resources */,
+			);
+			path = ASMediaFocusManager;
+			sourceTree = "<group>";
+		};
+		B193755A1B176F6F0027A7DF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B193755B1B176F6F0027A7DF /* asmedia_pause.png */,
+				B193755C1B176F6F0027A7DF /* asmedia_pause@2x.png */,
+				B193755D1B176F6F0027A7DF /* asmedia_play.png */,
+				B193755E1B176F6F0027A7DF /* asmedia_play@2x.png */,
+				B193755F1B176F6F0027A7DF /* asmedia_playbig.png */,
+				B19375601B176F6F0027A7DF /* asmedia_playbig@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B1D80AAF1AF9F84500A533DB /* WeiboSDK */ = {
@@ -536,15 +601,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B193756C1B176F6F0027A7DF /* asmedia_play@2x.png in Resources */,
 				B1D80AEE1AF9F84500A533DB /* WeiboDialogClose.png in Resources */,
 				B16CE53B1B01134000D8AAB0 /* OriginalWeiboTableViewCell.xib in Resources */,
+				B193756D1B176F6F0027A7DF /* asmedia_playbig.png in Resources */,
 				B14A4B7D1AEBDBA000498F9C /* ProfileViewController.xib in Resources */,
+				B193756E1B176F6F0027A7DF /* asmedia_playbig@2x.png in Resources */,
 				B1D80AEF1AF9F84500A533DB /* WeiboDialogClose@2x.png in Resources */,
+				B19375681B176F6F0027A7DF /* ASVideoControlView.xib in Resources */,
 				B14A4B871AEBEEAA00498F9C /* AtViewController.xib in Resources */,
 				B14A4B451AEBBA8E00498F9C /* Main.storyboard in Resources */,
 				B14A4B4A1AEBBA8E00498F9C /* LaunchScreen.xib in Resources */,
+				B19375631B176F6F0027A7DF /* ASMediaFocusController.xib in Resources */,
+				B193756A1B176F6F0027A7DF /* asmedia_pause@2x.png in Resources */,
 				B16CE53D1B01134000D8AAB0 /* RetweetedTableViewCell.xib in Resources */,
 				B14A4B831AEBEE9600498F9C /* FavoriteViewController.xib in Resources */,
+				B193756B1B176F6F0027A7DF /* asmedia_play.png in Resources */,
+				B19375691B176F6F0027A7DF /* asmedia_pause.png in Resources */,
 				B14A4B751AEBDAEB00498F9C /* CommentViewController.xib in Resources */,
 				B14A4B471AEBBA8E00498F9C /* Images.xcassets in Resources */,
 			);
@@ -617,6 +690,8 @@
 				B1D80AF31AF9F84500A533DB /* Resources.m in Sources */,
 				B14A4B701AEBDAB100498F9C /* HomeViewController.swift in Sources */,
 				B1D80AF01AF9F84500A533DB /* ImageResourceLoader.m in Sources */,
+				B19375661B176F6F0027A7DF /* ASVideoBehavior.m in Sources */,
+				B19375671B176F6F0027A7DF /* ASVideoControlView.m in Sources */,
 				B1D80AE71AF9F84500A533DB /* GeoInfo.m in Sources */,
 				B14A4B921AECB59300498F9C /* CommentNavigationController.swift in Sources */,
 				B1D80AE21AF9F84500A533DB /* WeiboAccounts.m in Sources */,
@@ -644,7 +719,10 @@
 				B1D80AF21AF9F84500A533DB /* PathHelper.m in Sources */,
 				B14A4B651AEBD8FB00498F9C /* MainTabBarController.swift in Sources */,
 				B1D80AF11AF9F84500A533DB /* NSDictionary+Json.m in Sources */,
+				B19375611B176F6F0027A7DF /* ASImageScrollView.m in Sources */,
 				B13930321AEE306900D682BD /* ContainerViewController.swift in Sources */,
+				B16953981B0F1AEF00E81A2D /* DetailImageViewController.swift in Sources */,
+				B19375621B176F6F0027A7DF /* ASMediaFocusController.m in Sources */,
 				B14A4B941AECB5EC00498F9C /* FavoriteNavigationController.swift in Sources */,
 				B14A4B691AEBD9B200498F9C /* BaseViewController.swift in Sources */,
 				B14A4B821AEBEE9600498F9C /* FavoriteViewController.swift in Sources */,
@@ -652,7 +730,9 @@
 				B13930341AEE30B700D682BD /* SidePaneViewController.swift in Sources */,
 				B1D80AE31AF9F84500A533DB /* WeiboRequest.m in Sources */,
 				B1D80AE41AF9F84500A533DB /* WeiboRequestOperation.m in Sources */,
-				B14A4B8E1AEC7AE900498F9C /* Tools.swift in Sources */,
+				B19375651B176F6F0027A7DF /* ASTransparentView.m in Sources */,
+				B14A4B8E1AEC7AE900498F9C /* DefaultConstants.swift in Sources */,
+				B19375641B176F6F0027A7DF /* ASMediaFocusManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +881,7 @@
 					"$(inherited)",
 					"-all_load",
 				);
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iAugus/iAugus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -828,6 +909,7 @@
 					"$(inherited)",
 					"-all_load",
 				);
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iAugus/iAugus-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
