@@ -1,6 +1,0 @@
-framework module ASBPlayerScrubbing {
-  umbrella header "Pods-ASBPlayerScrubbing-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class OriginalWeiboTableViewCell: UITableViewCell, ASMediasFocusDelegate {
+class OriginalWeiboTableViewCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var screenName: UILabel!
 //    @IBOutlet weak var name: UILabel!
@@ -19,8 +19,6 @@ class OriginalWeiboTableViewCell: UITableViewCell, ASMediasFocusDelegate {
     @IBOutlet weak var weiboSource: UILabel!
     @IBOutlet var imageViewContainer: UIScrollView!
 
-    let mediaFocusManager = ASMediaFocusManager()
-    let homeViewController = HomeViewController()
     
     var image1: UIImageView = UIImageView()
     var image2: UIImageView = UIImageView()
@@ -60,10 +58,7 @@ class OriginalWeiboTableViewCell: UITableViewCell, ASMediasFocusDelegate {
 
         }
         
-        
-        self.mediaFocusManager.delegate = self
-        self.mediaFocusManager.installOnView(imageView)
-        
+      
     }
     
    
@@ -82,17 +77,5 @@ class OriginalWeiboTableViewCell: UITableViewCell, ASMediasFocusDelegate {
         // Configure the view for the selected state
     }
     
-    // MARK: - ASMediaFocusManagerDelegate
-    func parentViewControllerForMediaFocusManager(mediaFocusManager: ASMediaFocusManager!) -> UIViewController! {
-        return homeViewController
-    }
-    func mediaFocusManager(mediaFocusManager: ASMediaFocusManager!, mediaURLForView view: UIView!) -> NSURL! {
-        let url = NSURL(string: "")
-        return url
-    }
-    func mediaFocusManager(mediaFocusManager: ASMediaFocusManager!, titleForView view: UIView!) -> String! {
-        let st = ""
-        return st
-    }
-
+   
 }

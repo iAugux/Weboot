@@ -1,23 +1,14 @@
 PODS:
-  - Alamofire (1.2.2)
-  - ASBPlayerScrubbing (0.1)
-  - ASMediaFocusManager (0.5):
-    - ASBPlayerScrubbing (~> 0.1)
   - GearRefreshControl (0.1)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 1.2)
-  - ASMediaFocusManager
   - GearRefreshControl (~> 0.1)
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
-  Alamofire: 11a6022f5089887d92ffb5a3014c97a0a915ab98
-  ASBPlayerScrubbing: 0fc5e76aad6fdbcf14380734fb7f2c127cd28b66
-  ASMediaFocusManager: 5a071038ada1a79abf9d0c95b6b2b1c1e5cd3a87
   GearRefreshControl: c9c3531449560152f2834579fb059615db24a77f
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
