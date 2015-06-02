@@ -11,13 +11,13 @@ import GearRefreshControl
 import Alamofire
 
 let kNewWeiboSegue = "newWeiboSegue"
-let kOriginalWeiboTableViewCell: String = "OriginalWeiboTableViewCell"
+let kWeiboTableViewCell: String = "WeiboTableViewCell"
 var publicStatusImageUrl: NSURL?
 
 class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate {
     let mainTabBarController = MainTabBarController()
     var gearRefreshControl: GearRefreshControl!
-
+    
     var statuses: NSMutableArray?
     var users: NSMutableArray?
     
@@ -37,11 +37,11 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         self.refreshControl = gearRefreshControl
         
         // register weibo cell
-        tableView.rowHeight = 400.0
-        tableView.registerNib(UINib(nibName: "OriginalWeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "OriginalWeiboTableViewCell")
+        tableView.rowHeight = 600.0
+        tableView.registerNib(UINib(nibName: "WeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "WeiboTableViewCell")
         
         
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -171,10 +171,10 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kOriginalWeiboTableViewCell) as! OriginalWeiboTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kWeiboTableViewCell) as! WeiboTableViewCell
         if statuses != nil{
             var status = statuses?.objectAtIndex(indexPath.row) as! Status
-            
+            // MARK: - original weibo data source
             // set weibo text
             cell.originalWeiboText.text = status.text
             
@@ -198,12 +198,14 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                 var images = [cell.image1, cell.image2, cell.image3, cell.image4, cell.image5, cell.image6, cell.image7, cell.image8, cell.image9]
                 images[i].hidden = true
             }
-            println("numberOfImages = \(numberOfImages)")
+//            println("numberOfImages = \(numberOfImages)")
             if numberOfImages == 0 {
                 cell.imageViewContainer.hidden = true
+                cell.imageViewContainerHeight.constant = 0
             }
             else{
                 cell.imageViewContainer.hidden = false
+                cell.imageViewContainerHeight.constant = originalWeiboImageWidth
                 // back to default position when imageViewContainer appears again
                 cell.imageViewContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
                 
@@ -211,14 +213,13 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                     var images = [cell.image1, cell.image2, cell.image3, cell.image4, cell.image5, cell.image6, cell.image7, cell.image8, cell.image9]
                     images[i].hidden = false
                     var widthOfImageContainer: CGFloat = 25.0 + (originalWeiboImageWidth + 8) * CGFloat(numberOfImages)
-                    cell.imageViewContainer.contentSize = CGSize(width: widthOfImageContainer, height: 125.0)
+                    cell.imageViewContainer.contentSize = CGSize(width: widthOfImageContainer, height: originalWeiboImageWidth)
                     
                     var statusImage: StatusImage! = status.images[numberOfImages - i - 1] as? StatusImage
                     let statusImageUrl: NSURL = NSURL(string: statusImage.middleImageUrl)!
                     publicStatusImageUrl = NSURL(string: statusImage.originalImageUrl)
-                    println("\(statusImageUrl)")
+//                    println("\(statusImageUrl)")
                     images[i].sd_setImageWithURL(statusImageUrl, placeholderImage: UIImage(named: "image_holder"))
-//                    images[i].contentMode = UIViewContentMode.ScaleToFill
                     
                     let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTapDidTap")
                     singleTap.numberOfTapsRequired = 1
@@ -229,9 +230,65 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                 }
             }
             
+            // MARK: - retweeted Weibo data source
+            var retweetedImages = [cell.retweetedImage1, cell.retweetedImage2, cell.retweetedImage3, cell.retweetedImage4, cell.retweetedImage5, cell.retweetedImage6, cell.retweetedImage7, cell.retweetedImage8, cell.retweetedImage9]
+
+            if let retweetedStatus = status.retweetedStatus{
+                cell.retweetedContainerHeight.constant = 200
+                // set retweeted weibo text
+                if var retweetedWeiboText = retweetedStatus.text{
+                let retweetedWeiboUserName = retweetedStatus.user.screenName
+                retweetedWeiboText = "@\(retweetedWeiboUserName): \(retweetedWeiboText)"
+                cell.retweetedWeiboText.text = retweetedWeiboText
+                }
+                
+                // set retweeted weibo images
+                let numberOfRetweetedImages = retweetedStatus.images.count
+                for i in 0..<9 {
+                    retweetedImages[i].hidden = true
+                }
+                println("numberOfRetweetedImages = \(numberOfRetweetedImages)")
+                if numberOfRetweetedImages == 0 {
+                    cell.retweetedImageContainer.hidden = true
+                    cell.retweetedImageContainerHeight.constant = 0
+                }
+                else{
+                    cell.retweetedImageContainer.hidden = false
+                    cell.retweetedImageContainerHeight.constant = retweetedWeiboImageWidth
+                    // back to default position when imageViewContainer appears again
+//                    cell.retweetedImageContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                    
+                    for var i = 0 ; i < numberOfRetweetedImages ; i++ {
+                        retweetedImages[i].hidden = false
+                        var widthOfRetweetedImageContainer: CGFloat = 25.0 + (retweetedWeiboImageWidth + 8) * CGFloat(numberOfRetweetedImages)
+//                        cell.retweetedImageContainer.contentSize = CGSize(width: widthOfRetweetedImageContainer, height: retweetedWeiboImageWidth)
+                        var retweetedStatusImage: StatusImage! = retweetedStatus.images[numberOfRetweetedImages - i - 1] as? StatusImage
+                        let retweetedStatusImageUrl: NSURL = NSURL(string: retweetedStatusImage.middleImageUrl)!
+                        println("\(retweetedStatusImageUrl)")
+                        retweetedImages[i].sd_setImageWithURL(retweetedStatusImageUrl, placeholderImage: UIImage(named: "image_holder"))
+                        
+                        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTapDidTap")
+                        singleTap.numberOfTapsRequired = 1
+                        retweetedImages[i].userInteractionEnabled = true
+                        retweetedImages[i].addGestureRecognizer(singleTap)
+                        
+                        
+                    }
+                    
+                }
+                
+                
+            }else{
+                cell.retweetedContainerHeight.constant = 0
+                cell.retweetedWeiboText.text = nil
+                cell.retweetedImageContainerHeight.constant = 0
+                for object in retweetedImages{
+                    object.hidden = true
+                }
+
+            }
+            
         }
-        
-        
         return cell
     }
     func singleTapDidTap(){
@@ -242,6 +299,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         
         println("thumbnail image tapped")
     }
+    
     
     
     // MARK: - part of GearRefreshControl

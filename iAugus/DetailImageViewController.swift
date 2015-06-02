@@ -10,7 +10,7 @@ import UIKit
 
 
 class DetailImageViewController: UIViewController {
-    let originalWeiboCell = OriginalWeiboTableViewCell()
+    let originalWeiboCell = WeiboTableViewCell()
     @IBOutlet var detailImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -28,3 +28,6 @@ let numberOfTimelineRow: Int32 = 100
 
 // set width of original image
 let originalWeiboImageWidth: CGFloat = 110
+
+// set width of retweeted image
+let retweetedWeiboImageWidth: CGFloat = 80.0
