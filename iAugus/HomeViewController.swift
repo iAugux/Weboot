@@ -11,7 +11,8 @@ import GearRefreshControl
 import Alamofire
 
 let kNewWeiboSegue = "newWeiboSegue"
-let kWeiboTableViewCell: String = "WeiboTableViewCell"
+let kOriginalWeiboTableViewCell: String = "OriginalWeiboTableViewCell"
+var publicStatusImageUrl: NSURL?
 
 class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate {
     let mainTabBarController = MainTabBarController()
@@ -25,7 +26,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         refreshTableView()
         
         self.loadStatuses()
@@ -36,10 +37,10 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         self.refreshControl = gearRefreshControl
         
         // register weibo cell
-        tableView.rowHeight = 600.0
-        tableView.registerNib(UINib(nibName: "WeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "WeiboTableViewCell")
+        tableView.rowHeight = 400.0
+        tableView.registerNib(UINib(nibName: "OriginalWeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "OriginalWeiboTableViewCell")
         
-
+        
 
     }
     
@@ -169,14 +170,10 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCellWithIdentifier(kWeiboTableViewCell) as! WeiboTableViewCell
-//        cell.preservesSuperviewLayoutMargins = false
-//        cell.separatorInset = UIEdgeInsetsZero
-
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(kOriginalWeiboTableViewCell) as! OriginalWeiboTableViewCell
         if statuses != nil{
             var status = statuses?.objectAtIndex(indexPath.row) as! Status
-            
-            // MARK: - original weibo data source
             
             // set weibo text
             cell.originalWeiboText.text = status.text
@@ -184,7 +181,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             // set created time
             cell.createdDate.text = status.statusTimeString()
             
-            // set weibo source
+            //set weibo source
             cell.weiboSource.text = status.source
             
             // set ScreenName
@@ -207,8 +204,6 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             }
             else{
                 cell.imageViewContainer.hidden = false
-//                cell.originalWeiboImageHeight.constant = originalWeiboImageWidth
-//                cell.imageViewContainer.contentSize.height = originalWeiboImageWidth
                 // back to default position when imageViewContainer appears again
                 cell.imageViewContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
                 
@@ -220,7 +215,8 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                     
                     var statusImage: StatusImage! = status.images[numberOfImages - i - 1] as? StatusImage
                     let statusImageUrl: NSURL = NSURL(string: statusImage.middleImageUrl)!
-                    
+                    publicStatusImageUrl = NSURL(string: statusImage.originalImageUrl)
+                    println("\(statusImageUrl)")
                     images[i].sd_setImageWithURL(statusImageUrl, placeholderImage: UIImage(named: "image_holder"))
 //                    images[i].contentMode = UIViewContentMode.ScaleToFill
                     
@@ -229,19 +225,9 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                     images[i].userInteractionEnabled = true
                     images[i].addGestureRecognizer(singleTap)
                     
+                    
                 }
             }
-            
-            
-            // MARK: - retweeted weibo data source
-            
-            // set retweeted weibo text
-            if let retweetedWeiboText = status.retweetedStatus?.text {
-//                cell.retweetedViewContainer.hidden = false
-//                cell.retweetedWeiboText.text = retweetedWeiboText
-            }
-            // set retweeted weibo image
-            
             
         }
         

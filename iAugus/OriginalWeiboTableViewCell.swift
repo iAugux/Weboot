@@ -1,5 +1,5 @@
 //
-//  WeiboTableViewCell.swift
+//  OriginalWeiboTableViewCell.swift
 //  iAugus
 //
 //  Created by Augus on 5/11/15.
@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class WeiboTableViewCell: UITableViewCell {
+class OriginalWeiboTableViewCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var screenName: UILabel!
 //    @IBOutlet weak var name: UILabel!
@@ -34,22 +34,20 @@ class WeiboTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.preservesSuperviewLayoutMargins = false
-        self.separatorInset = UIEdgeInsetsZero
-        self.layoutMargins = UIEdgeInsetsZero
         
+//        self.preservesSuperviewLayoutMargins = false
+        self.separatorInset = UIEdgeInsetsZero
         // Initialization code
-        initControllers()
         userImage.layer.cornerRadius = 20.0
         userImage.clipsToBounds = true
+        initControllers()
         imageViewContainer!.hidden = true
         imageViewContainer.scrollsToTop = false
-        
         imageViewContainer.showsHorizontalScrollIndicator = false
         // set image array
         var images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
         for var index = 0; index < 9; index++ {
-            var image_x: CGFloat = 25.0 + (originalWeiboImageWidth + 8) * CGFloat(index)
+            var image_x: CGFloat = 20.0 + (originalWeiboImageWidth + 8) * CGFloat(index)
             images[index].frame = CGRectMake(image_x, 0, originalWeiboImageWidth, originalWeiboImageWidth)
             images[index].contentMode = UIViewContentMode.ScaleAspectFill
             images[index].clipsToBounds = true
@@ -59,19 +57,6 @@ class WeiboTableViewCell: UITableViewCell {
             imageViewContainer.addSubview(images[index])
 
         }
-        
-//        var retweetedImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
-//        for var i = 0; i < 9; i++ {
-//            var image_x: CGFloat = 25.0 + (retweetedWeiboImageWidth + 8) * CGFloat(i)
-//            retweetedImages[i].frame = CGRectMake(image_x, 0, retweetedWeiboImageWidth, retweetedWeiboImageWidth)
-//            retweetedImages[i].contentMode = UIViewContentMode.ScaleAspectFill
-//            retweetedImages[i].clipsToBounds = true
-//            var imageArray: NSMutableArray?
-//            imageArray?.addObject(retweetedImages[i])
-//            
-//            retweetedImageViewContainer.addSubview(retweetedImages[i])
-//            
-//        }
         
       
     }
@@ -83,9 +68,7 @@ class WeiboTableViewCell: UITableViewCell {
         originalWeiboText.text = nil
         createdDate.text = nil
         weiboSource.text = nil
-//        imageViewContainer.hidden = true
-       
-        
+//        originalWeiboImages.image = nil
     }
    
     override func setSelected(selected: Bool, animated: Bool) {
