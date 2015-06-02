@@ -10,7 +10,7 @@ import UIKit
 
 
 class DetailImageViewController: UIViewController {
-    let originalWeiboCell = OriginalWeiboTableViewCell()
+    let originalWeiboCell = WeiboTableViewCell()
     @IBOutlet var detailImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,7 @@ class DetailImageViewController: UIViewController {
 //        detailImageView.backgroundColor = UIColor.blueColor()
 //        detailImageView.backgroundColor?.colorWithAlphaComponent(0.5)
 //        detailImageView?.image = UIImage(named: "image_holder")
-        detailImageView.sd_setImageWithURL(publicStatusImageUrl)
-//        detailImageView.contentMode = UIViewContentMode.Top
+        detailImageView.contentMode = UIViewContentMode.ScaleAspectFill
         detailImageView.clipsToBounds = true
         showDetailImage()
         
