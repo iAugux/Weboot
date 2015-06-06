@@ -8,38 +8,43 @@
 
 import UIKit
 import GearRefreshControl
-import Alamofire
 
 let kNewWeiboSegue = "newWeiboSegue"
 let kWeiboTableViewCell: String = "WeiboTableViewCell"
 var publicStatusImageUrl: NSURL?
 
-class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate {
+class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeiboViewControllerDelegate {
     let mainTabBarController = MainTabBarController()
     var gearRefreshControl: GearRefreshControl!
-    
+    var bottomRefreshControl = RefreshControl()
     var statuses: NSMutableArray?
     var users: NSMutableArray?
     
     var query:WeiboRequestOperation? = WeiboRequestOperation()
-    //    var storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         refreshTableView()
-        
-        self.loadStatuses()
         showCurrentAccountNameOnTimeline()
+        //        for var index = 0 ; index < 20; index++ {
+        //            var t = (Int(numberOfTimelineRow))
+        //            t++
+        //            numberOfTimelineRow = Int32(t)
+        //        }
         // part of GearRefreshController
         gearRefreshControl = GearRefreshControl(frame: self.view.bounds)
         gearRefreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = gearRefreshControl
+        // pull to load more (part of RefreshControlDelegate)
+        //        bottomRefreshControl = RefreshControl(scrollView: self.tableView, delegate: self)
+        //        bottomRefreshControl.bottomEnabled = true
+        
         
         // register weibo cell
         tableView.rowHeight = 600.0
         tableView.registerNib(UINib(nibName: "WeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "WeiboTableViewCell")
         
+        self.loadStatuses()
         
         
     }
@@ -166,6 +171,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         if self.statuses == nil{
             return 1
         }
+        //        statuses?.addObject("")
         return statuses!.count
     }
     
@@ -173,10 +179,12 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         
         let cell = tableView.dequeueReusableCellWithIdentifier(kWeiboTableViewCell) as! WeiboTableViewCell
         if statuses != nil{
+            var rowHeight:CGFloat = WEIBO_HEADER
             var status = statuses?.objectAtIndex(indexPath.row) as! Status
             // MARK: - original weibo data source
             // set weibo text
             cell.originalWeiboText.text = status.text
+            rowHeight += status.text.sizeWithConstrainedToWidth(ORIGINAL_TEXT_WIDTH, fromFont: UIFont.systemFontOfSize(ORIGINAL_FONT_SIZE), lineSpace: 0).height + 30.0
             
             // set created time
             cell.createdDate.text = status.statusTimeString()
@@ -198,27 +206,33 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                 var images = [cell.image1, cell.image2, cell.image3, cell.image4, cell.image5, cell.image6, cell.image7, cell.image8, cell.image9]
                 images[i].hidden = true
             }
-//            println("numberOfImages = \(numberOfImages)")
+            //            println("numberOfImages = \(numberOfImages)")
             if numberOfImages == 0 {
                 cell.imageViewContainer.hidden = true
                 cell.imageViewContainerHeight.constant = 0
             }
             else{
+                rowHeight += originalWeiboImageWidth + 10.0
+                
                 cell.imageViewContainer.hidden = false
                 cell.imageViewContainerHeight.constant = originalWeiboImageWidth
                 // back to default position when imageViewContainer appears again
-                cell.imageViewContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                cell.imageViewContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
                 
                 for var i = 0 ; i < numberOfImages ; i++ {
                     var images = [cell.image1, cell.image2, cell.image3, cell.image4, cell.image5, cell.image6, cell.image7, cell.image8, cell.image9]
                     images[i].hidden = false
-                    var widthOfImageContainer: CGFloat = 25.0 + (originalWeiboImageWidth + 8) * CGFloat(numberOfImages)
+                    var widthOfImageContainer: CGFloat = 40.0 + (originalWeiboImageWidth + 8) * CGFloat(numberOfImages)
+                    if numberOfImages <= 3{
+                        cell.imageViewContainerWidth.constant = widthOfImageContainer
+                    }else{
+                        cell.imageViewContainerWidth.constant = ScreenWidth + 12.0
+                    }
                     cell.imageViewContainer.contentSize = CGSize(width: widthOfImageContainer, height: originalWeiboImageWidth)
-                    
                     var statusImage: StatusImage! = status.images[numberOfImages - i - 1] as? StatusImage
                     let statusImageUrl: NSURL = NSURL(string: statusImage.middleImageUrl)!
                     publicStatusImageUrl = NSURL(string: statusImage.originalImageUrl)
-//                    println("\(statusImageUrl)")
+                    //                    println("\(statusImageUrl)")
                     images[i].sd_setImageWithURL(statusImageUrl, placeholderImage: UIImage(named: "image_holder"))
                     
                     let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTapDidTap")
@@ -232,14 +246,22 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             
             // MARK: - retweeted Weibo data source
             var retweetedImages = [cell.retweetedImage1, cell.retweetedImage2, cell.retweetedImage3, cell.retweetedImage4, cell.retweetedImage5, cell.retweetedImage6, cell.retweetedImage7, cell.retweetedImage8, cell.retweetedImage9]
-
+            var retweetedViewHeight = CGFloat()
             if let retweetedStatus = status.retweetedStatus{
-                cell.retweetedContainerHeight.constant = 200
                 // set retweeted weibo text
-                if var retweetedWeiboText = retweetedStatus.text{
-                let retweetedWeiboUserName = retweetedStatus.user.screenName
-                retweetedWeiboText = "@\(retweetedWeiboUserName): \(retweetedWeiboText)"
-                cell.retweetedWeiboText.text = retweetedWeiboText
+                if let retweetedWeiboText = status.retweetedStatus?.text{
+                    var text = retweetedWeiboText
+                    // carefully: when original weibo has been deleted, there is no user !!!  Once you call user, it will crash.
+                    if let retweetedWeiboUserName = retweetedStatus.user?.screenName {
+                        text = "@\(retweetedWeiboUserName): \(retweetedWeiboText)"
+                    }else{
+                        text = "\(retweetedWeiboText)"
+                    }
+                    cell.retweetedWeiboText.text = text
+                    var textSize = text.sizeWithConstrainedToWidth(RETWEETED_TEXT_WIDTH, fromFont: UIFont.systemFontOfSize(RETWEETED_FONT_SIZE), lineSpace: 0)
+//                    var textSize = cell.retweetedWeiboText.frame.size.height
+                    rowHeight += textSize.height + 30.0
+                    retweetedViewHeight += textSize.height + 16.0
                 }
                 
                 // set retweeted weibo images
@@ -247,24 +269,33 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                 for i in 0..<9 {
                     retweetedImages[i].hidden = true
                 }
-                println("numberOfRetweetedImages = \(numberOfRetweetedImages)")
+                //                println("numberOfRetweetedImages = \(numberOfRetweetedImages)")
                 if numberOfRetweetedImages == 0 {
                     cell.retweetedImageContainer.hidden = true
                     cell.retweetedImageContainerHeight.constant = 0
+                    cell.retweetedContainerHeight.constant = retweetedViewHeight
                 }
                 else{
+                    rowHeight += retweetedWeiboImageWidth + 20.0
+//                    retweetedViewHeight += retweetedWeiboImageWidth + 16.0
                     cell.retweetedImageContainer.hidden = false
                     cell.retweetedImageContainerHeight.constant = retweetedWeiboImageWidth
                     // back to default position when imageViewContainer appears again
-//                    cell.retweetedImageContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                    cell.retweetedImageContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
                     
+                    //                    println("\(cell.retweetedImageContainer.frame.maxY)")
                     for var i = 0 ; i < numberOfRetweetedImages ; i++ {
                         retweetedImages[i].hidden = false
-                        var widthOfRetweetedImageContainer: CGFloat = 25.0 + (retweetedWeiboImageWidth + 8) * CGFloat(numberOfRetweetedImages)
-//                        cell.retweetedImageContainer.contentSize = CGSize(width: widthOfRetweetedImageContainer, height: retweetedWeiboImageWidth)
+                        var widthOfRetweetedImageContainer: CGFloat = 55.0 + (retweetedWeiboImageWidth + 8) * CGFloat(numberOfRetweetedImages)
+                        if numberOfRetweetedImages <= 3{
+                            cell.retweetedImageContainerWidth.constant = widthOfRetweetedImageContainer
+                        }else{
+                            cell.retweetedImageContainerWidth.constant = ScreenWidth + 16.0
+                        }
+                        cell.retweetedImageContainer.contentSize = CGSize(width: widthOfRetweetedImageContainer, height: retweetedWeiboImageWidth)
                         var retweetedStatusImage: StatusImage! = retweetedStatus.images[numberOfRetweetedImages - i - 1] as? StatusImage
                         let retweetedStatusImageUrl: NSURL = NSURL(string: retweetedStatusImage.middleImageUrl)!
-                        println("\(retweetedStatusImageUrl)")
+                        //                        println("\(retweetedStatusImageUrl)")
                         retweetedImages[i].sd_setImageWithURL(retweetedStatusImageUrl, placeholderImage: UIImage(named: "image_holder"))
                         
                         let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTapDidTap")
@@ -272,12 +303,16 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                         retweetedImages[i].userInteractionEnabled = true
                         retweetedImages[i].addGestureRecognizer(singleTap)
                         
-                        
+                        //                        let maxY = retweetedImages.first?.frame.maxY
+                        //                        cell.retweetedContainerHeight.constant = maxY!
                     }
+                    cell.retweetedContainerHeight.constant = retweetedViewHeight
                     
                 }
                 
-                
+                //                println("\(cell.retweetedWeiboText.frame.size.height)")
+                //                let maxY = retweetedImages.first?.frame.maxY
+                //                cell.retweetedContainerHeight.constant = 400
             }else{
                 cell.retweetedContainerHeight.constant = 0
                 cell.retweetedWeiboText.text = nil
@@ -285,12 +320,17 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                 for object in retweetedImages{
                     object.hidden = true
                 }
-
+                
             }
+//            tableView.rowHeight = rowHeight
+            tableView.rowHeight = 600
+            
             
         }
         return cell
     }
+    
+    
     func singleTapDidTap(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: DetailImageViewController = storyboard.instantiateViewControllerWithIdentifier("detailImageViewController") as! DetailImageViewController
@@ -316,8 +356,12 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         gearRefreshControl.scrollViewDidScroll(scrollView)
     }
     
+    // MARK: - RefreshControlDelegate
+    func refreshControl(refreshControl: RefreshControl!, didEngageRefreshDirection direction: RefreshDirection) {
+        //        self.statuses?.removeAllObjects()
+    }
     
-    // fake to start refresh
+    // MARK: - fake to start refresh
     func refreshTableView(){
         
         NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "fakeStartRefresh", userInfo: nil, repeats: false)

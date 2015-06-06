@@ -44,39 +44,38 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baj-nr-D2D" userLabel="Image Container" customClass="UIScrollView">
+                        <rect key="frame" x="-8" y="88" width="320" height="110"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="320" id="Lg8-cn-roV"/>
+                            <constraint firstAttribute="height" constant="110" id="bJL-Ec-ZtZ"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hx-m8-M7e" userLabel="retweeted container">
-                        <rect key="frame" x="-8" y="198.5" width="336" height="142"/>
+                        <rect key="frame" x="-8" y="198" width="336" height="142"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="retweeted weibo text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U2-yH-BzZ">
-                                <rect key="frame" x="21" y="5" width="294" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="30" y="8" width="283" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x23-V5-Tnd" userLabel="retweeted image container">
-                                <rect key="frame" x="1" y="30.5" width="334" height="80"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x23-V5-Tnd" userLabel="retweeted image container" customClass="UIScrollView">
+                                <rect key="frame" x="1" y="34" width="334" height="80"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="334" id="3Tp-S3-kCy"/>
                                     <constraint firstAttribute="height" constant="80" id="ex5-Rd-t4d"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="0.38" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.19" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="x23-V5-Tnd" firstAttribute="leading" secondItem="6Hx-m8-M7e" secondAttribute="leading" constant="1" id="Py2-1r-Fh3"/>
-                            <constraint firstAttribute="trailing" secondItem="4U2-yH-BzZ" secondAttribute="trailing" constant="21" id="fbB-zO-CeI"/>
-                            <constraint firstItem="4U2-yH-BzZ" firstAttribute="top" secondItem="6Hx-m8-M7e" secondAttribute="top" constant="5" id="haK-ZV-sLm"/>
-                            <constraint firstAttribute="trailing" secondItem="x23-V5-Tnd" secondAttribute="trailing" constant="1" id="nlc-tR-A77"/>
+                            <constraint firstAttribute="trailing" secondItem="4U2-yH-BzZ" secondAttribute="trailing" constant="23" id="fbB-zO-CeI"/>
+                            <constraint firstItem="4U2-yH-BzZ" firstAttribute="top" secondItem="6Hx-m8-M7e" secondAttribute="top" constant="8" id="haK-ZV-sLm"/>
                             <constraint firstAttribute="height" constant="142" id="uPJ-sX-01k"/>
-                            <constraint firstItem="4U2-yH-BzZ" firstAttribute="leading" secondItem="6Hx-m8-M7e" secondAttribute="leading" constant="21" id="uQw-tT-XIZ"/>
-                            <constraint firstItem="x23-V5-Tnd" firstAttribute="top" secondItem="4U2-yH-BzZ" secondAttribute="bottom" constant="5" id="uV4-8o-0hd"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baj-nr-D2D" userLabel="Image Container" customClass="UIScrollView">
-                        <rect key="frame" x="-8" y="88" width="336" height="110"/>
-                        <color key="backgroundColor" red="0.62712764659999998" green="1" blue="0.32483828190000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="110" id="bJL-Ec-ZtZ"/>
+                            <constraint firstItem="4U2-yH-BzZ" firstAttribute="leading" secondItem="6Hx-m8-M7e" secondAttribute="leading" constant="30" id="uQw-tT-XIZ"/>
+                            <constraint firstItem="x23-V5-Tnd" firstAttribute="top" secondItem="4U2-yH-BzZ" secondAttribute="bottom" constant="8" id="uV4-8o-0hd"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -85,7 +84,6 @@
                     <constraint firstAttribute="trailingMargin" secondItem="6Hx-m8-M7e" secondAttribute="trailing" constant="-16" id="83n-nG-3Pn"/>
                     <constraint firstItem="6Hx-m8-M7e" firstAttribute="top" secondItem="baj-nr-D2D" secondAttribute="bottom" id="88o-ll-KhG"/>
                     <constraint firstItem="ZnO-FH-Psx" firstAttribute="top" secondItem="rri-BP-UX2" secondAttribute="topMargin" constant="4" id="Civ-72-5r6"/>
-                    <constraint firstItem="baj-nr-D2D" firstAttribute="trailing" secondItem="rri-BP-UX2" secondAttribute="trailingMargin" constant="16" id="EFO-pP-AKD"/>
                     <constraint firstItem="QnS-Lj-Zn4" firstAttribute="leading" secondItem="IyH-ho-lNI" secondAttribute="trailing" constant="12" id="Jb4-DN-Zbf"/>
                     <constraint firstItem="IyH-ho-lNI" firstAttribute="leading" secondItem="ZnO-FH-Psx" secondAttribute="trailing" constant="20" id="Jns-Vr-RkH"/>
                     <constraint firstItem="XJ3-e2-dCp" firstAttribute="leading" secondItem="rri-BP-UX2" secondAttribute="leadingMargin" constant="8" id="KVE-OX-TAN"/>
@@ -104,10 +102,12 @@
                 <outlet property="createdDate" destination="IyH-ho-lNI" id="cC8-S6-Ahr"/>
                 <outlet property="imageViewContainer" destination="baj-nr-D2D" id="RSm-zc-AwX"/>
                 <outlet property="imageViewContainerHeight" destination="bJL-Ec-ZtZ" id="nIR-gr-MvK"/>
+                <outlet property="imageViewContainerWidth" destination="Lg8-cn-roV" id="x00-bb-y0M"/>
                 <outlet property="originalWeiboText" destination="XJ3-e2-dCp" id="XMK-ky-UFb"/>
                 <outlet property="retweetedContainerHeight" destination="uPJ-sX-01k" id="VUp-0t-xoh"/>
                 <outlet property="retweetedImageContainer" destination="x23-V5-Tnd" id="gOL-eX-WP9"/>
                 <outlet property="retweetedImageContainerHeight" destination="ex5-Rd-t4d" id="3ux-BK-nGZ"/>
+                <outlet property="retweetedImageContainerWidth" destination="3Tp-S3-kCy" id="lLJ-gg-kkk"/>
                 <outlet property="retweetedWeiboText" destination="4U2-yH-BzZ" id="0MH-GO-JSB"/>
                 <outlet property="screenName" destination="gsG-1w-hbp" id="xwT-1O-y1D"/>
                 <outlet property="userImage" destination="ZnO-FH-Psx" id="6cd-m7-I53"/>

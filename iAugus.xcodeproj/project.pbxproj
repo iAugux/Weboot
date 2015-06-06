@@ -36,6 +36,9 @@
 		B14A4B941AECB5EC00498F9C /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B931AECB5EC00498F9C /* FavoriteNavigationController.swift */; };
 		B14A4B961AECB60200498F9C /* AtNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B951AECB60200498F9C /* AtNavigationController.swift */; };
 		B14A4B981AECB61100498F9C /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */; };
+		B14FE31E1B22DDAF006A38A7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B14FE31D1B22DDAF006A38A7 /* NSString+Additions.m */; };
+		B14FE3211B2335C1006A38A7 /* VVeboLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B14FE3201B2335C1006A38A7 /* VVeboLabel.m */; };
+		B14FE3241B23362B006A38A7 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B14FE3231B23362B006A38A7 /* UIView+Additions.m */; };
 		B15D00F31AF9D8DA00F0C92F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */; };
 		B15D00F51AF9D8E600F0C92F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */; };
 		B16953981B0F1AEF00E81A2D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */; };
@@ -68,6 +71,11 @@
 		B1D80AF61AF9F84500A533DB /* WeiboDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80ADB1AF9F84500A533DB /* WeiboDialog.m */; };
 		B1D80AF71AF9F84500A533DB /* WeiboLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80ADD1AF9F84500A533DB /* WeiboLoginDialog.m */; };
 		B1D80AF81AF9F84500A533DB /* Weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80ADF1AF9F84500A533DB /* Weibo.m */; };
+		B1DB61041B1F342300A6E44D /* RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DB60FB1B1F342300A6E44D /* RefreshControl.m */; };
+		B1DB61051B1F342300A6E44D /* pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DB60FD1B1F342300A6E44D /* pull_refresh@2x.png */; };
+		B1DB61061B1F342300A6E44D /* pull_refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DB60FE1B1F342300A6E44D /* pull_refresh@3x.png */; };
+		B1DB61071B1F342300A6E44D /* RefreshBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DB61001B1F342300A6E44D /* RefreshBottomView.m */; };
+		B1DB61081B1F342300A6E44D /* RefreshTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DB61021B1F342300A6E44D /* RefreshTopView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +124,12 @@
 		B14A4B931AECB5EC00498F9C /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B951AECB60200498F9C /* AtNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
+		B14FE31C1B22DDAF006A38A7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		B14FE31D1B22DDAF006A38A7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		B14FE31F1B2335C1006A38A7 /* VVeboLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVeboLabel.h; sourceTree = "<group>"; };
+		B14FE3201B2335C1006A38A7 /* VVeboLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVeboLabel.m; sourceTree = "<group>"; };
+		B14FE3221B23362B006A38A7 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		B14FE3231B23362B006A38A7 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +185,15 @@
 		B1D80ADF1AF9F84500A533DB /* Weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Weibo.m; path = ../Weibo.m; sourceTree = "<group>"; };
 		B1D80AE01AF9F84500A533DB /* WeiboConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboConfig.h; sourceTree = "<group>"; };
 		B1D80AE11AF9F84500A533DB /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		B1DB60FA1B1F342300A6E44D /* RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshControl.h; sourceTree = "<group>"; };
+		B1DB60FB1B1F342300A6E44D /* RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshControl.m; sourceTree = "<group>"; };
+		B1DB60FD1B1F342300A6E44D /* pull_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull_refresh@2x.png"; sourceTree = "<group>"; };
+		B1DB60FE1B1F342300A6E44D /* pull_refresh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull_refresh@3x.png"; sourceTree = "<group>"; };
+		B1DB60FF1B1F342300A6E44D /* RefreshBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshBottomView.h; sourceTree = "<group>"; };
+		B1DB61001B1F342300A6E44D /* RefreshBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshBottomView.m; sourceTree = "<group>"; };
+		B1DB61011B1F342300A6E44D /* RefreshTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshTopView.h; sourceTree = "<group>"; };
+		B1DB61021B1F342300A6E44D /* RefreshTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshTopView.m; sourceTree = "<group>"; };
+		B1DB61031B1F342300A6E44D /* RefreshViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshViewDelegate.h; sourceTree = "<group>"; };
 		CE48B4F81EDF1545559EF6D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,10 +248,11 @@
 			isa = PBXGroup;
 			children = (
 				B14A4B3C1AEBBA8E00498F9C /* iAugus */,
+				B1DB605F1B1F04BD00A6E44D /* Additions */,
 				B14A4B521AEBBA8E00498F9C /* iAugusTests */,
-				B14A4B3B1AEBBA8E00498F9C /* Products */,
-				A9CE65315BD0F4FDDB68E160 /* Pods */,
 				8C91D068BF51825768DEBA0D /* Frameworks */,
+				A9CE65315BD0F4FDDB68E160 /* Pods */,
+				B14A4B3B1AEBBA8E00498F9C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,7 +274,6 @@
 				B14A4B631AEBD71700498F9C /* At */,
 				B14A4B621AEBD6F100498F9C /* Profile */,
 				B14A4B671AEBD98500498F9C /* BaseView */,
-				B1D80AAF1AF9F84500A533DB /* WeiboSDK */,
 				B14A4B3F1AEBBA8E00498F9C /* AppDelegate.swift */,
 				B13930311AEE306900D682BD /* ContainerViewController.swift */,
 				B13930331AEE30B700D682BD /* SidePaneViewController.swift */,
@@ -356,6 +379,19 @@
 			name = BaseView;
 			sourceTree = "<group>";
 		};
+		B14FE3181B22DC4A006A38A7 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				B14FE31F1B2335C1006A38A7 /* VVeboLabel.h */,
+				B14FE3201B2335C1006A38A7 /* VVeboLabel.m */,
+				B14FE3221B23362B006A38A7 /* UIView+Additions.h */,
+				B14FE3231B23362B006A38A7 /* UIView+Additions.m */,
+				B14FE31C1B22DDAF006A38A7 /* NSString+Additions.h */,
+				B14FE31D1B22DDAF006A38A7 /* NSString+Additions.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
 		B1D80AAF1AF9F84500A533DB /* WeiboSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +484,41 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B1DB605F1B1F04BD00A6E44D /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				B14FE3181B22DC4A006A38A7 /* Additions */,
+				B1DB60F91B1F342300A6E44D /* RefreshControl */,
+				B1D80AAF1AF9F84500A533DB /* WeiboSDK */,
+			);
+			name = Additions;
+			path = iAugus;
+			sourceTree = "<group>";
+		};
+		B1DB60F91B1F342300A6E44D /* RefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				B1DB60FA1B1F342300A6E44D /* RefreshControl.h */,
+				B1DB60FB1B1F342300A6E44D /* RefreshControl.m */,
+				B1DB60FC1B1F342300A6E44D /* RefreshView */,
+			);
+			path = RefreshControl;
+			sourceTree = "<group>";
+		};
+		B1DB60FC1B1F342300A6E44D /* RefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				B1DB60FD1B1F342300A6E44D /* pull_refresh@2x.png */,
+				B1DB60FE1B1F342300A6E44D /* pull_refresh@3x.png */,
+				B1DB60FF1B1F342300A6E44D /* RefreshBottomView.h */,
+				B1DB61001B1F342300A6E44D /* RefreshBottomView.m */,
+				B1DB61011B1F342300A6E44D /* RefreshTopView.h */,
+				B1DB61021B1F342300A6E44D /* RefreshTopView.m */,
+				B1DB61031B1F342300A6E44D /* RefreshViewDelegate.h */,
+			);
+			path = RefreshView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -537,11 +608,13 @@
 				B1D80AEF1AF9F84500A533DB /* WeiboDialogClose@2x.png in Resources */,
 				B14A4B871AEBEEAA00498F9C /* AtViewController.xib in Resources */,
 				B14A4B451AEBBA8E00498F9C /* Main.storyboard in Resources */,
+				B1DB61061B1F342300A6E44D /* pull_refresh@3x.png in Resources */,
 				B14A4B4A1AEBBA8E00498F9C /* LaunchScreen.xib in Resources */,
 				B16CE53D1B01134000D8AAB0 /* RetweetedTableViewCell.xib in Resources */,
 				B14A4B831AEBEE9600498F9C /* FavoriteViewController.xib in Resources */,
 				B14A4B751AEBDAEB00498F9C /* CommentViewController.xib in Resources */,
 				B14A4B471AEBBA8E00498F9C /* Images.xcassets in Resources */,
+				B1DB61051B1F342300A6E44D /* pull_refresh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B14FE3241B23362B006A38A7 /* UIView+Additions.m in Sources */,
 				B1D80AF71AF9F84500A533DB /* WeiboLoginDialog.m in Sources */,
 				B1D80AEB1AF9F84500A533DB /* User.m in Sources */,
 				B1D80AF31AF9F84500A533DB /* Resources.m in Sources */,
@@ -619,6 +693,7 @@
 				B14A4B6B1AEBD9EA00498F9C /* BaseNavigationController.swift in Sources */,
 				B14A4B981AECB61100498F9C /* ProfileNavigationController.swift in Sources */,
 				B1D80AF41AF9F84500A533DB /* URLRequestHelper.m in Sources */,
+				B1DB61081B1F342300A6E44D /* RefreshTopView.m in Sources */,
 				B1D80AE91AF9F84500A533DB /* StatusImage.m in Sources */,
 				B1D80AE81AF9F84500A533DB /* Status.m in Sources */,
 				B1C213C91B063A7A00BDB8E6 /* DetailTimelineViewController.swift in Sources */,
@@ -626,6 +701,8 @@
 				B1D80AF81AF9F84500A533DB /* Weibo.m in Sources */,
 				B1D80AE51AF9F84500A533DB /* WeiboSignIn.m in Sources */,
 				B14A4B741AEBDAEB00498F9C /* CommentViewController.swift in Sources */,
+				B1DB61041B1F342300A6E44D /* RefreshControl.m in Sources */,
+				B14FE3211B2335C1006A38A7 /* VVeboLabel.m in Sources */,
 				B14A4B401AEBBA8E00498F9C /* AppDelegate.swift in Sources */,
 				B1C213CB1B0642F700BDB8E6 /* NewWeiboViewController.swift in Sources */,
 				B16CE53C1B01134000D8AAB0 /* RetweetedTableViewCell.swift in Sources */,
@@ -635,6 +712,7 @@
 				B16CE53A1B01134000D8AAB0 /* WeiboTableViewCell.swift in Sources */,
 				B14A4B901AEC7F2600498F9C /* HomeNavigationController.swift in Sources */,
 				B1D80AF61AF9F84500A533DB /* WeiboDialog.m in Sources */,
+				B1DB61071B1F342300A6E44D /* RefreshBottomView.m in Sources */,
 				B1D80AEA1AF9F84500A533DB /* StatusVisible.m in Sources */,
 				B1D80AF21AF9F84500A533DB /* PathHelper.m in Sources */,
 				B14A4B651AEBD8FB00498F9C /* MainTabBarController.swift in Sources */,
@@ -647,6 +725,7 @@
 				B14A4B7C1AEBDBA000498F9C /* ProfileViewController.swift in Sources */,
 				B13930341AEE30B700D682BD /* SidePaneViewController.swift in Sources */,
 				B1D80AE31AF9F84500A533DB /* WeiboRequest.m in Sources */,
+				B14FE31E1B22DDAF006A38A7 /* NSString+Additions.m in Sources */,
 				B1D80AE41AF9F84500A533DB /* WeiboRequestOperation.m in Sources */,
 				B14A4B8E1AEC7AE900498F9C /* DefaultConstants.swift in Sources */,
 			);
