@@ -19,7 +19,7 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
     var bottomRefreshControl = RefreshControl()
     var statuses: NSMutableArray?
     var users: NSMutableArray?
-    
+
     var query:WeiboRequestOperation? = WeiboRequestOperation()
     
     override func viewDidLoad() {
@@ -41,14 +41,16 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
         
         
         // register weibo cell
-        tableView.rowHeight = 600.0
+        tableView.rowHeight = 200.0
         tableView.registerNib(UINib(nibName: "WeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "WeiboTableViewCell")
         
         self.loadStatuses()
         
         
     }
-    
+    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -180,11 +182,13 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
         let cell = tableView.dequeueReusableCellWithIdentifier(kWeiboTableViewCell) as! WeiboTableViewCell
         if statuses != nil{
             var rowHeight:CGFloat = WEIBO_HEADER
+
             var status = statuses?.objectAtIndex(indexPath.row) as! Status
             // MARK: - original weibo data source
             // set weibo text
             cell.originalWeiboText.text = status.text
-            rowHeight += status.text.sizeWithConstrainedToWidth(ORIGINAL_TEXT_WIDTH, fromFont: UIFont.systemFontOfSize(ORIGINAL_FONT_SIZE), lineSpace: 0).height + 30.0
+            var originalTextSize = ausFrameSizeForText(cell.originalWeiboText, status.text, CGSizeMake(ORIGINAL_TEXT_WIDTH, CGFloat.max))
+            rowHeight += originalTextSize.height + 16.0
             
             // set created time
             cell.createdDate.text = status.statusTimeString()
@@ -212,7 +216,7 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
                 cell.imageViewContainerHeight.constant = 0
             }
             else{
-                rowHeight += originalWeiboImageWidth + 10.0
+                rowHeight += originalWeiboImageWidth + 8.0
                 
                 cell.imageViewContainer.hidden = false
                 cell.imageViewContainerHeight.constant = originalWeiboImageWidth
@@ -222,11 +226,13 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
                 for var i = 0 ; i < numberOfImages ; i++ {
                     var images = [cell.image1, cell.image2, cell.image3, cell.image4, cell.image5, cell.image6, cell.image7, cell.image8, cell.image9]
                     images[i].hidden = false
-                    var widthOfImageContainer: CGFloat = 40.0 + (originalWeiboImageWidth + 8) * CGFloat(numberOfImages)
+                    var widthOfImageContainer: CGFloat = (originalWeiboImageWidth + 8) * CGFloat(numberOfImages)
                     if numberOfImages <= 3{
-                        cell.imageViewContainerWidth.constant = widthOfImageContainer
+                        cell.imageViewContainerWidth.constant = widthOfImageContainer - 8.0
+                        cell.imageViewContainer.scrollEnabled = false
                     }else{
-                        cell.imageViewContainerWidth.constant = ScreenWidth + 12.0
+                        cell.imageViewContainerWidth.constant = ScreenWidth - 34.0
+                        cell.imageViewContainer.scrollEnabled = true
                     }
                     cell.imageViewContainer.contentSize = CGSize(width: widthOfImageContainer, height: originalWeiboImageWidth)
                     var statusImage: StatusImage! = status.images[numberOfImages - i - 1] as? StatusImage
@@ -257,10 +263,13 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
                     }else{
                         text = "\(retweetedWeiboText)"
                     }
-                    cell.retweetedWeiboText.text = text
-                    var textSize = text.sizeWithConstrainedToWidth(RETWEETED_TEXT_WIDTH, fromFont: UIFont.systemFontOfSize(RETWEETED_FONT_SIZE), lineSpace: 0)
-//                    var textSize = cell.retweetedWeiboText.frame.size.height
-                    rowHeight += textSize.height + 30.0
+               
+                    var retweetedLabel = cell.retweetedWeiboText
+                    retweetedLabel.text = text
+                    var textSize = ausFrameSizeForText(retweetedLabel, text, CGSizeMake(RETWEETED_TEXT_WIDTH, CGFloat.max))
+                    
+                    
+//                    rowHeight += textSize.height + 30.0
                     retweetedViewHeight += textSize.height + 16.0
                 }
                 
@@ -269,15 +278,16 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
                 for i in 0..<9 {
                     retweetedImages[i].hidden = true
                 }
-                //                println("numberOfRetweetedImages = \(numberOfRetweetedImages)")
                 if numberOfRetweetedImages == 0 {
                     cell.retweetedImageContainer.hidden = true
                     cell.retweetedImageContainerHeight.constant = 0
                     cell.retweetedContainerHeight.constant = retweetedViewHeight
                 }
                 else{
-                    rowHeight += retweetedWeiboImageWidth + 20.0
-//                    retweetedViewHeight += retweetedWeiboImageWidth + 16.0
+//                    rowHeight += retweetedWeiboImageWidth + 20.0
+                    retweetedViewHeight += retweetedWeiboImageWidth + 8.0
+                    cell.retweetedContainerHeight.constant = retweetedViewHeight
+
                     cell.retweetedImageContainer.hidden = false
                     cell.retweetedImageContainerHeight.constant = retweetedWeiboImageWidth
                     // back to default position when imageViewContainer appears again
@@ -286,11 +296,13 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
                     //                    println("\(cell.retweetedImageContainer.frame.maxY)")
                     for var i = 0 ; i < numberOfRetweetedImages ; i++ {
                         retweetedImages[i].hidden = false
-                        var widthOfRetweetedImageContainer: CGFloat = 55.0 + (retweetedWeiboImageWidth + 8) * CGFloat(numberOfRetweetedImages)
+                        var widthOfRetweetedImageContainer: CGFloat = (retweetedWeiboImageWidth + 8) * CGFloat(numberOfRetweetedImages)
                         if numberOfRetweetedImages <= 3{
-                            cell.retweetedImageContainerWidth.constant = widthOfRetweetedImageContainer
+                            cell.retweetedImageContainerWidth.constant = widthOfRetweetedImageContainer - 8.0
+                            cell.retweetedImageContainer.scrollEnabled = false
                         }else{
-                            cell.retweetedImageContainerWidth.constant = ScreenWidth + 16.0
+                            cell.retweetedImageContainerWidth.constant = ScreenWidth - 34.0
+                            cell.retweetedImageContainer.scrollEnabled = true
                         }
                         cell.retweetedImageContainer.contentSize = CGSize(width: widthOfRetweetedImageContainer, height: retweetedWeiboImageWidth)
                         var retweetedStatusImage: StatusImage! = retweetedStatus.images[numberOfRetweetedImages - i - 1] as? StatusImage
@@ -306,7 +318,6 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
                         //                        let maxY = retweetedImages.first?.frame.maxY
                         //                        cell.retweetedContainerHeight.constant = maxY!
                     }
-                    cell.retweetedContainerHeight.constant = retweetedViewHeight
                     
                 }
                 
@@ -322,15 +333,16 @@ class HomeViewController: UITableViewController,RefreshControlDelegate, NewWeibo
                 }
                 
             }
-//            tableView.rowHeight = rowHeight
-            tableView.rowHeight = 600
+//            rowHeight += retweetedViewHeight
+            tableView.rowHeight = rowHeight + retweetedViewHeight
+//            tableView.rowHeight = 600
             
             
         }
         return cell
     }
     
-    
+  
     func singleTapDidTap(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: DetailImageViewController = storyboard.instantiateViewControllerWithIdentifier("detailImageViewController") as! DetailImageViewController

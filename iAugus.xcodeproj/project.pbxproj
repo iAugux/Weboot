@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9FC510D0AFC6BD1A669B6D86 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C49906CFCFCC02648970BE5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B12F5A531B240C7600CAB2E6 /* UILabel+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12F5A521B240C7600CAB2E6 /* UILabel+Additions.swift */; };
 		B1374BC61AF65E7000C454B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1374BC51AF65E7000C454B7 /* Foundation.framework */; };
 		B1374BC81AF65E7D00C454B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1374BC71AF65E7D00C454B7 /* UIKit.framework */; };
 		B1374BD41AF65ED000C454B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1374BD31AF65ED000C454B7 /* CoreGraphics.framework */; };
@@ -36,9 +37,6 @@
 		B14A4B941AECB5EC00498F9C /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B931AECB5EC00498F9C /* FavoriteNavigationController.swift */; };
 		B14A4B961AECB60200498F9C /* AtNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B951AECB60200498F9C /* AtNavigationController.swift */; };
 		B14A4B981AECB61100498F9C /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */; };
-		B14FE31E1B22DDAF006A38A7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B14FE31D1B22DDAF006A38A7 /* NSString+Additions.m */; };
-		B14FE3211B2335C1006A38A7 /* VVeboLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B14FE3201B2335C1006A38A7 /* VVeboLabel.m */; };
-		B14FE3241B23362B006A38A7 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B14FE3231B23362B006A38A7 /* UIView+Additions.m */; };
 		B15D00F31AF9D8DA00F0C92F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */; };
 		B15D00F51AF9D8E600F0C92F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */; };
 		B16953981B0F1AEF00E81A2D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */; };
@@ -91,6 +89,7 @@
 /* Begin PBXFileReference section */
 		4C49906CFCFCC02648970BE5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6052A341134E97ACEDB5DD2F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B12F5A521B240C7600CAB2E6 /* UILabel+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Additions.swift"; sourceTree = "<group>"; };
 		B1374BBC1AF65D0D00C454B7 /* iAugus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iAugus-Bridging-Header.h"; sourceTree = "<group>"; };
 		B1374BC51AF65E7000C454B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B1374BC71AF65E7D00C454B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -124,12 +123,6 @@
 		B14A4B931AECB5EC00498F9C /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B951AECB60200498F9C /* AtNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
-		B14FE31C1B22DDAF006A38A7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
-		B14FE31D1B22DDAF006A38A7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
-		B14FE31F1B2335C1006A38A7 /* VVeboLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVeboLabel.h; sourceTree = "<group>"; };
-		B14FE3201B2335C1006A38A7 /* VVeboLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVeboLabel.m; sourceTree = "<group>"; };
-		B14FE3221B23362B006A38A7 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
-		B14FE3231B23362B006A38A7 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
@@ -382,12 +375,7 @@
 		B14FE3181B22DC4A006A38A7 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
-				B14FE31F1B2335C1006A38A7 /* VVeboLabel.h */,
-				B14FE3201B2335C1006A38A7 /* VVeboLabel.m */,
-				B14FE3221B23362B006A38A7 /* UIView+Additions.h */,
-				B14FE3231B23362B006A38A7 /* UIView+Additions.m */,
-				B14FE31C1B22DDAF006A38A7 /* NSString+Additions.h */,
-				B14FE31D1B22DDAF006A38A7 /* NSString+Additions.m */,
+				B12F5A521B240C7600CAB2E6 /* UILabel+Additions.swift */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -680,8 +668,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B14FE3241B23362B006A38A7 /* UIView+Additions.m in Sources */,
 				B1D80AF71AF9F84500A533DB /* WeiboLoginDialog.m in Sources */,
+				B12F5A531B240C7600CAB2E6 /* UILabel+Additions.swift in Sources */,
 				B1D80AEB1AF9F84500A533DB /* User.m in Sources */,
 				B1D80AF31AF9F84500A533DB /* Resources.m in Sources */,
 				B14A4B701AEBDAB100498F9C /* HomeViewController.swift in Sources */,
@@ -702,7 +690,6 @@
 				B1D80AE51AF9F84500A533DB /* WeiboSignIn.m in Sources */,
 				B14A4B741AEBDAEB00498F9C /* CommentViewController.swift in Sources */,
 				B1DB61041B1F342300A6E44D /* RefreshControl.m in Sources */,
-				B14FE3211B2335C1006A38A7 /* VVeboLabel.m in Sources */,
 				B14A4B401AEBBA8E00498F9C /* AppDelegate.swift in Sources */,
 				B1C213CB1B0642F700BDB8E6 /* NewWeiboViewController.swift in Sources */,
 				B16CE53C1B01134000D8AAB0 /* RetweetedTableViewCell.swift in Sources */,
@@ -725,7 +712,6 @@
 				B14A4B7C1AEBDBA000498F9C /* ProfileViewController.swift in Sources */,
 				B13930341AEE30B700D682BD /* SidePaneViewController.swift in Sources */,
 				B1D80AE31AF9F84500A533DB /* WeiboRequest.m in Sources */,
-				B14FE31E1B22DDAF006A38A7 /* NSString+Additions.m in Sources */,
 				B1D80AE41AF9F84500A533DB /* WeiboRequestOperation.m in Sources */,
 				B14A4B8E1AEC7AE900498F9C /* DefaultConstants.swift in Sources */,
 			);

@@ -45,23 +45,23 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baj-nr-D2D" userLabel="Image Container" customClass="UIScrollView">
-                        <rect key="frame" x="-8" y="88" width="320" height="110"/>
+                        <rect key="frame" x="18" y="88" width="320" height="110"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="320" id="Lg8-cn-roV"/>
                             <constraint firstAttribute="height" constant="110" id="bJL-Ec-ZtZ"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hx-m8-M7e" userLabel="retweeted container">
-                        <rect key="frame" x="-8" y="198" width="336" height="142"/>
+                        <rect key="frame" x="0.0" y="198" width="320" height="142"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="retweeted weibo text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U2-yH-BzZ">
-                                <rect key="frame" x="30" y="8" width="283" height="18"/>
+                                <rect key="frame" x="16" y="8" width="288" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x23-V5-Tnd" userLabel="retweeted image container" customClass="UIScrollView">
-                                <rect key="frame" x="1" y="34" width="334" height="80"/>
+                                <rect key="frame" x="18" y="34" width="334" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="334" id="3Tp-S3-kCy"/>
                                     <constraint firstAttribute="height" constant="80" id="ex5-Rd-t4d"/>
@@ -70,18 +70,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.19" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="x23-V5-Tnd" firstAttribute="leading" secondItem="6Hx-m8-M7e" secondAttribute="leading" constant="1" id="Py2-1r-Fh3"/>
-                            <constraint firstAttribute="trailing" secondItem="4U2-yH-BzZ" secondAttribute="trailing" constant="23" id="fbB-zO-CeI"/>
+                            <constraint firstAttribute="trailing" secondItem="4U2-yH-BzZ" secondAttribute="trailing" constant="16" id="6BS-JL-h6u"/>
+                            <constraint firstItem="x23-V5-Tnd" firstAttribute="leading" secondItem="6Hx-m8-M7e" secondAttribute="leading" constant="18" id="Py2-1r-Fh3"/>
                             <constraint firstItem="4U2-yH-BzZ" firstAttribute="top" secondItem="6Hx-m8-M7e" secondAttribute="top" constant="8" id="haK-ZV-sLm"/>
                             <constraint firstAttribute="height" constant="142" id="uPJ-sX-01k"/>
-                            <constraint firstItem="4U2-yH-BzZ" firstAttribute="leading" secondItem="6Hx-m8-M7e" secondAttribute="leading" constant="30" id="uQw-tT-XIZ"/>
+                            <constraint firstItem="4U2-yH-BzZ" firstAttribute="leading" secondItem="6Hx-m8-M7e" secondAttribute="leading" constant="16" id="uQw-tT-XIZ"/>
                             <constraint firstItem="x23-V5-Tnd" firstAttribute="top" secondItem="4U2-yH-BzZ" secondAttribute="bottom" constant="8" id="uV4-8o-0hd"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ZnO-FH-Psx" firstAttribute="top" secondItem="IyH-ho-lNI" secondAttribute="top" constant="-25" id="6S5-FG-fys"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="6Hx-m8-M7e" secondAttribute="trailing" constant="-16" id="83n-nG-3Pn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="6Hx-m8-M7e" secondAttribute="trailing" constant="-8" id="83n-nG-3Pn"/>
                     <constraint firstItem="6Hx-m8-M7e" firstAttribute="top" secondItem="baj-nr-D2D" secondAttribute="bottom" id="88o-ll-KhG"/>
                     <constraint firstItem="ZnO-FH-Psx" firstAttribute="top" secondItem="rri-BP-UX2" secondAttribute="topMargin" constant="4" id="Civ-72-5r6"/>
                     <constraint firstItem="QnS-Lj-Zn4" firstAttribute="leading" secondItem="IyH-ho-lNI" secondAttribute="trailing" constant="12" id="Jb4-DN-Zbf"/>
@@ -92,9 +92,9 @@
                     <constraint firstItem="XJ3-e2-dCp" firstAttribute="trailing" secondItem="rri-BP-UX2" secondAttribute="trailingMargin" constant="-2" id="XUW-FP-Q7A"/>
                     <constraint firstItem="XJ3-e2-dCp" firstAttribute="top" secondItem="ZnO-FH-Psx" secondAttribute="bottom" constant="8" id="XxB-qm-dqM"/>
                     <constraint firstItem="gsG-1w-hbp" firstAttribute="leading" secondItem="ZnO-FH-Psx" secondAttribute="trailing" constant="20" id="bZs-Jq-uqK"/>
-                    <constraint firstItem="6Hx-m8-M7e" firstAttribute="leading" secondItem="rri-BP-UX2" secondAttribute="leadingMargin" constant="-16" id="qS6-EC-gvc"/>
+                    <constraint firstItem="6Hx-m8-M7e" firstAttribute="leading" secondItem="rri-BP-UX2" secondAttribute="leadingMargin" constant="-8" id="qS6-EC-gvc"/>
                     <constraint firstItem="ZnO-FH-Psx" firstAttribute="top" secondItem="gsG-1w-hbp" secondAttribute="top" constant="-1" id="umO-Qc-qXk"/>
-                    <constraint firstItem="baj-nr-D2D" firstAttribute="leading" secondItem="rri-BP-UX2" secondAttribute="leadingMargin" constant="-16" id="yga-so-Rvu"/>
+                    <constraint firstItem="baj-nr-D2D" firstAttribute="leading" secondItem="rri-BP-UX2" secondAttribute="leadingMargin" constant="10" id="yga-so-Rvu"/>
                     <constraint firstItem="QnS-Lj-Zn4" firstAttribute="top" secondItem="IyH-ho-lNI" secondAttribute="top" id="z0G-3F-xid"/>
                 </constraints>
             </tableViewCellContentView>

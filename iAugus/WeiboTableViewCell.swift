@@ -14,7 +14,7 @@ class WeiboTableViewCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var screenName: UILabel!
 //    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var originalWeiboText: VVeboLabel!
+    @IBOutlet weak var originalWeiboText: UILabel!
     @IBOutlet weak var createdDate: UILabel!
     @IBOutlet weak var weiboSource: UILabel!
     @IBOutlet var imageViewContainerWidth: NSLayoutConstraint!
@@ -22,7 +22,7 @@ class WeiboTableViewCell: UITableViewCell {
     @IBOutlet var imageViewContainerHeight: NSLayoutConstraint!
     
     @IBOutlet var retweetedContainerHeight: NSLayoutConstraint!
-    @IBOutlet var retweetedWeiboText: VVeboLabel!
+    @IBOutlet var retweetedWeiboText: UILabel!
     @IBOutlet var retweetedImageContainer: UIScrollView!
     @IBOutlet var retweetedImageContainerHeight: NSLayoutConstraint!
     @IBOutlet var retweetedImageContainerWidth: NSLayoutConstraint!
@@ -52,6 +52,8 @@ class WeiboTableViewCell: UITableViewCell {
         super.awakeFromNib()
         initControllers()
      
+//        originalWeiboText.adjustsFontSizeToFitWidth = false
+//        retweetedWeiboText.adjustsFontSizeToFitWidth = false
     }
    
     func initControllers(){
@@ -88,7 +90,7 @@ class WeiboTableViewCell: UITableViewCell {
         // set image array
         var images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
         for var index = 0; index < 9; index++ {
-            var image_x: CGFloat = 27.0 + (originalWeiboImageWidth + 8) * CGFloat(index)
+            var image_x: CGFloat = (originalWeiboImageWidth + 8) * CGFloat(index)
             images[index].frame = CGRectMake(image_x, 0, originalWeiboImageWidth, originalWeiboImageWidth)
             images[index].contentMode = UIViewContentMode.ScaleAspectFill
             images[index].clipsToBounds = true
@@ -107,7 +109,7 @@ class WeiboTableViewCell: UITableViewCell {
         retweetedImageContainer.showsHorizontalScrollIndicator = false
         var retweetedImages = [retweetedImage1, retweetedImage2, retweetedImage3, retweetedImage4, retweetedImage5, retweetedImage6, retweetedImage7, retweetedImage8, retweetedImage9]
         for var index = 0; index < 9; index++ {
-            var image_x: CGFloat = 33.0 + (retweetedWeiboImageWidth + 8) * CGFloat(index)
+            var image_x: CGFloat = (retweetedWeiboImageWidth + 8) * CGFloat(index)
             retweetedImages[index].frame = CGRectMake(image_x, 0, retweetedWeiboImageWidth, retweetedWeiboImageWidth)
             retweetedImages[index].contentMode = UIViewContentMode.ScaleAspectFill
             retweetedImages[index].clipsToBounds = true

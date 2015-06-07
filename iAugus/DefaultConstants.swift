@@ -36,10 +36,10 @@ let retweetedWeiboImageWidth: CGFloat = 90.0
 var RETWEETED_FONT_SIZE: CGFloat = 15.0
 
 // set size of retweeted weibo text width
-var RETWEETED_TEXT_WIDTH: Float = 283
+var RETWEETED_TEXT_WIDTH: CGFloat = 288.0
 
 var ORIGINAL_FONT_SIZE: CGFloat = 17.0
 
-var ORIGINAL_TEXT_WIDTH: Float = 294.0
+var ORIGINAL_TEXT_WIDTH: CGFloat = 294.0
 
 var WEIBO_HEADER: CGFloat = 52.0
