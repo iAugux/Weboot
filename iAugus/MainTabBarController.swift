@@ -10,18 +10,31 @@ import UIKit
 
 
 class MainTabBarController: UITabBarController {
-    
+
+    var mainVCBackgrounderButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        initViewController()
+        self.changeStatusBarColorOnSwipe()
+
+        self.tabBar.frame = CGRectMake(0 , kScreenHeight - 46 , kScreenWidth ,46)
         
         // set defalut viewController of TabBarViewController
         self.selectedIndex = 2
         
-        doubleClickTarBarToRefresh()
+        
+        
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+            mainVCBackgrounderButton?.frame = self.view.frame
+
     }
     
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+    }
     private func initViewController(){
         let homeViewController = HomeViewController()
         let commentViewController = CommentViewController()
@@ -31,19 +44,16 @@ class MainTabBarController: UITabBarController {
         
     }
  
-    func doubleClickTarBarToRefresh(){
-        if tabBarItem == self.selectedIndex {
-            
-
-        }
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "beginToRefresh")
-        tapGesture.numberOfTapsRequired = 2
-        
-    }
+    // after swiping, navigation bar has  been hidden, but background color of status bar is clearColor, so I need to set status bar' color to blur
+    func changeStatusBarColorOnSwipe(){
+        let statusBarView: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, kScreenWidth, 22))
+        statusBarView.barStyle = UIBarStyle.Default
+//        statusBarView.barTintColor = UIColor.redColor()
     
-    func beginToRefresh(){
-        println("double Clicked")
+        self.view.addSubview(statusBarView)
     }
+   
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
