@@ -6,12 +6,6 @@
 // project.
 
 
-// GearRefreshControl
-#define COCOAPODS_POD_AVAILABLE_GearRefreshControl
-#define COCOAPODS_VERSION_MAJOR_GearRefreshControl 0
-#define COCOAPODS_VERSION_MINOR_GearRefreshControl 1
-#define COCOAPODS_VERSION_PATCH_GearRefreshControl 0
-
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3

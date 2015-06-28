@@ -1,15 +1,12 @@
 PODS:
-  - GearRefreshControl (0.1)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
 
 DEPENDENCIES:
-  - GearRefreshControl (~> 0.1)
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
-  GearRefreshControl: c9c3531449560152f2834579fb059615db24a77f
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
 COCOAPODS: 0.37.2

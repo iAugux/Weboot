@@ -31,7 +31,7 @@ class RefreshBaseView: UIView {
     var scrollViewOriginalInset:UIEdgeInsets!
     
     // 内部的控件
-    var statusLabel:UILabel!
+//    var statusLabel:UILabel!
     var arrowImage:UIImageView!
     var activityView:UIActivityIndicatorView!
     
@@ -62,10 +62,12 @@ class RefreshBaseView: UIView {
         }
         switch newValue {
         case .Normal:
-            self.arrowImage.hidden = false
-            self.activityView.stopAnimating()
+            self.arrowImage.hidden = true
+//            self.activityView.stopAnimating()
             break
         case .Pulling:
+            self.arrowImage.hidden = true
+            activityView.startAnimating()
             break
         case .Refreshing:
             self.arrowImage.hidden = true
@@ -85,10 +87,20 @@ class RefreshBaseView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
        
-
+        
+//        //状态标签
+//        statusLabel = UILabel()
+//        statusLabel.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+//        statusLabel.font = UIFont.boldSystemFontOfSize(13)
+//        statusLabel.textColor = RefreshLabelTextColor
+//        statusLabel.backgroundColor =  UIColor.clearColor()
+//        statusLabel.textAlignment = NSTextAlignment.Center
+//        self.addSubview(statusLabel)
+        
+        
         //箭头图片
         arrowImage = UIImageView(image: UIImage(named: "arrow.png"))
-        arrowImage.autoresizingMask = UIViewAutoresizing.FlexibleLeftMargin |  UIViewAutoresizing.FlexibleRightMargin
+        arrowImage.autoresizingMask = [UIViewAutoresizing.FlexibleLeftMargin, UIViewAutoresizing.FlexibleRightMargin]
         self.addSubview(arrowImage)
         //状态标签
         activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
@@ -114,6 +126,8 @@ class RefreshBaseView: UIView {
          //箭头
         let arrowX:CGFloat = self.frame.size.width * 0.5
         self.arrowImage.center = CGPointMake(arrowX, self.frame.size.height * 0.5)
+        
+        self.arrowImage.hidden = true
         //指示器
         self.activityView.center = self.arrowImage.center
     }
@@ -173,7 +187,7 @@ class RefreshBaseView: UIView {
     //结束刷新
     func endRefreshing(){
         let delayInSeconds:Double = 0.3
-        var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds));
+        let popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds));
         
         dispatch_after(popTime, dispatch_get_main_queue(), {
             self.State = RefreshState.Normal;
