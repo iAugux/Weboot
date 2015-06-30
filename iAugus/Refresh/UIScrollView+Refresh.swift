@@ -11,9 +11,9 @@ import UIKit
 
 
 extension UIScrollView {
-           
+    
    func addFooterWithCallback( callback:(() -> Void)!){
-        let footer:RefreshFooterView = RefreshFooterView.footer()
+        var footer:RefreshFooterView = RefreshFooterView.footer()
       
         self.addSubview(footer)
         footer.beginRefreshingCallback = callback
@@ -57,7 +57,7 @@ extension UIScrollView {
     {
         for object : AnyObject in self.subviews{
             if object is RefreshFooterView{
-                let view:UIView  = object as! UIView
+                var view:UIView  = object as! UIView
                 view.hidden = hidden
             }
         }
@@ -68,7 +68,7 @@ extension UIScrollView {
     {
         for object : AnyObject in self.subviews{
             if object is RefreshFooterView{
-                let view:UIView  = object as! UIView
+                var view:UIView  = object as! UIView
                 view.hidden = hidden
             }
         }

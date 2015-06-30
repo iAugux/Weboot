@@ -9,7 +9,7 @@
 import UIKit
 class RefreshFooterView: RefreshBaseView {
     class func footer()->RefreshFooterView{
-        let footer:RefreshFooterView  = RefreshFooterView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width,
+        var footer:RefreshFooterView  = RefreshFooterView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width,
             CGFloat(RefreshViewHeight)))
         
         return footer
@@ -32,21 +32,21 @@ class RefreshFooterView: RefreshBaseView {
     
     //重写调整frame
     func adjustFrameWithContentSize(){
-        let contentHeight:CGFloat = self.scrollView.contentSize.height//
-        let scrollHeight:CGFloat = self.scrollView.frame.size.height  - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom
+        var contentHeight:CGFloat = self.scrollView.contentSize.height//
+        var scrollHeight:CGFloat = self.scrollView.frame.size.height  - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom
         var rect:CGRect = self.frame;
         rect.origin.y =  contentHeight > scrollHeight ? contentHeight : scrollHeight
         self.frame = rect;
     }
     
     //监听UIScrollView的属性
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [NSObject : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         if (!self.userInteractionEnabled || self.hidden){
             return
         }
-        if RefreshContentSize.isEqualToString(keyPath!){
+        if RefreshContentSize.isEqualToString(keyPath){
             adjustFrameWithContentSize()
-        }else if RefreshContentOffset.isEqualToString(keyPath!) {
+        }else if RefreshContentOffset.isEqualToString(keyPath) {
             if self.State == RefreshState.Refreshing{
                 return
             }
@@ -56,13 +56,13 @@ class RefreshFooterView: RefreshBaseView {
     
     func adjustStateWithContentOffset()
     {
-        let currentOffsetY:CGFloat  = self.scrollView.contentOffset.y
-        let happenOffsetY:CGFloat = self.happenOffsetY()
+        var currentOffsetY:CGFloat  = self.scrollView.contentOffset.y
+        var happenOffsetY:CGFloat = self.happenOffsetY()
         if currentOffsetY <= happenOffsetY {
             return
         }
         if self.scrollView.dragging {
-            let normal2pullingOffsetY =  happenOffsetY + self.frame.size.height
+            var normal2pullingOffsetY =  happenOffsetY + self.frame.size.height
             if self.State == RefreshState.Normal && currentOffsetY > normal2pullingOffsetY {
                 self.State = RefreshState.Pulling;
             } else if (self.State == RefreshState.Pulling && currentOffsetY <= normal2pullingOffsetY) {
@@ -96,8 +96,8 @@ class RefreshFooterView: RefreshBaseView {
                         self.arrowImage.transform = CGAffineTransformMakeRotation(CGFloat(M_PI));
                     })
                 }
-                let deltaH:CGFloat = self.heightForContentBreakView()
-                let currentCount:Int = self.totalDataCountInScrollView()
+                var deltaH:CGFloat = self.heightForContentBreakView()
+                var currentCount:Int = self.totalDataCountInScrollView()
                 if (RefreshState.Refreshing == oldState && deltaH > 0  && currentCount != self.lastRefreshCount) {
                     var offset:CGPoint = self.scrollView.contentOffset;
                     offset.y = self.scrollView.contentOffset.y
@@ -114,7 +114,7 @@ class RefreshFooterView: RefreshBaseView {
                 self.lastRefreshCount = self.totalDataCountInScrollView();
                 UIView.animateWithDuration(RefreshSlowAnimationDuration, animations: {
                     var bottom:CGFloat = self.frame.size.height + self.scrollViewOriginalInset.bottom
-                    let deltaH:CGFloat = self.heightForContentBreakView()
+                    var deltaH:CGFloat = self.heightForContentBreakView()
                     if deltaH < 0 {
                         bottom = bottom - deltaH
                     }
@@ -137,14 +137,14 @@ class RefreshFooterView: RefreshBaseView {
     {
         var totalCount:Int = 0
         if self.scrollView is UITableView {
-            let tableView:UITableView = self.scrollView as! UITableView
+            var tableView:UITableView = self.scrollView as! UITableView
             
-            for (var i:Int = 0 ; i <  tableView.numberOfSections ; i++){
+            for (var i:Int = 0 ; i <  tableView.numberOfSections() ; i++){
                 totalCount = totalCount + tableView.numberOfRowsInSection(i)
                 
             }
         } else if self.scrollView is UICollectionView{
-            let collectionView:UICollectionView = self.scrollView as! UICollectionView
+            var collectionView:UICollectionView = self.scrollView as! UICollectionView
             for (var i:Int = 0 ; i <  collectionView.numberOfSections() ; i++){
                 totalCount = totalCount + collectionView.numberOfItemsInSection(i)
                 
@@ -155,14 +155,14 @@ class RefreshFooterView: RefreshBaseView {
     
     func heightForContentBreakView()->CGFloat
     {
-        let h:CGFloat  = self.scrollView.frame.size.height - self.scrollViewOriginalInset.bottom - self.scrollViewOriginalInset.top;
+        var h:CGFloat  = self.scrollView.frame.size.height - self.scrollViewOriginalInset.bottom - self.scrollViewOriginalInset.top;
         return self.scrollView.contentSize.height - h;
     }
     
     
     func happenOffsetY()->CGFloat
     {
-        let deltaH:CGFloat = self.heightForContentBreakView()
+        var deltaH:CGFloat = self.heightForContentBreakView()
         if deltaH > 0 {
             return   deltaH - self.scrollViewOriginalInset.top;
         } else {

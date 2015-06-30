@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="onb-pg-Hkz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="onb-pg-Hkz">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -231,7 +230,7 @@
         <!--HomeNavigationControllerScene-->
         <scene sceneID="opw-ye-hEh">
             <objects>
-                <navigationController title="HomeNavigationControllerScene" automaticallyAdjustsScrollViewInsets="NO" id="RUE-9Q-Vql" customClass="HomeNavigationController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="HomeNavigationControllerScene" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="RUE-9Q-Vql" customClass="HomeNavigationController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_user_home_selected" id="BtN-Iw-UYi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7C2-Up-7Fd">
@@ -428,4 +427,9 @@
         <image name="tab_user_home_selected" width="30" height="30"/>
         <image name="tab_user_message_selected" width="30" height="24"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

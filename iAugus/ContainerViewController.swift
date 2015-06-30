@@ -189,7 +189,7 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate{
         }
     }
     // close left panel
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         if leftViewController != nil{
             animateLeftPanel(false)
             self.centerVCFrontBlurView.hidden = true
