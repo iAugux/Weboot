@@ -35,7 +35,7 @@ class DetailImageViewController: UIViewController {
     }
     
     func singleTap(){
-        print("detail image view tapped")
+        println("detail image view tapped")
         self.dismissViewControllerAnimated(true, completion: nil)
         tabBarController?.tabBar.becomeFirstResponder()
     }
