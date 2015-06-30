@@ -94,8 +94,8 @@ class WeiboTableViewCell: UITableViewCell {
             images[index].frame = CGRectMake(image_x, 0, kOriginalWeiboImageWidth, kOriginalWeiboImageWidth)
             images[index].contentMode = UIViewContentMode.ScaleAspectFill
             images[index].clipsToBounds = true
-            var imageArray: NSMutableArray?
-            imageArray?.addObject(images[index])
+            var imageArray = NSMutableArray()
+            imageArray.addObject(images[index])
             
             imageViewContainer.addSubview(images[index])
             
@@ -113,8 +113,8 @@ class WeiboTableViewCell: UITableViewCell {
             retweetedImages[index].frame = CGRectMake(image_x, 0, kRetweetedWeiboImageWidth, kRetweetedWeiboImageWidth)
             retweetedImages[index].contentMode = UIViewContentMode.ScaleAspectFill
             retweetedImages[index].clipsToBounds = true
-            var imageArray: NSMutableArray?
-            imageArray?.addObject(retweetedImages[index])
+            var imageArray = NSMutableArray()
+            imageArray.addObject(retweetedImages[index])
             
             retweetedImageContainer.addSubview(retweetedImages[index])
             
