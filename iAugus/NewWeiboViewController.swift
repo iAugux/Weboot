@@ -36,7 +36,7 @@ class NewWeiboViewController: UIViewController{
         let picData: NSData = NSData()
         query = Weibo.getWeibo().newStatus(status as String, pic: picData, completed: { data, error in
             if error != nil{
-                println(error)
+                print(error)
             }
             else{
                 self.delegate.postNewWeibo(self)
@@ -48,7 +48,7 @@ class NewWeiboViewController: UIViewController{
     }
     
     // MARK: - close keyboard after touching out of textfield
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         newWeiboCanceled.resignFirstResponder()
     }
     

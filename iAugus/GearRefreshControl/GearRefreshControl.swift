@@ -95,8 +95,8 @@ public class GearRefreshControl: UIRefreshControl {
         var refreshBounds = self.bounds;
     
         // Distance the table has been pulled
-        var pullDistance = max(0.0, -self.frame.origin.y);
-        var pullRatio = min(max(pullDistance, 0.0), 140.0) / 140.0;
+        let pullDistance = max(0.0, -self.frame.origin.y);
+        let pullRatio = min(max(pullDistance, 0.0), 140.0) / 140.0;
         
         overlayView.alpha = 1 - pullRatio
         
@@ -176,7 +176,7 @@ private class BigGear: UIView {
 
         let bigGear: CGRect = CGRectMake(rect.minX, rect.minY, rect.width - 0.03, rect.height)
 
-        var rectangle14Path = UIBezierPath()
+        let rectangle14Path = UIBezierPath()
         rectangle14Path.moveToPoint(CGPointMake(bigGear.minX + 0.54057 * bigGear.width, bigGear.minY + 0.08763 * bigGear.height))
         rectangle14Path.addLineToPoint(CGPointMake(bigGear.minX + 0.52246 * bigGear.width, bigGear.minY + 0.00000 * bigGear.height))
         rectangle14Path.addLineToPoint(CGPointMake(bigGear.minX + 0.47754 * bigGear.width, bigGear.minY + 0.00000 * bigGear.height))
@@ -269,7 +269,7 @@ private class MainGear : UIView {
 
         let centerGear: CGRect = CGRectMake(rect.minX, rect.minY, rect.width + 0.42, rect.height)
 
-        var rectangle1Path = UIBezierPath()
+        let rectangle1Path = UIBezierPath()
         rectangle1Path.moveToPoint(CGPointMake(centerGear.minX + 0.58954 * centerGear.width, centerGear.minY + 0.11232 * centerGear.height))
         rectangle1Path.addLineToPoint(CGPointMake(centerGear.minX + 0.56841 * centerGear.width, centerGear.minY + 0.00000 * centerGear.height))
         rectangle1Path.addLineToPoint(CGPointMake(centerGear.minX + 0.42589 * centerGear.width, centerGear.minY + 0.00000 * centerGear.height))

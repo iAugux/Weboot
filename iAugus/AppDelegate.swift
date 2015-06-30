@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // SlideMenu
         application.statusBarStyle = .LightContent
         let containerViewController = ContainerViewController()
-        var homeNav = storyboard.instantiateViewControllerWithIdentifier("homeNav") as! UINavigationController
+        let homeNav = storyboard.instantiateViewControllerWithIdentifier("homeNav") as! UINavigationController
         homeNav.viewControllers[0] = containerViewController
         homeNav.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = homeNav

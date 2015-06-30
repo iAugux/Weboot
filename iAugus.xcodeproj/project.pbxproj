@@ -43,11 +43,20 @@
 		B14A4B981AECB61100498F9C /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B971AECB61100498F9C /* ProfileNavigationController.swift */; };
 		B152118C1B3E89A80030A000 /* GearRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B152118B1B3E89A80030A000 /* GearRefreshControl.swift */; };
 		B15211901B3E89B00030A000 /* JDFPeekabooCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = B152118F1B3E89B00030A000 /* JDFPeekabooCoordinator.m */; };
+<<<<<<< HEAD
+=======
+		B15211931B3E8E3C0030A000 /* fruit_animation@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = B15211921B3E8E3C0030A000 /* fruit_animation@2x.gif */; };
+>>>>>>> origin/master
 		B15D00F31AF9D8DA00F0C92F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */; };
 		B15D00F51AF9D8E600F0C92F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */; };
 		B16953981B0F1AEF00E81A2D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */; };
 		B16CE53A1B01134000D8AAB0 /* WeiboTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16CE5361B01134000D8AAB0 /* WeiboTableViewCell.swift */; };
 		B16CE53B1B01134000D8AAB0 /* WeiboTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16CE5371B01134000D8AAB0 /* WeiboTableViewCell.xib */; };
+<<<<<<< HEAD
+=======
+		B16CE53C1B01134000D8AAB0 /* RetweetedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */; };
+		B16CE53D1B01134000D8AAB0 /* RetweetedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */; };
+>>>>>>> origin/master
 		B1C213C91B063A7A00BDB8E6 /* DetailTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */; };
 		B1C213CB1B0642F700BDB8E6 /* NewWeiboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */; };
 		B1D80AE21AF9F84500A533DB /* WeiboAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D80AB21AF9F84500A533DB /* WeiboAccounts.m */; };
@@ -129,12 +138,22 @@
 		B152118B1B3E89A80030A000 /* GearRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GearRefreshControl.swift; sourceTree = "<group>"; };
 		B152118E1B3E89B00030A000 /* JDFPeekabooCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFPeekabooCoordinator.h; sourceTree = "<group>"; };
 		B152118F1B3E89B00030A000 /* JDFPeekabooCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFPeekabooCoordinator.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		B15211921B3E8E3C0030A000 /* fruit_animation@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fruit_animation@2x.gif"; sourceTree = "<group>"; };
+>>>>>>> origin/master
 		B15D00F21AF9D8DA00F0C92F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B15D00F41AF9D8E600F0C92F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B16953971B0F1AEF00E81A2D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
 		B16CE5361B01134000D8AAB0 /* WeiboTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiboTableViewCell.swift; sourceTree = "<group>"; };
 		B16CE5371B01134000D8AAB0 /* WeiboTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeiboTableViewCell.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		B1819A4F1B079F2E00E66D0D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = iAugus/MyPlayground.playground; sourceTree = "<group>"; };
+=======
+		B16CE5381B01134000D8AAB0 /* RetweetedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetedTableViewCell.swift; sourceTree = "<group>"; };
+		B16CE5391B01134000D8AAB0 /* RetweetedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetweetedTableViewCell.xib; sourceTree = "<group>"; };
+		B1819A4F1B079F2E00E66D0D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+>>>>>>> origin/master
 		B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTimelineViewController.swift; sourceTree = "<group>"; };
 		B1C213CA1B0642F700BDB8E6 /* NewWeiboViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWeiboViewController.swift; sourceTree = "<group>"; };
 		B1D80AB11AF9F84500A533DB /* WeiboAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboAccounts.h; sourceTree = "<group>"; };
@@ -405,6 +424,10 @@
 		B15211911B3E8E190030A000 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				B15211921B3E8E3C0030A000 /* fruit_animation@2x.gif */,
+>>>>>>> origin/master
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -562,7 +585,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Augus;
 				TargetAttributes = {
 					B14A4B391AEBBA8E00498F9C = {
@@ -605,7 +628,13 @@
 				B14A4B871AEBEEAA00498F9C /* AtViewController.xib in Resources */,
 				B14A4B451AEBBA8E00498F9C /* Main.storyboard in Resources */,
 				B14A4B4A1AEBBA8E00498F9C /* LaunchScreen.xib in Resources */,
+<<<<<<< HEAD
 				B10222BF1B3EF2FF00C8D8AC /* arrow@2x.png in Resources */,
+=======
+				B16CE53D1B01134000D8AAB0 /* RetweetedTableViewCell.xib in Resources */,
+				B10222BF1B3EF2FF00C8D8AC /* arrow@2x.png in Resources */,
+				B15211931B3E8E3C0030A000 /* fruit_animation@2x.gif in Resources */,
+>>>>>>> origin/master
 				B14A4B831AEBEE9600498F9C /* FavoriteViewController.xib in Resources */,
 				B14A4B471AEBBA8E00498F9C /* Images.xcassets in Resources */,
 			);
@@ -783,6 +812,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -800,7 +830,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -841,7 +871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -868,8 +898,10 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
+					"$(inherited)",
 				);
 				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iAugus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iAugus/iAugus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -898,8 +930,10 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
+					"$(inherited)",
 				);
 				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iAugus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iAugus/iAugus-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -921,6 +955,7 @@
 				);
 				INFOPLIST_FILE = iAugusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.augus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iAugus.app/iAugus";
 			};
@@ -936,6 +971,7 @@
 				);
 				INFOPLIST_FILE = iAugusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.augus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iAugus.app/iAugus";
 			};

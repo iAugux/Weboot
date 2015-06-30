@@ -90,11 +90,15 @@ class WeiboTableViewCell: UITableViewCell {
         // set image array
         var images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
         for var index = 0; index < 9; index++ {
-            var image_x: CGFloat = (kOriginalWeiboImageWidth + 8) * CGFloat(index)
+            let image_x: CGFloat = (kOriginalWeiboImageWidth + 8) * CGFloat(index)
             images[index].frame = CGRectMake(image_x, 0, kOriginalWeiboImageWidth, kOriginalWeiboImageWidth)
             images[index].contentMode = UIViewContentMode.ScaleAspectFill
             images[index].clipsToBounds = true
+<<<<<<< HEAD
             var imageArray = NSMutableArray()
+=======
+            let imageArray = NSMutableArray()
+>>>>>>> origin/master
             imageArray.addObject(images[index])
             
             imageViewContainer.addSubview(images[index])
@@ -109,11 +113,15 @@ class WeiboTableViewCell: UITableViewCell {
         retweetedImageContainer.showsHorizontalScrollIndicator = false
         var retweetedImages = [retweetedImage1, retweetedImage2, retweetedImage3, retweetedImage4, retweetedImage5, retweetedImage6, retweetedImage7, retweetedImage8, retweetedImage9]
         for var index = 0; index < 9; index++ {
-            var image_x: CGFloat = (kRetweetedWeiboImageWidth + 8) * CGFloat(index)
+            let image_x: CGFloat = (kRetweetedWeiboImageWidth + 8) * CGFloat(index)
             retweetedImages[index].frame = CGRectMake(image_x, 0, kRetweetedWeiboImageWidth, kRetweetedWeiboImageWidth)
             retweetedImages[index].contentMode = UIViewContentMode.ScaleAspectFill
             retweetedImages[index].clipsToBounds = true
+<<<<<<< HEAD
             var imageArray = NSMutableArray()
+=======
+            let imageArray = NSMutableArray()
+>>>>>>> origin/master
             imageArray.addObject(retweetedImages[index])
             
             retweetedImageContainer.addSubview(retweetedImages[index])
