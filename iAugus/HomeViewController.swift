@@ -7,16 +7,11 @@
 //
 
 import UIKit
-<<<<<<< HEAD
-=======
-import GearRefreshControl
->>>>>>> origin/master
 
 let kNewWeiboSegue = "newWeiboSegue"
 let kWeiboTableViewCell: String = "WeiboTableViewCell"
 var publicStatusImageUrl: NSURL?
 
-<<<<<<< HEAD
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewWeiboViewControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
@@ -30,23 +25,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var scrollCoordinator: JDFPeekabooCoordinator!
     var gearRefreshControl: GearRefreshControl!
     
-=======
-class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate {
-    let mainTabBarController = MainTabBarController()
-    var gearRefreshControl: GearRefreshControl!
-    var statuses: NSMutableArray?
-    var users: NSMutableArray?
-    var numberOfRows: NSMutableArray?
-    
-    var query:WeiboRequestOperation? = WeiboRequestOperation()
-    
->>>>>>> origin/master
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshTableView()
+        
+        automaticPullingDownToRefresh()
         showCurrentAccountNameOnTimeline()
-<<<<<<< HEAD
         
         self.loadStatuses()
         if self.tableView.indexPathForSelectedRow()?.row < Int(kNumberOfTimelineRow) {
@@ -84,40 +68,6 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         
     }
 
-=======
-
-        numberOfRows = NSMutableArray()
-        for var index = 0; index < defaultNumberOfStatusesInTheForstTime; index++ {
-            numberOfRows?.addObject(index)
-        }
-        // part of GearRefreshController
-        gearRefreshControl = GearRefreshControl(frame: self.view.bounds)
-        gearRefreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
-        self.refreshControl = gearRefreshControl
-        
-        
-        // register weibo cell
-        tableView.rowHeight = 200.0
-        tableView.registerNib(UINib(nibName: "WeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "WeiboTableViewCell")
-        
-        self.loadStatuses()
-        self.setupLoadmore()
-
-        
-    }
-    
-    func changeStatusBarColor(){
-        //        if bar
-        let statusBarView: UIView = UIView(frame: CGRectMake(0, 0, kScreenWidth, 22))
-//        statusBarView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
-        statusBarView.backgroundColor = UIColor.redColor()
-        //        statusBarView.opaque = true
-        //        statusBarView.clearsContextBeforeDrawing = false
-        self.view.addSubview(statusBarView)
-    }
-
-
->>>>>>> origin/master
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if !(Weibo.getWeibo().isAuthenticated()){
@@ -129,22 +79,12 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         tableView.reloadData()
         
         
-<<<<<<< HEAD
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-=======
->>>>>>> origin/master
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     
-<<<<<<< HEAD
-    
-=======
->>>>>>> origin/master
     // MARK: - set navigationItem' title to name of currentAccount
     func showCurrentAccountNameOnTimeline(){
         if Weibo.getWeibo().isAuthenticated(){
@@ -184,39 +124,22 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
             Weibo.getWeibo().authorizeWithCompleted({ account, error in
                 if error == nil{
                     NSLog("sign in successful \(account.user.screenName)")
-<<<<<<< HEAD
                     self.loadStatuses()
                     self.showCurrentAccountNameOnTimeline()
                     self.automaticPullingDownToRefresh()
 //                    self.tableView.reloadData()
-=======
-                    println("sign in successful")
-                    
->>>>>>> origin/master
                 }
+
                 else{
                     NSLog("failed to sign in \(error)")
-<<<<<<< HEAD
-=======
-                    println("failed to sign in ")
->>>>>>> origin/master
                 }
             })
-            self.loadStatuses()
-            tableView.reloadData()
         }
         else{
-<<<<<<< HEAD
             println("has been already authenticated!")
-=======
-            println("has already been authenticated!")
-            self.loadStatuses()
-            tableView.reloadData()
->>>>>>> origin/master
         }
-        self.loadStatuses()
-        tableView.reloadData()
     }
+    
     
     func logoutWeibo(){
         let alertController = UIAlertController(title: "Log Out", message: "Are you sure to logout", preferredStyle: UIAlertControllerStyle.Alert)
@@ -240,57 +163,43 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
         if query != nil {
             query!.cancel()
         }
-<<<<<<< HEAD
 //        self.tableView.reloadData()
-=======
-        self.tableView.reloadData()
->>>>>>> origin/master
         query = Weibo.getWeibo().queryTimeline(StatusTimelineFriends, count: kNumberOfTimelineRow , completed: ({ statuses, error in
             if error != nil{
                 self.statuses = nil
                 NSLog("error: \(error) , please login...")
-                
             }
             else{
                 self.statuses = statuses
             }
             self.query = nil
             self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+            self.refreshControl.endRefreshing()
         }))
         
     }
     
     
     // MARK: - TableViewDataSource
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if query != nil {
             return 1
         }
         if self.statuses == nil{
             return 1
+        }else{
+            return numberOfRows!.count
         }
-<<<<<<< HEAD
-=======
-        return numberOfRows!.count
-
->>>>>>> origin/master
     }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+   
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCellWithIdentifier(kWeiboTableViewCell) as! WeiboTableViewCell
         if statuses != nil{
-<<<<<<< HEAD
             var rowHeight:CGFloat = WEIBO_HEADER_HEIGHT
             
             var status = statuses?.objectAtIndex(indexPath.row) as! Status
             
-=======
-            var rowHeight:CGFloat = WEIBO_HEADER
-
-            var status = statuses?.objectAtIndex(indexPath.row) as! Status
->>>>>>> origin/master
             // MARK: - original weibo data source
             // set weibo text
             cell.originalWeiboText.text = status.text
@@ -370,11 +279,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                     }else{
                         text = "\(retweetedWeiboText)"
                     }
-<<<<<<< HEAD
                     
-=======
-               
->>>>>>> origin/master
                     var retweetedLabel = cell.retweetedWeiboText
                     retweetedLabel.text = text
                     var textSize = ausFrameSizeForText(retweetedLabel, text, CGSizeMake(RETWEETED_TEXT_WIDTH, CGFloat.max))
@@ -395,11 +300,7 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                     cell.retweetedContainerHeight.constant = retweetedViewHeight
                 }
                 else{
-<<<<<<< HEAD
                     //                    rowHeight += kRetweetedWeiboImageWidth + 20.0
-=======
-//                    rowHeight += kRetweetedWeiboImageWidth + 20.0
->>>>>>> origin/master
                     retweetedViewHeight += kRetweetedWeiboImageWidth + 8.0
                     cell.retweetedContainerHeight.constant = retweetedViewHeight
                     
@@ -448,18 +349,9 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
                 }
                 
             }
-<<<<<<< HEAD
             tableView.rowHeight = rowHeight + retweetedViewHeight
         }
 //        println("\(indexPath.row)")
-=======
-//            rowHeight += retweetedViewHeight
-            tableView.rowHeight = rowHeight + retweetedViewHeight
-//            tableView.rowHeight = 600
-            
-            
-        }
->>>>>>> origin/master
         return cell
     }
     
@@ -477,53 +369,34 @@ class HomeViewController: UITableViewController, NewWeiboViewControllerDelegate 
     
     // MARK: - part of GearRefreshControl
     func refresh(){
-<<<<<<< HEAD
         var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(refreshInSeconds * Double(NSEC_PER_SEC)));
-=======
-        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC)));
->>>>>>> origin/master
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
             self.loadStatuses()
+            self.tableView.reloadData()
             self.gearRefreshControl.endRefreshing()
         }
         
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         gearRefreshControl.scrollViewDidScroll(scrollView)
     }
     
     
-    // MARK: - fake to start refresh
-    func refreshTableView(){
+    // MARK: - Automatic pulling down to refresh
+    func automaticPullingDownToRefresh(){
         
-        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "fakeStartRefresh", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "automaticContentOffset", userInfo: nil, repeats: false)
         //        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "endRefresh", userInfo: nil, repeats: false)
         //        NSTimer.performSelector("endRefresh", withObject: nil, afterDelay: 0.1)
     }
     
-    func fakeStartRefresh(){
+    func automaticContentOffset(){
         self.gearRefreshControl.beginRefreshing()
         self.tableView.setContentOffset(CGPointMake(0, -125), animated: true)
         
     }
     
-
-    func setupLoadmore(){
-        self.tableView.addFooterWithCallback({
-            for var i = 0; i < numberOfLoadmoreStatuses; i++ {
-                self.numberOfRows!.addObject(i)
-            }
-            let delayInSeconds:Int64 = 1000000 * 2
-            var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW,delayInSeconds)
-            dispatch_after(popTime, dispatch_get_main_queue(), {
-                self.tableView.reloadData()
-                self.tableView.footerEndRefreshing()
-//                self.tableView.setFooterHidden(true)
-            })
-        })
-    }
-
     
     func setupLoadmore(){
         self.tableView.addFooterWithCallback({

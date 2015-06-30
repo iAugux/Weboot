@@ -7,11 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-<<<<<<< HEAD
 	<string>com.iAugus.$(PRODUCT_NAME:rfc1034identifier)</string>
-=======
-	<string>com.augus.$(PRODUCT_NAME:rfc1034identifier)</string>
->>>>>>> origin/master
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

@@ -161,6 +161,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Kt5-cb-feK" id="Kfa-rm-AYW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZc-mO-qsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,7 +233,7 @@
         <!--HomeNavigationControllerScene-->
         <scene sceneID="opw-ye-hEh">
             <objects>
-                <navigationController title="HomeNavigationControllerScene" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="RUE-9Q-Vql" customClass="HomeNavigationController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="HomeNavigationControllerScene" automaticallyAdjustsScrollViewInsets="NO" id="RUE-9Q-Vql" customClass="HomeNavigationController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_user_home_selected" id="BtN-Iw-UYi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7C2-Up-7Fd">

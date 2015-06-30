@@ -4,10 +4,5 @@
 
 
 #import "WeiboSDK.h"
-<<<<<<< HEAD
 #import "UIImageView+WebCache.h"
 #import "JDFPeekabooCoordinator.h"
-=======
-#import "SDWebImage/UIImageView+WebCache.h"
-
->>>>>>> origin/master

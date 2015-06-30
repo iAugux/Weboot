@@ -24,15 +24,9 @@ let kWeiboAppSecret:String = "c489a36fc2ba7aa130114cfa680df1a8"
 let authorizeURL = "https://api.weibo.com/oauth2/authorize"
 
 // set row number of Timeline
-<<<<<<< HEAD
 var kNumberOfTimelineRow: Int32 = 100
 var defaultNumberOfStatusesInTheFirstTime: Int = 50
 var numberOfLoadmoreStatuses: Int = 50
-=======
-var kNumberOfTimelineRow: Int32 = 200
-var defaultNumberOfStatusesInTheForstTime: Int = 25
-var numberOfLoadmoreStatuses: Int = 15
->>>>>>> origin/master
 
 // set width of original image
 let kOriginalWeiboImageWidth: CGFloat = 110
@@ -50,14 +44,8 @@ let ORIGINAL_FONT_SIZE: CGFloat = 17.0
 
 let ORIGINAL_TEXT_WIDTH: CGFloat = 294.0
 
-<<<<<<< HEAD
 let WEIBO_HEADER_HEIGHT: CGFloat = 52.0
 
 let kExpandedOffSet: CGFloat = 120
 
 let HEIGHT_OF_TAB_BAR: CGFloat = 46.0
-=======
-var WEIBO_HEADER: CGFloat = 52.0
-
-let kExpandedOffSet: CGFloat = 120
->>>>>>> origin/master

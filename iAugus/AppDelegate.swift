@@ -29,12 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         homeNav.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = homeNav
         
-<<<<<<< HEAD
 
-=======
-   
-    
->>>>>>> origin/master
         let weibo:Weibo = Weibo(appKey: kWeiboAppKey, withAppSecret: kWeiboAppSecret)
         Weibo.setWeibo(weibo)
         if weibo.isAuthenticated(){
