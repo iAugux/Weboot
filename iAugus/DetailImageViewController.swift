@@ -18,7 +18,6 @@ class DetailImageViewController: UIViewController {
 //        detailImageView.backgroundColor = UIColor.blueColor()
 //        detailImageView.backgroundColor?.colorWithAlphaComponent(0.5)
 //        detailImageView?.image = UIImage(named: "image_holder")
-        detailImageView.sd_setImageWithURL(publicStatusImageUrl)
 //        detailImageView.contentMode = UIViewContentMode.Top
         detailImageView.clipsToBounds = true
         showDetailImage()

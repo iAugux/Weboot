@@ -8,9 +8,6 @@
 
 import UIKit
 
-let kNewWeiboSegue = "newWeiboSegue"
-let kWeiboTableViewCell: String = "WeiboTableViewCell"
-var publicStatusImageUrl: NSURL?
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewWeiboViewControllerDelegate {
     
@@ -253,7 +250,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     cell.imageViewContainer.contentSize = CGSize(width: widthOfImageContainer, height: kOriginalWeiboImageWidth)
                     var statusImage: StatusImage! = status.images[i] as? StatusImage
                     let statusImageUrl: NSURL = NSURL(string: statusImage.thumbnailImageUrl)!
-                    publicStatusImageUrl = NSURL(string: statusImage.originalImageUrl)
                     //                    println("\(statusImageUrl)")
                     images[i].sd_setImageWithURL(statusImageUrl, placeholderImage: UIImage(named: "image_holder"))
                     

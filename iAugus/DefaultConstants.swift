@@ -8,6 +8,13 @@
 
 import UIKit
 
+
+let kNewWeiboSegue = "newWeiboSegue"
+let kWeiboTableViewCell: String = "WeiboTableViewCell"
+
+
+
+
 // get the height of Screen
 let kScreenHeight = UIScreen.mainScreen().bounds.height
 
