@@ -304,7 +304,7 @@ static BOOL IsDeviceIPad() {
             }
         }
     }
-    _modalBackgroundView.backgroundColor = [UIColor clearColor];
+    _modalBackgroundView.backgroundColor = [UIColor redColor];
     _modalBackgroundView.frame = window.frame;
     [_modalBackgroundView addSubview:self];
     [window addSubview:_modalBackgroundView];
