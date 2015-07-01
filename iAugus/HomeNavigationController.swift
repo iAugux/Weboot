@@ -1,5 +1,5 @@
 //
-//  TimelineNavigationController.swift
+//  HomeNavigationController.swift
 //  iAugus
 //
 //  Created by Augus on 4/26/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimelineNavigationController: BaseNavigationController {
+class HomeNavigationController: BaseNavigationController {
     
     @IBOutlet weak var homeTabBarItem: UITabBarItem!
     

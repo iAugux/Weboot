@@ -1,5 +1,5 @@
 //
-//  TimelineViewController.swift
+//  HomeViewController.swift
 //  iAugus
 //
 //  Created by Augus on 4/25/15.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewWeiboViewControllerDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewWeiboViewControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
     var refreshControl: UIRefreshControl!
