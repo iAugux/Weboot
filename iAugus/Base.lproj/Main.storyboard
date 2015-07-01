@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="onb-pg-Hkz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="onb-pg-Hkz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -144,7 +144,7 @@
         <!--Timeline-->
         <scene sceneID="Z0z-J4-Yze">
             <objects>
-                <tableViewController id="vIe-Fm-pUq" customClass="HomeViewController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vIe-Fm-pUq" customClass="TimelineViewController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Kt5-cb-feK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="-282" y="1837"/>
         </scene>
-        <!--HomeNavigationControllerScene-->
+        <!--TimelineNavigationControllerScene-->
         <scene sceneID="opw-ye-hEh">
             <objects>
-                <navigationController title="HomeNavigationControllerScene" automaticallyAdjustsScrollViewInsets="NO" id="RUE-9Q-Vql" customClass="HomeNavigationController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="TimelineNavigationControllerScene" automaticallyAdjustsScrollViewInsets="NO" id="RUE-9Q-Vql" customClass="TimelineNavigationController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_user_home_selected" id="BtN-Iw-UYi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7C2-Up-7Fd">

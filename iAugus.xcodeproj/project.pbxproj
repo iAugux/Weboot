@@ -27,7 +27,7 @@
 		B14A4B651AEBD8FB00498F9C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B641AEBD8FB00498F9C /* MainTabBarController.swift */; };
 		B14A4B691AEBD9B200498F9C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B681AEBD9B200498F9C /* BaseViewController.swift */; };
 		B14A4B6B1AEBD9EA00498F9C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B6A1AEBD9EA00498F9C /* BaseNavigationController.swift */; };
-		B14A4B701AEBDAB100498F9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B6E1AEBDAB100498F9C /* HomeViewController.swift */; };
+		B14A4B701AEBDAB100498F9C /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B6E1AEBDAB100498F9C /* TimelineViewController.swift */; };
 		B14A4B741AEBDAEB00498F9C /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B721AEBDAEB00498F9C /* CommentViewController.swift */; };
 		B14A4B7C1AEBDBA000498F9C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B7A1AEBDBA000498F9C /* ProfileViewController.swift */; };
 		B14A4B7D1AEBDBA000498F9C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14A4B7B1AEBDBA000498F9C /* ProfileViewController.xib */; };
@@ -36,7 +36,7 @@
 		B14A4B861AEBEEAA00498F9C /* AtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B841AEBEEAA00498F9C /* AtViewController.swift */; };
 		B14A4B871AEBEEAA00498F9C /* AtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14A4B851AEBEEAA00498F9C /* AtViewController.xib */; };
 		B14A4B8E1AEC7AE900498F9C /* DefaultConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B8D1AEC7AE900498F9C /* DefaultConstants.swift */; };
-		B14A4B901AEC7F2600498F9C /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */; };
+		B14A4B901AEC7F2600498F9C /* TimelineNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B8F1AEC7F2600498F9C /* TimelineNavigationController.swift */; };
 		B14A4B921AECB59300498F9C /* CommentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B911AECB59300498F9C /* CommentNavigationController.swift */; };
 		B14A4B941AECB5EC00498F9C /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B931AECB5EC00498F9C /* FavoriteNavigationController.swift */; };
 		B14A4B961AECB60200498F9C /* AtNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B951AECB60200498F9C /* AtNavigationController.swift */; };
@@ -112,7 +112,7 @@
 		B14A4B641AEBD8FB00498F9C /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B14A4B681AEBD9B200498F9C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B14A4B6A1AEBD9EA00498F9C /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-		B14A4B6E1AEBDAB100498F9C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B14A4B6E1AEBDAB100498F9C /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		B14A4B721AEBDAEB00498F9C /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		B14A4B7A1AEBDBA000498F9C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B14A4B7B1AEBDBA000498F9C /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		B14A4B841AEBEEAA00498F9C /* AtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtViewController.swift; sourceTree = "<group>"; };
 		B14A4B851AEBEEAA00498F9C /* AtViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AtViewController.xib; sourceTree = "<group>"; };
 		B14A4B8D1AEC7AE900498F9C /* DefaultConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultConstants.swift; sourceTree = "<group>"; };
-		B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		B14A4B8F1AEC7F2600498F9C /* TimelineNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B911AECB59300498F9C /* CommentNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B931AECB5EC00498F9C /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
 		B14A4B951AECB60200498F9C /* AtNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtNavigationController.swift; sourceTree = "<group>"; };
@@ -318,8 +318,8 @@
 		B14A4B5F1AEBD65400498F9C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B14A4B6E1AEBDAB100498F9C /* HomeViewController.swift */,
-				B14A4B8F1AEC7F2600498F9C /* HomeNavigationController.swift */,
+				B14A4B6E1AEBDAB100498F9C /* TimelineViewController.swift */,
+				B14A4B8F1AEC7F2600498F9C /* TimelineNavigationController.swift */,
 				B16CE5361B01134000D8AAB0 /* WeiboTableViewCell.swift */,
 				B16CE5371B01134000D8AAB0 /* WeiboTableViewCell.xib */,
 				B1C213C81B063A7A00BDB8E6 /* DetailTimelineViewController.swift */,
@@ -679,7 +679,7 @@
 				B1D80AEB1AF9F84500A533DB /* User.m in Sources */,
 				B15211901B3E89B00030A000 /* JDFPeekabooCoordinator.m in Sources */,
 				B1D80AF31AF9F84500A533DB /* Resources.m in Sources */,
-				B14A4B701AEBDAB100498F9C /* HomeViewController.swift in Sources */,
+				B14A4B701AEBDAB100498F9C /* TimelineViewController.swift in Sources */,
 				B1D80AF01AF9F84500A533DB /* ImageResourceLoader.m in Sources */,
 				B1D80AE71AF9F84500A533DB /* GeoInfo.m in Sources */,
 				B14A4B921AECB59300498F9C /* CommentNavigationController.swift in Sources */,
@@ -704,7 +704,7 @@
 				B14A4B961AECB60200498F9C /* AtNavigationController.swift in Sources */,
 				B1D80AF51AF9F84500A533DB /* WeiboDialogClosePNG.m in Sources */,
 				B16CE53A1B01134000D8AAB0 /* WeiboTableViewCell.swift in Sources */,
-				B14A4B901AEC7F2600498F9C /* HomeNavigationController.swift in Sources */,
+				B14A4B901AEC7F2600498F9C /* TimelineNavigationController.swift in Sources */,
 				B1D80AF61AF9F84500A533DB /* WeiboDialog.m in Sources */,
 				B1D80AEA1AF9F84500A533DB /* StatusVisible.m in Sources */,
 				B1D80AF21AF9F84500A533DB /* PathHelper.m in Sources */,

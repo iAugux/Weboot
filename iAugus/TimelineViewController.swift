@@ -9,7 +9,7 @@
 import UIKit
 
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewWeiboViewControllerDelegate {
+class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewWeiboViewControllerDelegate {
     
     @IBOutlet var tableView: UITableView!
     var refreshControl: UIRefreshControl!
