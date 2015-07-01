@@ -35,14 +35,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLayoutSubviews()
 
     }
-    private func initViewController(){
-        let homeViewController = HomeViewController()
-        let commentViewController = CommentViewController()
-        let favoriteViewController = FavoriteViewController()
-        let atViewController = AtViewController()
-        let profileViewController = ProfileViewController()
-        
-    }
+
  
 //    // after swiping, navigation bar has  been hidden, but background color of status bar is clearColor, so I need to set status bar' color to blur
 //    func changeStatusBarColorOnSwipe(){

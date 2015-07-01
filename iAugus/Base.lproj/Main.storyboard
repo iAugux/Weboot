@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="onb-pg-Hkz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="onb-pg-Hkz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -144,14 +144,14 @@
         <!--Timeline-->
         <scene sceneID="Z0z-J4-Yze">
             <objects>
-                <tableViewController id="vIe-Fm-pUq" customClass="HomeViewController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vIe-Fm-pUq" customClass="CommentViewController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Kt5-cb-feK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
-                            <outlet property="dataSource" destination="vIe-Fm-pUq" id="DQp-u7-irn"/>
-                            <outlet property="delegate" destination="vIe-Fm-pUq" id="gBN-vm-QvT"/>
+                            <outlet property="dataSource" destination="vIe-Fm-pUq" id="oUJ-K8-8Tb"/>
+                            <outlet property="delegate" destination="vIe-Fm-pUq" id="qUl-7a-uj4"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Timeline" id="GRN-vx-1Db">
@@ -161,9 +161,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="Kt5-cb-feK" id="Kfa-rm-AYW"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZc-mO-qsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="-282" y="1837"/>
         </scene>
-        <!--HomeNavigationControllerScene-->
+        <!--TimelineNavigationControllerScene-->
         <scene sceneID="opw-ye-hEh">
             <objects>
-                <navigationController title="HomeNavigationControllerScene" automaticallyAdjustsScrollViewInsets="NO" id="RUE-9Q-Vql" customClass="HomeNavigationController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="TimelineNavigationControllerScene" automaticallyAdjustsScrollViewInsets="NO" id="RUE-9Q-Vql" customClass="TimelineNavigationController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_user_home_selected" id="BtN-Iw-UYi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7C2-Up-7Fd">
@@ -247,7 +244,7 @@
                     <connections>
                         <outlet property="homeTabBarItem" destination="BtN-Iw-UYi" id="mk6-dg-CLN"/>
                         <outlet property="tabBarItem" destination="BtN-Iw-UYi" id="ZiP-xv-1TP"/>
-                        <segue destination="vIe-Fm-pUq" kind="relationship" relationship="rootViewController" id="VVi-6t-V0V"/>
+                        <segue destination="vIe-Fm-pUq" kind="relationship" relationship="rootViewController" id="QRh-MC-Od6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bme-2D-UsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,7 +274,7 @@
         <!--Comment-->
         <scene sceneID="NrP-kl-sOG">
             <objects>
-                <tableViewController id="sp3-DX-TCf" sceneMemberID="viewController">
+                <tableViewController id="sp3-DX-TCf" customClass="CommentViewController" customModule="iAugus" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9NL-Fa-7Z6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
