@@ -1,15 +1,25 @@
 PODS:
-  - GearRefreshControl (0.1)
-  - SDWebImage (3.7.2):
-    - SDWebImage/Core (= 3.7.2)
-  - SDWebImage/Core (3.7.2)
+  - Alamofire (2.0.0-beta.3)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
-  - GearRefreshControl (~> 0.1)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
   - SDWebImage (~> 3.7)
 
-SPEC CHECKSUMS:
-  GearRefreshControl: c9c3531449560152f2834579fb059615db24a77f
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift-2.0
+    :git: https://github.com/Alamofire/Alamofire.git
 
-COCOAPODS: 0.37.2
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 0fd77fec2a33e237ab99069c36410eb7101126c6
+    :git: https://github.com/Alamofire/Alamofire.git
+
+SPEC CHECKSUMS:
+  Alamofire: 39dddb7d3725d1771b1d2f7099c8bd45bd83ffbb
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+
+COCOAPODS: 0.38.2
