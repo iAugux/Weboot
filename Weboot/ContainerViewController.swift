@@ -18,6 +18,7 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate{
     
     // 0 ~ 320
     let centerPanelExpandedOffset: CGFloat = kScreenWidth - kExpandedOffSet
+    
     var centerVCFrontBlurView: UIVisualEffectView!
     var centerNavigationController: UINavigationController!
     var mainTabBarViewController: MainTabBarController!
@@ -47,8 +48,8 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate{
         let panGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: "handlePanGesture:")
         panGestureRecognizer.edges = UIRectEdge.Left
         centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+        panGestureRecognizer.delegate = self
 
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
         centerVCFrontBlurView.addGestureRecognizer(tapGestureRecognizer)
     }
@@ -58,6 +59,10 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate{
         centerVCFrontBlurView.frame = CGRect(x: kExpandedOffSet , y: 0, width: kScreenWidth, height: kScreenHeight)
     }
 
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
     func configureViews(){
 //        centerVCFrontBlurView = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         let viewEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
@@ -147,8 +152,8 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate{
         }
     }
     
-    
     func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+
         let gestureIsDraggingFromLeftToRight = (recognizer.velocityInView(view).x > 0)
         switch(recognizer.state) {
         case .Began:

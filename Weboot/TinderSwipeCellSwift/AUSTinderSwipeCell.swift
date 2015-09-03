@@ -45,7 +45,6 @@ class AUSTinderSwipeCell: UITableViewCell {
         
         //        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
         panGestureRecognizer = PanDirectionGestureRecognizer(direction: PanDirection.Horizontal, target: self, action: "beingDragged:")
-        
         self.addGestureRecognizer(panGestureRecognizer)
 //        self.addSubview(information)
         

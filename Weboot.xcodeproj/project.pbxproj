@@ -232,14 +232,14 @@
 		B1E7CA021B8EFCB90005FFE2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B1E7CA081B8EFD000005FFE2 /* TimelineViewController.swift */,
+				B1E7CA061B8EFD000005FFE2 /* TimelineModel.swift */,
+				B1E7CA071B8EFD000005FFE2 /* TimelineNavigationController.swift */,
+				B1E7CA091B8EFD000005FFE2 /* WeiboTableViewCell.swift */,
+				B1E7CA0A1B8EFD000005FFE2 /* WeiboTableViewCell.xib */,
 				B1E7CA031B8EFD000005FFE2 /* DetailImageViewController.swift */,
 				B1E7CA041B8EFD000005FFE2 /* DetailTimelineViewController.swift */,
 				B1E7CA051B8EFD000005FFE2 /* NewWeiboViewController.swift */,
-				B1E7CA061B8EFD000005FFE2 /* TimelineModel.swift */,
-				B1E7CA071B8EFD000005FFE2 /* TimelineNavigationController.swift */,
-				B1E7CA081B8EFD000005FFE2 /* TimelineViewController.swift */,
-				B1E7CA091B8EFD000005FFE2 /* WeiboTableViewCell.swift */,
-				B1E7CA0A1B8EFD000005FFE2 /* WeiboTableViewCell.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -763,7 +763,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Weboot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -784,7 +784,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Weboot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (

@@ -13,12 +13,15 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     
     struct MainStoryboard{
         struct TableViewCellIdentifiers {
-            static let weiboTableViewCell = "WeiboTableViewCell"
+            static let weiboTableViewCell = "weiboTableViewCell"
         }
-       
+        struct NibNames {
+            static let weiboCellNibName = "WeiboTableViewCell"
+        }
     }
     
     @IBOutlet var tableView: UITableView!
+    var cellHeight: CGFloat?
     var statuses: NSMutableArray?
     var query: WeiboRequestOperation?
 
@@ -43,9 +46,10 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         self.setupLoadmore()
         
         // register weibo cell
-        tableView.registerNib(UINib(nibName: "WeiboTableViewCell", bundle: nil), forCellReuseIdentifier: "WeiboTableViewCell")
+        tableView.registerNib(UINib(nibName: MainStoryboard.NibNames.weiboCellNibName, bundle: nil), forCellReuseIdentifier: MainStoryboard.TableViewCellIdentifiers.weiboTableViewCell)
+        tableView.tableFooterView = UIView(frame: CGRectZero)
         // hide separator in the first time, then show the separator after loading data and reloading view
-        tableView.separatorColor = UIColor.clearColor()
+//        tableView.separatorColor = UIColor.clearColor()
 
         numberOfRows = NSMutableArray()
         for var index = 0; index < defaultNumberOfStatusesInTheFirstTime; index++ {
@@ -58,6 +62,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
  
     }
 
+    
    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -111,7 +116,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             }
             self.query = nil
             
-            self.tableView.separatorColor = UIColor.lightGrayColor()
+//            self.tableView.separatorColor = UIColor.lightGrayColor()
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }))
@@ -192,10 +197,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - TableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if query != nil {
-            return 1
+            return 0
         }
         if statuses == nil{
-            return 1
+            return 0
+
         }else{
             return numberOfRows!.count
         }
@@ -203,7 +209,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kWeiboTableViewCell) as! WeiboTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(MainStoryboard.TableViewCellIdentifiers.weiboTableViewCell) as! WeiboTableViewCell
         timelineModel.modelForCell(indexPath, cell: cell, tableView: tableView, vc: self)
         for i in 0..<9{
             let aSelector: Selector = "singleTapDidTap"
@@ -227,7 +233,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 200.0
     }
-    
+        
     func singleTapDidTap(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("detailImageViewController") as! DetailImageViewController

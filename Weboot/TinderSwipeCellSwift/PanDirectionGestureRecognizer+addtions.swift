@@ -27,7 +27,9 @@ class PanDirectionGestureRecognizer: UIPanGestureRecognizer {
         if state == .Began {
             let velocity = velocityInView(self.view!)
             switch direction {
-            case .Horizontal where fabs(velocity.y) > fabs(velocity.x):
+                
+                // disable local gesture when locationInView < 40 to ensure UIScreenEdgePanGestureRecognizer is only avalible
+            case .Horizontal where fabs(velocity.y) > fabs(velocity.x) || locationInView(self.view).x < 40:
                 state = .Cancelled
             case .Vertical where fabs(velocity.x) > fabs(velocity.y):
                 state = .Cancelled

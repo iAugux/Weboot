@@ -13,7 +13,8 @@ class CommentViewController:UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: kWeiboTableViewCell, bundle: nil), forHeaderFooterViewReuseIdentifier: kWeiboTableViewCell)
-        
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+
         
         // Do any additional setup after loading the view.
     }
@@ -25,7 +26,7 @@ class CommentViewController:UITableViewController {
     
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
