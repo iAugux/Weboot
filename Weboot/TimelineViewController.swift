@@ -137,7 +137,6 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             let detailVC = segue.destinationViewController as! UINavigationController
             let newWeiboVC = detailVC.viewControllers[0] as! NewWeiboViewController
             newWeiboVC.delegate = self
-            
         }
     }
     func postNewWeibo(controller: NewWeiboViewController) {

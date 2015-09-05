@@ -76,7 +76,6 @@ class WeiboTableViewCell: AUSTinderSwipeCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.preservesSuperviewLayoutMargins = false
         self.separatorInset = UIEdgeInsetsZero
         self.layoutMargins = UIEdgeInsetsZero
