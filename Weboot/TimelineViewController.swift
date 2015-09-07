@@ -139,9 +139,10 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             newWeiboVC.delegate = self
         }
     }
-    func postNewWeibo(controller: NewWeiboViewController) {
+    func loadDataAfterPostNewWeibo() {
         self.loadStatuses()
     }
+    
     // MARK: - login or logout
     
     func showLoginButton(){

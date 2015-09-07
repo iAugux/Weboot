@@ -28,8 +28,9 @@ class PanDirectionGestureRecognizer: UIPanGestureRecognizer {
             let velocity = velocityInView(self.view!)
             switch direction {
                 
-                // disable local gesture when locationInView < 40 to ensure UIScreenEdgePanGestureRecognizer is only avalible
-            case .Horizontal where fabs(velocity.y) > fabs(velocity.x) || locationInView(self.view).x < 40:
+                // disable local gesture when locationInView < 44 to ensure UIScreenEdgePanGestureRecognizer is only avalible
+                // The comfortable minimum size of tappable UI elements is 44 x 44 points.
+            case .Horizontal where fabs(velocity.y) > fabs(velocity.x) || locationInView(self.view).x <= 44:
                 state = .Cancelled
             case .Vertical where fabs(velocity.x) > fabs(velocity.y):
                 state = .Cancelled

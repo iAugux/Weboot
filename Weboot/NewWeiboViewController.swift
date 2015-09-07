@@ -9,8 +9,9 @@
 import UIKit
 
 protocol NewWeiboViewControllerDelegate{
-    func postNewWeibo(controller: NewWeiboViewController)
+    func loadDataAfterPostNewWeibo()
 }
+
 class NewWeiboViewController: UIViewController{
     var query: WeiboRequestOperation?
 
@@ -39,7 +40,7 @@ class NewWeiboViewController: UIViewController{
                 print(error)
             }
             else{
-                self.delegate.postNewWeibo(self)
+                self.delegate.loadDataAfterPostNewWeibo()
                 self.newWeiboTextField.resignFirstResponder()
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
