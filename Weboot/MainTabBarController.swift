@@ -36,6 +36,15 @@ class MainTabBarController: UITabBarController {
 
     }
    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        /**
+        important: if present NavigationController's property of interactivePopGestureRecognizer is enable, we must set it to disable,
+        otherwise if we call UIScreenEdgePanGestureRecognizer on present ViewController it will crash.
+        */
+//        self.navigationController?.interactivePopGestureRecognizer?.enabled = false
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+    }
  
 //    // after swiping, navigation bar has  been hidden, but background color of status bar is clearColor, so I need to set status bar' color to blur
 //    func changeStatusBarColorOnSwipe(){
