@@ -16,7 +16,6 @@ class NewWeiboViewController: UIViewController{
     var query: WeiboRequestOperation?
 
     @IBOutlet weak var newWeiboTextField: UITextView!
-    @IBOutlet weak var newWeiboCanceled: UITextView!
     
     var delegate: NewWeiboViewControllerDelegate!
     
@@ -50,7 +49,7 @@ class NewWeiboViewController: UIViewController{
     
     // MARK: - close keyboard after touching out of textfield
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        newWeiboCanceled.resignFirstResponder()
+        newWeiboTextField.resignFirstResponder()
     }
     
     

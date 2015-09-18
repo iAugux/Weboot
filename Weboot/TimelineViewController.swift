@@ -139,6 +139,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             newWeiboVC.delegate = self
         }
     }
+    
     func loadDataAfterPostNewWeibo() {
         self.loadStatuses()
     }
