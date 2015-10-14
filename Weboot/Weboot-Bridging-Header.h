@@ -10,7 +10,5 @@
 #define Weboot_Bridging_Header_h
 
 #import "WeiboSDK.h"
-#import "SDWebImage/UIImageView+WebCache.h"
-#import "JDFPeekabooCoordinator.h"
 
 #endif /* Weboot_Bridging_Header_h */

@@ -1,25 +1,13 @@
 PODS:
-  - Alamofire (2.0.0-beta.3)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
+  - Alamofire (2.0.2)
+  - Kingfisher (1.6.1)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
-  - SDWebImage (~> 3.7)
-
-EXTERNAL SOURCES:
-  Alamofire:
-    :branch: swift-2.0
-    :git: https://github.com/Alamofire/Alamofire.git
-
-CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: 0fd77fec2a33e237ab99069c36410eb7101126c6
-    :git: https://github.com/Alamofire/Alamofire.git
+  - Alamofire (~> 2.0)
+  - Kingfisher (~> 1.6)
 
 SPEC CHECKSUMS:
-  Alamofire: 39dddb7d3725d1771b1d2f7099c8bd45bd83ffbb
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
+  Kingfisher: a40cf8134ba1a78f395bdd3ee97d386ff3c3be0d
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
