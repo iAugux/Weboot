@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B1324B4A1BCCEA7300049D80 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1324B491BCCEA7300049D80 /* Pods.framework */; };
-		B1B4726F1BCE95010046B987 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B4726E1BCE95010046B987 /* HRToast+UIView.swift */; settings = {ASSET_TAGS = (); }; };
-		B1B472711BCEA3810046B987 /* WBIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B472701BCEA3810046B987 /* WBIdentifiers.swift */; settings = {ASSET_TAGS = (); }; };
-		B1B472731BCEAB610046B987 /* PanDirectionGestureRecognizer+Addtions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B472721BCEAB610046B987 /* PanDirectionGestureRecognizer+Addtions.swift */; settings = {ASSET_TAGS = (); }; };
+		B1B4726F1BCE95010046B987 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B4726E1BCE95010046B987 /* HRToast+UIView.swift */; };
+		B1B472711BCEA3810046B987 /* WBIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B472701BCEA3810046B987 /* WBIdentifiers.swift */; };
+		B1B472731BCEAB610046B987 /* PanDirectionGestureRecognizer+Addtions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B472721BCEAB610046B987 /* PanDirectionGestureRecognizer+Addtions.swift */; };
 		B1E7C9F81B8EFBCE0005FFE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1E7C9F71B8EFBCE0005FFE2 /* Assets.xcassets */; };
 		B1E7C9FB1B8EFBCE0005FFE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E7C9F91B8EFBCE0005FFE2 /* LaunchScreen.storyboard */; };
 		B1E7CA0B1B8EFD000005FFE2 /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E7CA031B8EFD000005FFE2 /* DetailImageViewController.swift */; };
@@ -77,10 +76,6 @@
 		09FF4096CF1D9454C3B3A11E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1A67BA15DDB0E508B3E1334B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0B9061D6B1DE45B7529C69 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		B1324B431BCCEA1600049D80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		B1324B451BCCEA1A00049D80 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "Pods/../build/Debug-iphoneos/Kingfisher.framework"; sourceTree = "<group>"; };
-		B1324B471BCCEA3200049D80 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
-		B1324B491BCCEA7300049D80 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		B1B4726E1BCE95010046B987 /* HRToast+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HRToast+UIView.swift"; sourceTree = "<group>"; };
 		B1B472701BCEA3810046B987 /* WBIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBIdentifiers.swift; sourceTree = "<group>"; };
 		B1B472721BCEAB610046B987 /* PanDirectionGestureRecognizer+Addtions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanDirectionGestureRecognizer+Addtions.swift"; sourceTree = "<group>"; };
@@ -176,7 +171,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1324B4A1BCCEA7300049D80 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,9 +219,6 @@
 				B1E7CAA91B8F05BE0005FFE2 /* Main.storyboard */,
 				B1E7CAA61B8EFFD30005FFE2 /* WBDefaultConstants.swift */,
 				B1B472701BCEA3810046B987 /* WBIdentifiers.swift */,
-				B1E7C9F71B8EFBCE0005FFE2 /* Assets.xcassets */,
-				B1E7C9F91B8EFBCE0005FFE2 /* LaunchScreen.storyboard */,
-				B1E7CAA81B8F01E80005FFE2 /* Weboot-Bridging-Header.h */,
 				B1E7CA371B8EFE620005FFE2 /* Supporting Files */,
 			);
 			path = Weboot;
@@ -294,6 +285,9 @@
 			isa = PBXGroup;
 			children = (
 				B1E7C9FC1B8EFBCE0005FFE2 /* Info.plist */,
+				B1E7C9F71B8EFBCE0005FFE2 /* Assets.xcassets */,
+				B1E7CAA81B8F01E80005FFE2 /* Weboot-Bridging-Header.h */,
+				B1E7C9F91B8EFBCE0005FFE2 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -467,10 +461,6 @@
 		F01BA66DA26F7DE78F345246 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B1324B491BCCEA7300049D80 /* Pods.framework */,
-				B1324B471BCCEA3200049D80 /* Pods.framework */,
-				B1324B451BCCEA1A00049D80 /* Kingfisher.framework */,
-				B1324B431BCCEA1600049D80 /* Alamofire.framework */,
 				1A67BA15DDB0E508B3E1334B /* Pods.framework */,
 			);
 			name = Frameworks;

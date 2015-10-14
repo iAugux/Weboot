@@ -10,14 +10,7 @@ import Foundation
 
 class WebootHttpRequest {
     class func repostStatus(callback: [String]? -> Void){
-        let url = "https://api.weibo.com/2/statuses/repost.json"
-//        Alamofire.request(.GET, url).responseJSON{ (_, _, json, error) -> Void in
-//            if error == nil && json != nil {
-//                print(json)
-//                
-//            }else{
-//                callback(nil)
-//            }
+
         
     }
 }

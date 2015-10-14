@@ -108,7 +108,7 @@ public class GearRefreshControl: UIRefreshControl {
         
         refreshBounds.size.height = pullDistance;
         
-        [self.refreshContainerView, self.overlayView].map({$0.frame = refreshBounds});
+        let _ = [self.refreshContainerView, self.overlayView].map({$0.frame = refreshBounds});
         
         // Don't rotate the gears if the refresh animation is playing
         if (!refreshing && !isRefreshControlAnimating) {
