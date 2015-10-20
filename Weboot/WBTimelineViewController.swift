@@ -18,7 +18,7 @@ class WBTimelineViewController: WBBaseViewController, WBNewWeiboViewControllerDe
     var maxId: Int?
     var numberOfRows: Int?
     var timelineModel: WBTimelineModel!
-    
+
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,15 +126,6 @@ class WBTimelineViewController: WBBaseViewController, WBNewWeiboViewControllerDe
     }
     
     
-    func singleTapDidTap(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("detailImageViewController") as! DetailImageViewController
-        vc.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
-        self.presentViewController(vc, animated: true, completion: nil)
-        
-        print("thumbnail image tapped")
-    }
-    
     func setupLoadmore(){
         print("start to load more")
         self.tableView?.addFooterWithCallback({
@@ -145,7 +136,7 @@ class WBTimelineViewController: WBBaseViewController, WBNewWeiboViewControllerDe
                 UIApplication.topMostViewController()?.view.makeToast(message: "F**k Sina! No more data allowed.", duration: 0.7, position: HRToastPositionCenter)
             }
             
-            self.tableView.footerEndRefreshing()
+            self.tableView?.footerEndRefreshing()
         })
     }
     
@@ -219,6 +210,9 @@ extension WBTimelineViewController {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier(MainStoryboard.CellIdentifiers.timelineTableViewCell) as? WBTimelineTableViewCell {
             timelineModel.modelForCell(indexPath, cell: cell, tableView: tableView, vc: self)
+
+
+
             for i in 0..<9{
                 let aSelector: Selector = "singleTapDidTap"
                 let singleTap = UITapGestureRecognizer(target: self, action: aSelector)
@@ -226,19 +220,32 @@ extension WBTimelineViewController {
                 cell.images[i].userInteractionEnabled = true
                 cell.images[i].addGestureRecognizer(singleTap)
                 
-            }
-            
-            for i in 0..<9{
-                let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTapDidTap")
-                singleTap.numberOfTapsRequired = 1
-                cell.retweetedImages[i].userInteractionEnabled = true
-                cell.retweetedImages[i].addGestureRecognizer(singleTap)
+              
+
                 
             }
+//
+//            for i in 0..<9{
+//                let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTapDidTap")
+//                singleTap.numberOfTapsRequired = 1
+//                cell.retweetedImages[i].userInteractionEnabled = true
+//                cell.retweetedImages[i].addGestureRecognizer(singleTap)
+//                
+//            }
+
             return cell
         }
         
         return UITableViewCell()
+    }
+    
+    func singleTapDidTap(){
+        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let vc = storyboard.instantiateViewControllerWithIdentifier("detailImageViewController") as! DetailImageViewController
+        //        vc.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
+        //        self.presentViewController(vc, animated: true, completion: nil)
+        //
+        //        print("thumbnail image tapped")
     }
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

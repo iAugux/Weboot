@@ -73,6 +73,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
     var images: [UIImageView] = []
     var retweetedImages: [UIImageView] = []
     
+    let imageBrowser = HZPhotoBrowser()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -83,9 +84,11 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
         initOriginalWeiboImages()
         initRetweetedWeiboImages()
         
-//                originalWeiboText.adjustsFontSizeToFitWidth = false
-        //        retweetedWeiboText.adjustsFontSizeToFitWidth = false
-        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
     }
     
     @IBAction func commentButton(sender: UIButton) {
@@ -102,7 +105,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
         // if set scrollsToTop available , it can not be back to top when you tap status bar
         imageViewContainer.scrollsToTop = false
         imageViewContainer.showsHorizontalScrollIndicator = false
-        
+
         // set image array
         for var index = 0; index < 9; index++ {
             images.append(UIImageView())
@@ -110,12 +113,14 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
             images[index].frame = CGRectMake(image_x, 0, kOriginalWeiboImageWidth, kOriginalWeiboImageWidth)
             images[index].contentMode = UIViewContentMode.ScaleAspectFill
             images[index].clipsToBounds = true
-            let imageArray = NSMutableArray()
-            imageArray.addObject(images[index])
+            
             
             imageViewContainer.addSubview(images[index])
-            
+
         }
+        
+       
+      
     }
     
     func initRetweetedWeiboImages(){
@@ -123,25 +128,27 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
         retweetedImageContainerHeight.constant = 0
         retweetedImageContainer.scrollsToTop = false
         retweetedImageContainer.showsHorizontalScrollIndicator = false
+        
         for var index = 0; index < 9; index++ {
             retweetedImages.append(UIImageView())
             let image_x: CGFloat = (kRetweetedWeiboImageWidth + 8) * CGFloat(index)
             retweetedImages[index].frame = CGRectMake(image_x, 0, kRetweetedWeiboImageWidth, kRetweetedWeiboImageWidth)
             retweetedImages[index].contentMode = UIViewContentMode.ScaleAspectFill
             retweetedImages[index].clipsToBounds = true
-            let imageArray = NSMutableArray()
-            imageArray.addObject(retweetedImages[index])
             
             retweetedImageContainer.addSubview(retweetedImages[index])
             
         }
         
     }
+    
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
+    
     
     
 }

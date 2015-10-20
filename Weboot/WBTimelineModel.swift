@@ -69,6 +69,7 @@ class WBTimelineModel: NSObject {
                     cell.images[i].kf_setImageWithURL(statusImageUrl!, placeholderImage: UIImage(named: "image_holder"))
                     
                 }
+                
             }
             
             
