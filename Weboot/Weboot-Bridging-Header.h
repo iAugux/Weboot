@@ -10,6 +10,5 @@
 #define Weboot_Bridging_Header_h
 
 #import "WeiboSDK.h"
-#import "HZPhotoBrowsers.h"
 
 #endif /* Weboot_Bridging_Header_h */

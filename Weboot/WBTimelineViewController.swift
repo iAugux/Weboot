@@ -208,44 +208,17 @@ extension WBTimelineViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier(MainStoryboard.CellIdentifiers.timelineTableViewCell) as? WBTimelineTableViewCell {
-            timelineModel.modelForCell(indexPath, cell: cell, tableView: tableView, vc: self)
+        if let cell = tableView.dequeueReusableCellWithIdentifier(MainStoryboard.CellIdentifiers.timelineTableViewCell, forIndexPath: indexPath) as? WBTimelineTableViewCell {
 
-
-
-            for i in 0..<9{
-                let aSelector: Selector = "singleTapDidTap"
-                let singleTap = UITapGestureRecognizer(target: self, action: aSelector)
-                singleTap.numberOfTapsRequired = 1
-                cell.images[i].userInteractionEnabled = true
-                cell.images[i].addGestureRecognizer(singleTap)
-                
-              
-
-                
+            if let status = statuses?.objectAtIndex(indexPath.row) as? Status {
+                cell.loadDataToCell(status)
+                tableView.rowHeight = cell.cellHeight
             }
-//
-//            for i in 0..<9{
-//                let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "singleTapDidTap")
-//                singleTap.numberOfTapsRequired = 1
-//                cell.retweetedImages[i].userInteractionEnabled = true
-//                cell.retweetedImages[i].addGestureRecognizer(singleTap)
-//                
-//            }
 
             return cell
         }
         
         return UITableViewCell()
-    }
-    
-    func singleTapDidTap(){
-        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let vc = storyboard.instantiateViewControllerWithIdentifier("detailImageViewController") as! DetailImageViewController
-        //        vc.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
-        //        self.presentViewController(vc, animated: true, completion: nil)
-        //
-        //        print("thumbnail image tapped")
     }
     
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
