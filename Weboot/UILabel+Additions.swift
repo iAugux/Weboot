@@ -46,4 +46,29 @@ extension UILabel {
             print("something error with NSAttributedString")
         }
     }
+    
+    func ausGetLabelSize() -> CGSize {
+        let constraint = CGSizeMake(self.frame.width, CGFloat.max)
+        
+        let context = NSStringDrawingContext()
+        let boundingBox = self.text?.boundingRectWithSize(constraint, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self.font], context: context).size
+        let size = CGSizeMake(ceil(boundingBox!.width), ceil(boundingBox!.height))
+        
+        return size
+    }
+    
+    func ausCalculateLabelSizeToFit() {
+        
+        let constraint = CGSizeMake(self.frame.width, CGFloat.max)
+        
+        let context = NSStringDrawingContext()
+        let boundingBox = self.text?.boundingRectWithSize(constraint, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self.font], context: context).size
+        let size = CGSizeMake(ceil(boundingBox!.width), ceil(boundingBox!.height))
+        
+        var frame = self.frame
+        frame.size.height = size.height
+        self.frame = frame
+        
+    }
+
 }

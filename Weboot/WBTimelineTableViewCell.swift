@@ -147,7 +147,8 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
         // MARK: - original weibo data source
         // set weibo text
         originalWeiboText.text = status.text
-        let originalTextSize = ausFrameSizeForText(status.text , font: UIFont.systemFontOfSize(ORIGINAL_FONT_SIZE), maximumSize: CGSizeMake(ORIGINAL_TEXT_WIDTH, CGFloat.max))
+        let originalTextSize = originalWeiboText.ausGetLabelSize()
+        
         totalHeight += originalTextSize.height + 16.0
         
         createdDate?.text = status.statusTimeString()
@@ -226,7 +227,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
                 
                 let retweetedLabel = self.retweetedWeiboText
                 retweetedLabel.text = text
-                let textSize = ausFrameSizeForText(text , font: UIFont.systemFontOfSize(RETWEETED_FONT_SIZE), maximumSize: CGSizeMake(RETWEETED_TEXT_WIDTH, CGFloat.max))
+                let textSize = retweetedLabel.ausGetLabelSize()
                 retweetedViewHeight += textSize.height + 16.0
             }
             
