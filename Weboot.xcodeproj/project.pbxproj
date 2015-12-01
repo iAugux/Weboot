@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A7C0DC5B5CBEB894EBD71762 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBF3BCF216523B78F7200F7 /* Pods.framework */; };
-		B1A779B51BD67AE30041BDAF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1A779AB1BD67AE30041BDAF /* Info.plist */; settings = {ASSET_TAGS = (); }; };
-		B1A779B61BD67AE30041BDAF /* SKCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779AC1BD67AE30041BDAF /* SKCaptionView.swift */; settings = {ASSET_TAGS = (); }; };
-		B1A779B71BD67AE30041BDAF /* SKDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779AD1BD67AE30041BDAF /* SKDetectingImageView.swift */; settings = {ASSET_TAGS = (); }; };
-		B1A779B81BD67AE30041BDAF /* SKDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779AE1BD67AE30041BDAF /* SKDetectingView.swift */; settings = {ASSET_TAGS = (); }; };
-		B1A779B91BD67AE30041BDAF /* SKIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779AF1BD67AE30041BDAF /* SKIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
-		B1A779BA1BD67AE30041BDAF /* SKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779B01BD67AE30041BDAF /* SKPhoto.swift */; settings = {ASSET_TAGS = (); }; };
-		B1A779BB1BD67AE30041BDAF /* SKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1A779B11BD67AE30041BDAF /* SKPhotoBrowser.bundle */; settings = {ASSET_TAGS = (); }; };
-		B1A779BC1BD67AE30041BDAF /* SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779B31BD67AE30041BDAF /* SKPhotoBrowser.swift */; settings = {ASSET_TAGS = (); }; };
-		B1A779BD1BD67AE30041BDAF /* SKZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779B41BD67AE30041BDAF /* SKZoomingScrollView.swift */; settings = {ASSET_TAGS = (); }; };
+		B1A779B51BD67AE30041BDAF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1A779AB1BD67AE30041BDAF /* Info.plist */; };
+		B1A779B61BD67AE30041BDAF /* SKCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779AC1BD67AE30041BDAF /* SKCaptionView.swift */; };
+		B1A779B71BD67AE30041BDAF /* SKDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779AD1BD67AE30041BDAF /* SKDetectingImageView.swift */; };
+		B1A779B81BD67AE30041BDAF /* SKDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779AE1BD67AE30041BDAF /* SKDetectingView.swift */; };
+		B1A779B91BD67AE30041BDAF /* SKIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779AF1BD67AE30041BDAF /* SKIndicatorView.swift */; };
+		B1A779BA1BD67AE30041BDAF /* SKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779B01BD67AE30041BDAF /* SKPhoto.swift */; };
+		B1A779BB1BD67AE30041BDAF /* SKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1A779B11BD67AE30041BDAF /* SKPhotoBrowser.bundle */; };
+		B1A779BC1BD67AE30041BDAF /* SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779B31BD67AE30041BDAF /* SKPhotoBrowser.swift */; };
+		B1A779BD1BD67AE30041BDAF /* SKZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A779B41BD67AE30041BDAF /* SKZoomingScrollView.swift */; };
 		B1B4726F1BCE95010046B987 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B4726E1BCE95010046B987 /* HRToast+UIView.swift */; };
 		B1B472711BCEA3810046B987 /* WBIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B472701BCEA3810046B987 /* WBIdentifiers.swift */; };
 		B1B472731BCEAB610046B987 /* PanDirectionGestureRecognizer+Addtions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B472721BCEAB610046B987 /* PanDirectionGestureRecognizer+Addtions.swift */; };
@@ -537,6 +537,7 @@
 				TargetAttributes = {
 					B1E7C9EC1B8EFBCE0005FFE2 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = J4Z2NCTR3S;
 					};
 				};
 			};
@@ -803,10 +804,8 @@
 			baseConfigurationReference = 8E3776B5B262958CF8C0FEE0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Weboot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -824,10 +823,8 @@
 			baseConfigurationReference = 5A896471AC72D99AD6FF0F26 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Weboot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
