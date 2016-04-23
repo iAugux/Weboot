@@ -52,7 +52,7 @@ class WBTimelineModel: NSObject {
                 // back to default position when imageViewContainer appears again
                 cell.imageViewContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
                 
-                for var i = 0 ; i < numberOfImages ; i++ {
+                for i in 0  ..< numberOfImages  {
                     cell.images[i].hidden = false
                     let widthOfImageContainer: CGFloat = (kOriginalWeiboImageWidth + 8) * CGFloat(numberOfImages)
                     if numberOfImages <= 3{
@@ -112,7 +112,7 @@ class WBTimelineModel: NSObject {
                     // back to default position when imageViewContainer appears again
                     cell.retweetedImageContainer.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
                     
-                    for var i = 0 ; i < numberOfRetweetedImages ; i++ {
+                    for i in 0  ..< numberOfRetweetedImages  {
                         cell.retweetedImages[i].hidden = false
                         let widthOfRetweetedImageContainer: CGFloat = (kRetweetedWeiboImageWidth + 8) * CGFloat(numberOfRetweetedImages)
                         if numberOfRetweetedImages <= 3{

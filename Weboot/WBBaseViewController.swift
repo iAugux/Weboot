@@ -33,7 +33,7 @@ class WBBaseViewController: UITableViewController {
     func gearRefreshManager(){
         refreshInSeconds = 1.3
         gearRefreshControl = GearRefreshControl(frame: self.view.bounds)
-        gearRefreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        gearRefreshControl.addTarget(self, action: #selector(WBBaseViewController.refresh), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl = UIRefreshControl()
         refreshControl = gearRefreshControl
     }
@@ -41,7 +41,7 @@ class WBBaseViewController: UITableViewController {
     // MARK: - Automatic pulling down to refresh
     func automaticPullingDownToRefresh(){
         
-        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "automaticContentOffset", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: #selector(WBBaseViewController.automaticContentOffset), userInfo: nil, repeats: false)
         //        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "endRefresh", userInfo: nil, repeats: false)
         //        NSTimer.performSelector("endRefresh", withObject: nil, afterDelay: 0.1)
     }
@@ -57,7 +57,7 @@ class WBBaseViewController: UITableViewController {
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         self.gearRefreshControl?.scrollViewDidScroll(scrollView)
         self.navigationController?.hidesBarsOnSwipe = true
-        self.navigationController?.barHideOnSwipeGestureRecognizer.addTarget(self, action: "hideBarOnSwipe:")
+        self.navigationController?.barHideOnSwipeGestureRecognizer.addTarget(self, action: #selector(WBBaseViewController.hideBarOnSwipe(_:)))
     }
     
     func hideBarOnSwipe(recognizer: UIPanGestureRecognizer) {
@@ -68,10 +68,11 @@ class WBBaseViewController: UITableViewController {
         }
     }
     
+    func loadStatuses() {}
     
     func refresh(){
         
-        self.performSelector("loadStatuses")
+        self.performSelector(#selector(WBBaseViewController.loadStatuses))
         let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC)));
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
             self.gearRefreshControl?.endRefreshing()

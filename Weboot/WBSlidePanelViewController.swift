@@ -71,6 +71,7 @@ class SlidePanelViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLayoutSubviews()
         self.blurView.frame = self.view.frame
         
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,7 +87,7 @@ class SlidePanelViewController: UIViewController, UITableViewDataSource, UITable
     
     // MARK: - configure login and register
     func configureLoginAndLogoutView(sender: UIImageView){
-        let longTapGesture = UILongPressGestureRecognizer(target: self , action: "loginOrLogout:")
+        let longTapGesture = UILongPressGestureRecognizer(target: self , action: #selector(SlidePanelViewController.loginOrLogout(_:)))
         sender.addGestureRecognizer(longTapGesture)
         sender.userInteractionEnabled = true
     }
@@ -243,7 +244,7 @@ class SlidePanelViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRectMake(0, 0, kExpandedOffSet, 27))
-        let recognizer = UITapGestureRecognizer(target: self, action: "showThemePickerView")
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(SlidePanelViewController.showThemePickerView))
         recognizer.numberOfTapsRequired = 1
         
         let titleLabel = UILabel()

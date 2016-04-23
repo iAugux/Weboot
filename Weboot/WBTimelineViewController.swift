@@ -11,7 +11,6 @@ import UIKit
 
 class WBTimelineViewController: WBBaseViewController, WBNewWeiboViewControllerDelegate {
     
-    
     var cellHeight: CGFloat?
     var statuses: NSMutableArray?
     var query: WeiboRequestOperation?
@@ -63,9 +62,9 @@ class WBTimelineViewController: WBBaseViewController, WBNewWeiboViewControllerDe
     
     // MARK: - Post new weibo
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == kNewWeiboSegue{
+        if segue.identifier == kNewWeiboSegue {
             let detailVC = segue.destinationViewController as! UINavigationController
-            let newWeiboVC = detailVC.viewControllers[0] as! WBNewWeiboViewController
+            let newWeiboVC = detailVC.viewControllers.first as! WBNewWeiboViewController
             newWeiboVC.delegate = self
         }
     }
@@ -77,12 +76,12 @@ class WBTimelineViewController: WBBaseViewController, WBNewWeiboViewControllerDe
     // MARK: - login or logout
     
     func showLoginButton(){
-        let loginButton = UIBarButtonItem(title: "Login", style: UIBarButtonItemStyle.Plain, target: self, action: "loginWeibo")
+        let loginButton = UIBarButtonItem(title: "Login", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBTimelineViewController.loginWeibo))
         self.navigationItem.leftBarButtonItem = loginButton
     }
     
     func showLogoutButton(){
-        let logoutButton = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: "logoutWeibo")
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(WBTimelineViewController.logoutWeibo))
         self.navigationItem.leftBarButtonItem = logoutButton
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -125,7 +124,6 @@ class WBTimelineViewController: WBBaseViewController, WBNewWeiboViewControllerDe
         
     }
     
-    
     func setupLoadmore(){
         print("start to load more")
         self.tableView?.addFooterWithCallback({
@@ -140,12 +138,11 @@ class WBTimelineViewController: WBBaseViewController, WBNewWeiboViewControllerDe
         })
     }
     
-    
 }
 
 // MARK: - load data
 extension WBTimelineViewController {
-    func loadStatuses(){
+    override func loadStatuses(){
         query = WeiboRequestOperation()
         statuses = nil
         if query != nil {

@@ -109,7 +109,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
         imageViewContainer.showsHorizontalScrollIndicator = false
 
         // set image array
-        for var index = 0; index < 9; index++ {
+        for index in 0 ..< 9 {
             images.append(UIImageView())
             let image_x: CGFloat = IMAGE_LEADING_SPACE + (kOriginalWeiboImageWidth + 8) * CGFloat(index)
             images[index].frame = CGRectMake(image_x, 0, kOriginalWeiboImageWidth, kOriginalWeiboImageWidth)
@@ -128,7 +128,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
         retweetedImageContainer.scrollsToTop = false
         retweetedImageContainer.showsHorizontalScrollIndicator = false
         
-        for var index = 0; index < 9; index++ {
+        for index in 0 ..< 9 {
             retweetedImages.append(UIImageView())
             let image_x: CGFloat = IMAGE_LEADING_SPACE + (kRetweetedWeiboImageWidth + 8) * CGFloat(index)
             retweetedImages[index].frame = CGRectMake(image_x, 0, kRetweetedWeiboImageWidth, kRetweetedWeiboImageWidth)
@@ -182,7 +182,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
             let widthOfImageContainer: CGFloat = (kOriginalWeiboImageWidth + 8) * CGFloat(numberOfImages) + IMAGE_LEADING_SPACE
             var imageOfBrowser: SKPhoto
             self.imagesBrowser.removeAll()
-            for var i = 0 ; i < numberOfImages ; i++ {
+            for i in 0  ..< numberOfImages  {
                 images[i].hidden = false
                 images[i].tag = i
                 if widthOfImageContainer < UIScreen.screenWidth() {
@@ -197,7 +197,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
                 let statusImageUrl = NSURL(string: statusImage.thumbnailImageUrl)
                 images[i].kf_setImageWithURL(statusImageUrl!, placeholderImage: UIImage(named: "image_holder"))
 
-                let recognizer = UITapGestureRecognizer(target: self, action: "imageDidTap:")
+                let recognizer = UITapGestureRecognizer(target: self, action: #selector(WBTimelineTableViewCell.imageDidTap(_:)))
                 images[i].addGestureRecognizer(recognizer)
                 images[i].userInteractionEnabled = true
                 
@@ -253,7 +253,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
                 let widthOfRetweetedImageContainer: CGFloat = (kRetweetedWeiboImageWidth + 8) * CGFloat(numberOfRetweetedImages) + IMAGE_LEADING_SPACE
                 var imageOfBrowser: SKPhoto
                 self.imagesBrowser.removeAll()
-                for var i = 0 ; i < numberOfRetweetedImages ; i++ {
+                for i in 0  ..< numberOfRetweetedImages  {
                     retweetedImages[i].hidden = false
                     retweetedImages[i].tag = i
                     if widthOfRetweetedImageContainer < UIScreen.screenWidth() {
@@ -269,7 +269,7 @@ class WBTimelineTableViewCell: AUSTinderSwipeCell {
                     
                     retweetedImages[i].kf_setImageWithURL(retweetedStatusImageUrl!, placeholderImage: UIImage(named: "image_holder"))
                     
-                    let recognizer = UITapGestureRecognizer(target: self, action: "imageDidTap:")
+                    let recognizer = UITapGestureRecognizer(target: self, action: #selector(WBTimelineTableViewCell.imageDidTap(_:)))
                     retweetedImages[i].addGestureRecognizer(recognizer)
                     retweetedImages[i].userInteractionEnabled = true
                     

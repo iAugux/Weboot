@@ -44,7 +44,7 @@ class AUSTinderSwipeCell: UITableViewCell {
         //        self.backgroundColor = UIColor.whiteColor()
         
         //        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
-        panGestureRecognizer = PanDirectionGestureRecognizer(direction: PanDirection.Horizontal, target: self, action: "beingDragged:")
+        panGestureRecognizer = PanDirectionGestureRecognizer(direction: PanDirection.Horizontal, target: self, action: #selector(AUSTinderSwipeCell.beingDragged(_:)))
         self.addGestureRecognizer(panGestureRecognizer)
 //        self.addSubview(information)
         
